@@ -90,8 +90,23 @@ Para no saturar la VM, usaremos el despliegue Docker "Single-Node" de Wazuh.
     ```bash
     git clone https://github.com/redcanaryco/atomic-red-team.git
     ```
-2.  Localizar la técnica exacta que se va a usar. Para Linux, la **T1003.008 (OS Credential Dumping: /etc/passwd and /etc/shadow)** es rápida y muy visual.
-    *   *Path en el repo:* `atomic-red-team/atomics/T1003.008/T1003.008.md`
+
+### 5. Configuración de Vulnerabilidades en la VM para la Demo
+
+Para que la simulación de las CVEs funcione correctamente durante la demo, la VM debe configurarse con los siguientes requisitos:
+
+#### Para NGINX / Simulación de DoS
+- Instalar **NGINX 1.29.x** (última versión vulnerable).
+- Configurar el bloque de directivas `rewrite` anómalas/vulnerables en `/etc/nginx/sites-available/default` (ver archivo de reporte para la directiva exacta).
+- Mantener **CrowdSec** y su bouncer de IPTables activos para interceptar y bloquear el tráfico.
+
+#### Para Escalada de Privilegios
+- Mantener el kernel de Ubuntu 24.04 **sin actualizar/parchear** (condición vulnerable por defecto al instalar la versión base inicial).
+- Crear un usuario secundario sin privilegios para simular la brecha:
+  ```bash
+  sudo adduser victima
+  ```
+- Configurar **Wazuh** con reglas de File Integrity Monitoring (FIM) o reglas personalizadas de auditd para monitorear accesos a `/etc/shadow` y `/etc/ssh/`.
 
 ---
 

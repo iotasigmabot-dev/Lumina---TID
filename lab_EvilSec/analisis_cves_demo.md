@@ -90,22 +90,9 @@ ACTO 2 — POST-BREACH (dentro de la VM, como usuario sin privilegios)
          ↓ "Esto es lo que TID detecta. Esto es lo que Rubén no puede prevenir."
 ```
 
----
-
-## Configuración de la VM para esta Demo
-
-### Para CVE-2026-42945 (NGINX Rift)
-- Instalar **NGINX 1.29.x** (última versión vulnerable)
-- Agregar bloque de configuración vulnerable deliberado
-- CrowdSec + Bouncer activos
-
-### Para CVE-2026-46333 (ssh-keysign-pwn)
-- Ubuntu 24.04 **SIN parchear el kernel** (es la condición por defecto al instalarla)
-- Crear un segundo usuario sin privilegios: `sudo adduser victima`
-- El PoC se ejecuta como `victima` y lee `/etc/shadow` y SSH keys
-- Wazuh con reglas de File Integrity Monitoring (FIM) en `/etc/shadow` y `/etc/ssh/`
 
 ---
+
 
 ## Mapeo MITRE ATT&CK para el Dashboard de Wazuh
 
