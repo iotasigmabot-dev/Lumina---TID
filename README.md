@@ -41,11 +41,14 @@ Cada pilar agrupa un conjunto de **órganos operativos** que convierten la estra
 | 2 | **Threat Profiling** | Mapear las técnicas del adversario sobre el framework MITRE ATT&CK, construyendo un perfil de amenaza contextualizado al sector y tecnologías de la organización. |
 
 ### 🟠 Pilar 2 — Attack Surface Management
-*Objetivo: conocer la superficie de ataque y asegurar que los controles la cubren.*
+*Objetivo: descubrir y mapear todos los activos expuestos, identificar sus vulnerabilidades y asegurar que los controles defensivos los cubren.*
+
+ASM no es solo un análisis de controles: **empieza con un assessment activo de la superficie**. Antes de evaluar si los controles detectan una técnica, hay que saber qué activos existen, qué servicios exponen y qué vulnerabilidades presentan — exactamente lo que hacen herramientas como Nmap, OpenVAS, Tenable ASM o Shodan.
 
 | # | Órgano | Función |
 |---|--------|---------|
-| 3 | **Defensive Gap Analysis** | Evaluar si los controles existentes son capaces de detectar las técnicas identificadas en el Threat Profiling. Identificar brechas de cobertura. |
+| 3 | **Asset Discovery & Vulnerability Assessment** | Escaneo activo de la superficie expuesta: puertos abiertos, servicios, dominios, endpoints, IPs y versiones de software. Identificación de vulnerabilidades conocidas mediante análisis de firmas y correlación con bases de datos de CVEs. Herramientas de referencia: Nmap, OpenVAS, Tenable ASM, Shodan. |
+| 3b | **Defensive Gap Analysis** | Con el mapa de activos y vulnerabilidades en mano, se evalúa si los controles existentes son capaces de detectar las técnicas del perfil de amenaza que apuntan a esos activos. El resultado es un mapa de cobertura con gaps explícitos. |
 | 4 | **Control Engineering** | Diseñar y desarrollar las reglas de detección, parsers, correlaciones y lógica defensiva necesaria para cerrar los gaps identificados. |
 | 5 | **Control Deployment** | Desplegar los controles diseñados sobre los activos expuestos, asegurando cobertura efectiva en los vectores relevantes. |
 
@@ -73,7 +76,7 @@ Cada pilar agrupa un conjunto de **órganos operativos** que convierten la estra
 Para optimizar su ejecución, los 12 órganos operativos se estructuran en **3 Grandes Épicas o Hitos**:
 
 1. **Threat Intel**: Saber *quién* y *cómo* nos ataca.
-2. **Attack Surface Management (ASM)**: Saber *dónde* nos van a atacar (qué activos tenemos expuestos y su nivel de protección).
+2. **Attack Surface Management (ASM)**: Saber *dónde* nos van a atacar — descubriendo activamente qué activos, puertos, servicios y vulnerabilidades están expuestos, y verificando qué tan protegidos están.
 3. **Attack Simulation & Remediation**: Poner a prueba las defensas (simulación) y accionar mecanismos de prevención/respuesta (remediación).
 
 ### 4.2 Mapa conceptual — Pipeline TID por Épicas
@@ -164,11 +167,18 @@ Cada amenaza identificada se mapea sobre la matriz MITRE ATT&CK, construyendo un
 
 ---
 
-#### 📌 Épica 2: Attack Surface Management — *Saber dónde me van a atacar*
+#### 📌 Épica 2: Attack Surface Management — *Saber qué tengo expuesto y qué tan protegido está*
 
-**🔍 Órgano 3 — Defensive Gap Analysis**  
-Pregunta central: *¿Nuestros controles actuales detectan las técnicas del perfil de amenaza?*  
-Se auditan las reglas, parsers, watchpoints y configuraciones de seguridad existentes y se mapean contra las técnicas ATT&CK identificadas. El resultado es un mapa de cobertura con gaps explícitos.
+**🗺️ Órgano 3a — Asset Discovery & Vulnerability Assessment**  
+El punto de partida de ASM es un **assessment activo de la superficie de ataque**. Se realizan escaneos de red para identificar hosts activos, puertos abiertos y servicios en escucha; enumeración de dominios, subdominios y endpoints expuestos; y detección de vulnerabilidades conocidas en las versiones de software detectadas, correlacionándolas con bases de datos de CVEs.
+
+Esta fase responde: *¿qué activos tengo expuestos y cuál es su postura de seguridad actual?*  
+Herramientas de referencia: **Nmap** (discovery & port scanning), **OpenVAS / Greenbone** (vulnerability scanning), **Tenable ASM / Nessus** (gestión continua de superficie), **Shodan / Censys** (visión externa del atacante).
+
+**🔍 Órgano 3b — Defensive Gap Analysis**  
+Con el mapa de activos y vulnerabilidades construido en el paso anterior, se evalúa si los controles existentes son capaces de detectar las técnicas del perfil de amenaza que apuntan a esos activos.  
+Pregunta central: *¿Nuestros controles actuales detectan las técnicas que un atacante usaría sobre los activos que acabamos de mapear?*  
+Se auditan reglas, parsers, watchpoints y configuraciones y se mapean contra las técnicas ATT&CK identificadas. El resultado es un mapa de cobertura con gaps explícitos.
 
 **🏗️ Órgano 4 — Control Engineering**  
 Se diseñan los controles de detección necesarios para cerrar los gaps: reglas de correlación en el SIEM, watchpoints de auditoría del sistema operativo, parsers de logs y firmas de comportamiento anómalo. Cada control incluye su mapeo ATT&CK correspondiente.
@@ -225,14 +235,17 @@ El ciclo TID no termina: se reinicia con cada nueva amenaza identificada. Nuevas
 
 TID es **tecnológicamente agnóstico**: puede implementarse con herramientas comerciales o completamente open-source. Un stack de referencia viable incluye:
 
-| Capacidad | Herramientas (Open Source) |
+| Capacidad | Herramientas de referencia |
 |-----------|---------------------------|
-| SIEM / Detección | Wazuh, Elastic SIEM, OpenSearch |
-| Prevención / Intel comunitaria | CrowdSec |
-| Auditoría del SO | auditd |
-| BAS / Simulación | Atomic Red Team, Caldera (MITRE) |
-| Framework de mapeo | MITRE ATT&CK |
-| Orquestación de respuesta | n8n, Shuffle, TheHive |
+| **Asset Discovery & Port Scanning** | Nmap, Masscan, Rustscan |
+| **Vulnerability Assessment** | OpenVAS / Greenbone, Nessus, Tenable ASM |
+| **Visión externa (Attacker View)** | Shodan, Censys, FOFA |
+| **SIEM / Detección** | Wazuh, Elastic SIEM, OpenSearch |
+| **Prevención / Intel comunitaria** | CrowdSec |
+| **Auditoría del SO** | auditd |
+| **BAS / Simulación** | Atomic Red Team, Caldera (MITRE) |
+| **Framework de mapeo** | MITRE ATT&CK |
+| **Orquestación de respuesta** | n8n, Shuffle, TheHive |
 
 ---
 
