@@ -116,39 +116,102 @@ sudo cscli decisions list
 
 **Dónde ejecutar:** Terminal de la VM (`multipass shell tid-lab`)
 
-**Acción:** Editaremos la configuración del Wazuh Manager (que corre en el contenedor Docker) para que asocie la alerta `100010` (lectura de `/etc/shadow`) con la ejecución automática del script `firewall-drop` en el agente de la VM.
+**Acción:** Configuraremos el Manager de Wazuh (contenedor Docker) para que ejecute una respuesta activa al detectar la alerta 100010 (acceso a `/etc/shadow`). La configuración se hace editando el `ossec.conf` dentro del contenedor via `docker cp`.
+
+> ⚠️ **Por qué `docker cp` y no editar un volumen:** El `ossec.conf` del Manager en el despliegue single-node de Wazuh **no está expuesto como volumen editable** en el host. La forma robusta es copiarlo fuera, editarlo, y devolverlo.
 
 ```bash
-# 1. Definir la ruta del archivo de configuración del Manager
-OSSEC_CONF_PATH="/home/ubuntu/wazuh-docker/single-node/config/wazuh_cluster/wazuh_manager.conf"
-# Nota: Si el path difiere, buscar dónde se monta el volumen del manager en el docker-compose.
+# 1. Verificar que el script firewall-drop existe en el Agente nativo
+sudo ls -lh /var/ossec/active-response/bin/firewall-drop
+# Debe existir. Si no: sudo apt-get install --reinstall wazuh-agent
+```
 
-# 2. Verificar si el bloque de active-response ya existe para evitar duplicados
-if ! sudo grep -q "<rules_id>100010</rules_id>" "$OSSEC_CONF_PATH" 2>/dev/null; then
-  echo "[*] Agregando configuración de Active Response al Manager..."
-  
-  # Insertar la configuración antes del cierre del bloque </ossec_config>
-  sudo sed -i '/<\/ossec_config>/i \
-  <active-response>\n    <command>firewall-drop<\/command>\n    <location>local<\/location>\n    <rules_id>100010<\/rules_id>\n    <timeout>60<\/timeout>\n  <\/active-response>' "$OSSEC_CONF_PATH"
-  
-  echo "[OK] Configuración insertada."
-else
-  echo "[!] Active Response ya configurada previamente."
+```bash
+# 2. Crear el script de Active Response personalizado en el Agente
+# Extrae la IP remota de la sesión SSH del usuario que disparó la alerta
+sudo tee /var/ossec/active-response/bin/ssh-drop.sh > /dev/null << 'EOF'
+#!/bin/bash
+# Active Response: Bloquear IP remota de sesión SSH activa del usuario comprometido
+LOCAL=`dirname $0`
+. $LOCAL/ar-lib
+
+ACTION=$1
+USER=$2
+IP=$3
+
+# Si no viene IP en el evento, obtener la IP remota de las sesiones SSH activas del usuario victima
+if [ -z "$IP" ] || [ "$IP" = "-" ]; then
+    IP=$(who | grep "victima" | grep -oE '[0-9]+\.[0-9]+\.[0-9]+\.[0-9]+' | head -1)
 fi
 
-# 3. Reiniciar el contenedor de Wazuh Manager para aplicar los cambios
-cd /home/ubuntu/wazuh-docker/single-node
-docker compose restart wazuh.manager
+if [ -z "$IP" ]; then
+    echo "[AR] No se pudo determinar la IP remota. Abortando." >> /var/ossec/logs/active-responses.log
+    exit 1
+fi
 
-# Esperar a que el manager inicie completamente (aprox. 30 segundos)
-echo "[*] Reiniciando Wazuh Manager... Esperando 30 segundos"
-sleep 30
-docker compose ps
+echo "[AR] ssh-drop: Bloqueando IP $IP por acceso a /etc/shadow" >> /var/ossec/logs/active-responses.log
+
+if [ "$ACTION" = "add" ]; then
+    /sbin/iptables -I INPUT -s "$IP" -j DROP
+    /sbin/iptables -I FORWARD -s "$IP" -j DROP
+elif [ "$ACTION" = "delete" ]; then
+    /sbin/iptables -D INPUT -s "$IP" -j DROP 2>/dev/null
+    /sbin/iptables -D FORWARD -s "$IP" -j DROP 2>/dev/null
+fi
+EOF
+sudo chmod 750 /var/ossec/active-response/bin/ssh-drop.sh
+sudo chown root:wazuh /var/ossec/active-response/bin/ssh-drop.sh
+```
+
+```bash
+# 3. Extraer el ossec.conf del Manager desde el contenedor, agregar el bloque AR y devolverlo
+cd ~/wazuh-docker/single-node
+
+# Copiar ossec.conf fuera del contenedor
+docker cp single-node-wazuh.manager-1:/var/ossec/etc/ossec.conf /tmp/wazuh_manager_ossec.conf
+
+# Verificar que no exista ya el bloque para la regla 100010 (idempotente)
+if ! grep -q "100010" /tmp/wazuh_manager_ossec.conf; then
+
+  # Agregar el comando personalizado y la respuesta activa antes de </ossec_config>
+  cat >> /tmp/wazuh_manager_ossec.conf << 'EOF'
+
+  <!-- Active Response: bloqueo SSH por acceso a /etc/shadow -->
+  <command>
+    <name>ssh-drop</name>
+    <executable>ssh-drop.sh</executable>
+    <timeout_allowed>yes</timeout_allowed>
+  </command>
+
+  <active-response>
+    <command>ssh-drop</command>
+    <location>local</location>
+    <rules_id>100010</rules_id>
+    <timeout>60</timeout>
+  </active-response>
+EOF
+
+  echo "[OK] Bloque AR agregado al ossec.conf del Manager."
+else
+  echo "[!] El bloque AR ya existe. No se modifica."
+fi
+
+# Devolver el archivo modificado al contenedor
+docker cp /tmp/wazuh_manager_ossec.conf single-node-wazuh.manager-1:/var/ossec/etc/ossec.conf
+
+# Recargar el Manager sin reiniciar el contenedor (conserva conexiones)
+docker exec single-node-wazuh.manager-1 /var/ossec/bin/wazuh-control reload
 ```
 
 **Checkpoint 3.5:**
-- El archivo `wazuh_manager.conf` contiene el bloque `<active-response>` asociado a la regla `100010`.
-- El contenedor `wazuh.manager` está en estado `running`.
+```bash
+# Verificar que el bloque AR quedó en el ossec.conf del contenedor
+docker exec single-node-wazuh.manager-1 grep -A 5 "ssh-drop" /var/ossec/etc/ossec.conf
+# Debe mostrar el bloque <active-response> y <command>
+
+# Verificar que el Manager está running
+docker compose ps
+```
 
 ---
 
@@ -159,16 +222,22 @@ docker compose ps
 **Acción:** Conectarse vía SSH como el usuario sin privilegios y ejecutar el PoC para leer `/etc/shadow`.
 
 ```bash
-# 1. Conectarse a la VM como victima
+# 1. Conectarse a la VM como victima (desde el HOST)
 ssh victima@10.78.238.104
 # (Ingresar contraseña: demo123)
 
-# 2. Una vez dentro de la sesión SSH de victima, ejecutar la simulación de lectura de shadow:
+# 2. Una vez dentro de la sesión SSH de victima, ejecutar el PoC:
 python3 /opt/pocs/shadow_reader_demo.py
+
+# 3. Intentar leer /etc/shadow directamente:
 cat /etc/shadow
 ```
 
-> **Qué observar en vivo:** Al ejecutar `cat /etc/shadow`, el comando fallará (o mostrará permiso denegado si no es root), pero el intento de lectura será capturado por `auditd`. En menos de 2 segundos, **tu sesión SSH se congelará por completo y se desconectará** debido a que la IP del Host ha sido bloqueada a nivel firewall.
+> **Comportamiento esperado y por qué importa:**
+> - `cat /etc/shadow` devolverá `Permission denied` — **esto es correcto**. El usuario `victima` no tiene privilegios para leer el archivo.
+> - Sin embargo, `auditd` registra el intento de acceso al syscall `openat()` **antes** de que el kernel deniegue el permiso. La alerta de Wazuh (Regla 100010) se dispara igualmente.
+> - **El punto de la demo:** TID detecta hasta los intentos *fallidos* de acceso a datos críticos. El atacante no necesita tener éxito para ser detectado y bloqueado.
+> - En 2-5 segundos, el script `ssh-drop.sh` ejecutará el bloqueo y **la sesión SSH se congelará y desconectará** por completo.
 
 ---
 
@@ -194,23 +263,42 @@ sudo iptables -L -n | grep -E "DROP|REJECT"
 
 ---
 
-### BLOQUE 3.8 — Resumen Final de la Demo (VM)
+### BLOQUE 3.8 — Resumen Final de la Demo
 
-**Dónde ejecutar:** Terminal de la VM.
+**Dónde ejecutar:** Terminal en el HOST (comandos separados de `multipass exec` — sin bash anidado para evitar problemas de escaping).
 
 ```bash
-multipass exec tid-lab -- bash -c "
-echo '=== RESUMEN DE DEFENSA ACTIVA TID ==='
-echo ''
-echo '--- Logs de Detección en Wazuh Manager ---'
-sudo docker exec single-node-wazuh.manager-1 \
-  tail -n 30 /var/ossec/logs/alerts/alerts.json | grep -E '100010|active_response'
-echo ''
-echo '--- Estado de Bloqueo Temporal (IPTables) ---'
-sudo iptables -L -n | grep -E 'DROP|REJECT'
-echo ''
-echo '=== DEMO COMPLETADA EXITOSAMENTE ==='
-"
+echo "=== RESUMEN DE DEFENSA ACTIVA TID ==="
+
+echo ""
+echo "--- Alertas Wazuh: Regla 100010 (Shadow Access) + Active Response ---"
+multipass exec tid-lab -- sudo docker exec single-node-wazuh.manager-1 \
+  python3 -c "
+import json
+with open('/var/ossec/logs/alerts/alerts.json') as f:
+    for line in f:
+        try:
+            a = json.loads(line)
+            rid = a.get('rule', {}).get('id', '')
+            if rid in ['100010', '100011'] or 'active_response' in str(a):
+                print(a['timestamp'], '| Rule', rid, '|', a['rule'].get('description',''))
+        except: pass
+" | tail -n 10
+
+echo ""
+echo "--- Logs de Active Response en el Agente ---"
+multipass exec tid-lab -- sudo tail -n 5 /var/ossec/logs/active-responses.log
+
+echo ""
+echo "--- Decisiones CrowdSec activas ---"
+multipass exec tid-lab -- sudo cscli decisions list
+
+echo ""
+echo "--- IPTables: reglas DROP activas ---"
+multipass exec tid-lab -- sudo iptables -L INPUT -n | grep DROP
+
+echo ""
+echo "=== DEMO COMPLETADA EXITOSAMENTE ==="
 ```
 
 ---
