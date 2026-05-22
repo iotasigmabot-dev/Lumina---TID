@@ -69,15 +69,17 @@ ASM no es solo un análisis de controles: **empieza con un assessment activo de 
 
 ## 4. Workflow Hipotético de TID dividido en 3 Épicas
 
-### 4.1 ¿Qué es TID y cómo se estructura?
+### 4.1 Por qué 3 Épicas y no 12 pasos sueltos
 
-**Threat-Informed Defense (TID)** es una metodología donde cada decisión defensiva está guiada por inteligencia real sobre las amenazas que enfrenta la organización. No se defiende "de todo": se defiende **de lo que importa**, validando continuamente que los controles funcionan.
+Organizar los 12 órganos operativos en **3 épicas secuenciadas** no es solo una decisión estética: resuelve un problema de dependencias lógicas. Cada épica es un prerrequisito de la siguiente:
 
-Para optimizar su ejecución, los 12 órganos operativos se estructuran en **3 Grandes Épicas o Hitos**:
+- **No tiene sentido hacer Gap Analysis (Épica 2) sin saber qué técnicas usa el adversario (Épica 1).**  
+  Un control que detecta algo que nadie está explotando no agrega valor real; uno que no cubre las TTPs activas deja la puerta abierta.
 
-1. **Threat Intel**: Saber *quién* y *cómo* nos ataca.
-2. **Attack Surface Management (ASM)**: Saber *dónde* nos van a atacar — descubriendo activamente qué activos, puertos, servicios y vulnerabilidades están expuestos, y verificando qué tan protegidos están.
-3. **Attack Simulation & Remediation**: Poner a prueba las defensas (simulación) y accionar mecanismos de prevención/respuesta (remediación).
+- **No tiene sentido simular ataques (Épica 3) sin conocer la superficie expuesta (Épica 2).**  
+  Simular sobre activos desconocidos o no mapeados genera resultados no representativos. La simulación debe apuntar a lo que el adversario real vería.
+
+- **El ciclo es deliberadamente cerrado:** el Órgano 12 (Continuous Improvement) retroalimenta al Órgano 1 (CTI), y el Órgano 8 (Feedback Loop) retroalimenta al Órgano 4 (Control Engineering). TID no es un proyecto con fecha de cierre — es un ciclo operativo continuo cuya velocidad de iteración define la madurez defensiva de la organización.
 
 ### 4.2 Mapa conceptual — Pipeline TID por Épicas
 
