@@ -8,6 +8,59 @@
 
 ---
 
+## 0. Contexto Estratégico & Arquitectura del Laboratorio
+
+### Enfoque y Mensaje
+
+> **"Menos humo. Más defensa real."**
+
+La ciberdefensa efectiva no requiere presupuestos millonarios. Requiere **inteligencia de amenazas y una mentalidad proactiva**. Este laboratorio demuestra que es posible construir capacidades defensivas de nivel enterprise usando exclusivamente herramientas open-source, siguiendo el principio de *Living off the Land (LotL)* defensivo.
+
+**Stack Core TID elegido para la demo:**
+- **Wazuh** — Detección, SIEM y correlación con MITRE ATT&CK
+- **CrowdSec** — Prevención perimetral e inteligencia comunitaria
+- **Scripts de Breach Simulation** — Emulación directa de TTPs reales, sin C2, sin agentes adicionales
+
+> La decisión de no usar CALDERA, TheHive o n8n fue deliberada: más herramientas = más puntos de falla durante una charla en vivo. El stack mínimo que demuestra el máximo impacto.
+
+---
+
+### Arquitectura Lógica del Laboratorio
+
+| Rol | Componente | OS / IP | Herramientas Clave |
+|-----|-----------|---------|-------------------|
+| **Atacante / Red Team** | Host Físico | Parrot OS — `10.78.238.1` | curl, scripts de PoC, Cliente SSH |
+| **Defensor / Blue Team** | VM `tid-lab` | Ubuntu 24.04 LTS — `10.78.238.104` | Wazuh Stack (Docker), CrowdSec + IPTables Bouncer, auditd |
+
+```
+[HOST FÍSICO — atacante]
+    IP: 10.78.238.1
+
+          ↕ Red Multipass
+
+[VM: tid-lab — Ubuntu 24.04]
+    IP: 10.78.238.104
+    Puerto 443  → Wazuh Dashboard (HTTPS)
+    Puerto 80   → NGINX (HTTP, endpoint vulnerable)
+    Puerto 22   → SSH
+    Puerto 1514 → Wazuh Agent
+```
+
+---
+
+### Narrativa de la Demo — Los 4 Actos
+
+| Acto | Fase | Qué ocurre |
+|------|------|-----------|
+| **1** | 🔊 El Ruido | El atacante genera tráfico agresivo: payloads masivos al endpoint vulnerable de Nginx. |
+| **2** | 🛡️ Prevención | CrowdSec detecta el patrón anómalo y ejecuta bloqueo en la capa de red vía IPTables. La whitelist del presentador permite continuar la demo sin interrupciones. |
+| **3** | 💀 Assume Breach | Se simula que el perímetro cayó. Un usuario sin privilegios (`victima`) intenta acceder a `/etc/shadow` y claves SSH privadas del host. |
+| **4** | 📊 Detección Mapeada | auditd captura los accesos. Wazuh correlaciona los eventos y genera alertas de nivel 10 mapeadas a MITRE ATT&CK en tiempo real. |
+
+> *"El perímetro eventualmente cae. La pregunta es: ¿cuánto tardás en detectarlo?"*
+
+---
+
 ## 1. Vulnerabilidades Explotadas (CVE & CWE)
 
 ### 1.1 CVE-2026-42945 — "NGINX Rift"
