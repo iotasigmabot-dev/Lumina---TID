@@ -15,4 +15,12 @@ for i in $(seq 1 200); do
     fi
 done
 wait
+
+# Inject 404 errors to guarantee Wazuh Rule 31101 (Web 4xx) and 100012 (nginx_error) trigger
+echo "[*] Inyectando tráfico anómalo para disparar alertas de Wazuh..."
+for i in {1..20}; do
+    curl -s -o /dev/null "http://${TARGET}/app-vuln-trigger-$i" &
+done
+wait
+
 echo "[!] Ataque completado. Verificar errores en Nginx y alertas en Wazuh."
