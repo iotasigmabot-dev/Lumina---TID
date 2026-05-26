@@ -231,16 +231,23 @@ El entorno práctico **Lumina - EvilSec Lab** materializa la filosofía LoL y el
 
 ```
 Lumina - TID/
-├── README.v2.md        ← Este documento maestro de la arquitectura TID
-├── scripts/            ← Automatización de despliegues, ataques y recuperación
+├── README.md                 ← Documento maestro de la arquitectura TID y laboratorio
+├── preflight_check.sh        ← Script para verificar salud del lab y rotar IPs
+├── scripts/                  ← Automatización de despliegues, ataques y extracción
 │   ├── rebuild_tid_lab.sh
 │   ├── recover_lab.sh
 │   ├── nginx_dos_demo.sh
-│   └── privilege_escalation_demo.sh
-├── Info/               ← Material complementario y Rundown
-└── lab_EvilSec/        ← Artefactos y SITREPs detallados de la operación
-    ├── SITREP_Wazuh_ActiveResponse.md
-    └── evidencias/     ← Respaldo en JSON de detecciones
+│   ├── privilege_escalation_demo.sh
+│   └── extract_*_logs.sh
+├── Info/                     ← Material complementario
+│   └── RUNDOWN_SIMPLE.md     ← Guía paso a paso para la demostración en vivo
+├── lab_EvilSec/              ← Artefactos, análisis de CVEs y detalles de las etapas
+│   ├── etapa1_construccion_lab.md
+│   ├── etapa2_ataque_y_defensa_activa.md
+│   └── informe_tecnico_ataques_tid.md
+└── evidencias/               ← Respaldo en JSON de detecciones de Wazuh y CrowdSec
+    ├── crowdsec_alerts_cscli.json
+    └── wazuh_*.log
 ```
 
 > **Lumina - TID** transforma la ciberseguridad corporativa: pasa de ser un gasto reactivo impulsado por el miedo, a una ventaja competitiva de negocio, orquestada de forma medible, probada y adaptativa.
