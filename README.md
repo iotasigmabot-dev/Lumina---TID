@@ -4,90 +4,50 @@
 
 ---
 
-## ¿Qué es Threat-Informed Defense?
+## 1. ¿Qué es Threat-Informed Defense?
 
 **Threat-Informed Defense (TID)** es una estrategia de ciberseguridad **adaptativa, dinámica y proactiva** que alinea cada decisión defensiva con inteligencia real sobre las amenazas que enfrenta una organización.
 
-A diferencia de los enfoques tradicionales basados en listas de verificación o controles genéricos, TID parte de una premisa fundamental:
+A diferencia de los enfoques tradicionales basados en cumplimiento ciego (*compliance*), TID asume que los ataques modernos son veloces, furtivos y propulsados por IA ofensiva que opera en milisegundos. De hecho, el **79% de las intrusiones evaden detecciones tradicionales operando sin malware**, utilizando credenciales robadas y herramientas nativas (LotL ofensivo).
 
-> **No se puede defender todo. Se defiende lo que importa.**
+Cuando un adversario logra evadir las defensas perimetrales, **el tiempo de *breakout* (el lapso hasta que inicia el movimiento lateral o impacto) puede ser de apenas 51 segundos.** La respuesta manual frente a esta velocidad es insostenible; se requiere una defensa activa, informada y automatizada.
 
-Esto implica conocer al adversario antes de que actúe, mapear las técnicas reales de ataque sobre el entorno propio y validar de forma continua que los controles defensivos funcionan contra esas técnicas específicas.
+### La Ecuación Fundamental del Riesgo
+El núcleo de la estrategia se define por:
+**Riesgo = Amenaza × Vulnerabilidad × Impacto**
 
----
-
-## Los 3 Pilares de TID
-
-TID se articula en **tres grandes pilares estratégicos**, cada uno respondiendo a una pregunta clave:
-
-| Pilar | Pregunta central |
-|-------|------------------|
-| 🔵 **Threat Intelligence** | ¿Quién me ataca y cómo? |
-| 🟠 **Attack Surface Management** | ¿Qué tengo expuesto y qué tan protegido está? |
-| 🔴 **Attack Simulation & Remediation** | ¿Mis defensas funcionan? ¿Cómo respondo cuando fallan? |
+El riesgo se mitiga de manera más efectiva **suprimiendo la variable de vulnerabilidad** en la superficie de ataque. Su antídoto operativo es **La Tríada T.I.D. en Movimiento:**
+1. **Inteligencia de Amenazas:** Entender el comportamiento del atacante.
+2. **Gestión de Superficie:** Conocer nuestra exposición y puntos ciegos.
+3. **Medidas Defensivas:** Implementar y validar controles basados en los dos puntos anteriores.
 
 ---
 
-## Los 12 Órganos Operativos
+## 2. El Ecosistema T.I.D. (Los 4 Cuadrantes y 12 Órganos)
 
-Cada pilar agrupa un conjunto de **órganos operativos** que convierten la estrategia en capacidades concretas:
+TID es un engranaje completo, no una herramienta aislada. Se articula a través de 4 cuadrantes funcionales (también conocidos históricamente en la madurez del proyecto como "Épicas") que agrupan 12 órganos operativos.
 
-### 🔵 Pilar 1 — Threat Intelligence
-*Objetivo: generar y consumir inteligencia accionable sobre el adversario.*
+### 🔵 1. Inteligencia y Visibilidad
+- **1. TI (Threat Intel):** Contextualiza amenazas mediante marcos de TTPs adaptables al negocio (ej. STRIDE para el sector salud, PASTA para telecomunicaciones), priorizando protecciones fundamentales sobre modelados teóricos.
+- **2. ASM (Attack Surface Management):** Descubre la exposición de activos (Internet-facing) y mapea vulnerabilidades críticas.
 
-| # | Órgano | Función |
-|---|--------|---------|
-| 1 | **CTI (Cyber Threat Intelligence)** | Identificar actores de amenaza, tácticas activas, vulnerabilidades explotadas en-the-wild y tendencias del ecosistema adversarial. |
-| 2 | **Threat Profiling** | Mapear las técnicas del adversario sobre el framework MITRE ATT&CK, construyendo un perfil de amenaza contextualizado al sector y tecnologías de la organización. |
+### 🟠 2. Detección y Operaciones
+- **3. VM/PM (Vulnerability & Patch Management):** Parcheo y priorización continua de los activos descubiertos.
+- **4. Detection Engineering:** Traducción de comportamientos a reglas de detección mapeadas a MITRE ATT&CK.
+- **5. SOC:** Triage de alertas y monitoreo operacional 24/7.
 
-### 🟠 Pilar 2 — Attack Surface Management
-*Objetivo: descubrir y mapear todos los activos expuestos, identificar sus vulnerabilidades y asegurar que los controles defensivos los cubren.*
+### 🔴 3. Acción y Emulación
+- **6. Threat Hunting:** Búsqueda proactiva, manual y profunda de anomalías que evadieron las alertas automáticas.
+- **7. Purple Team / BAS:** Simulación continua de ataques para validar de forma empírica la eficacia de los controles.
+- **8. IR / Forensics:** Respuesta a incidentes, contención técnica y peritaje.
 
-ASM no es solo un análisis de controles: **empieza con un assessment activo de la superficie**. Antes de evaluar si los controles detectan una técnica, hay que saber qué activos existen, qué servicios exponen y qué vulnerabilidades presentan — exactamente lo que hacen herramientas como Nmap, OpenVAS, Tenable ASM o Shodan.
+### 🟣 4. Fundamentos y Gobernanza
+- **9. Security Engineering:** Diseño, despliegue y mantenimiento de la arquitectura de seguridad.
+- **10. DevSecOps:** Hardening de infraestructura y despliegue de código seguro ("Security as Code").
+- **11. GRC (Governance, Risk & Compliance):** Alineación del riesgo técnico con el riesgo de negocio.
+- **12. Coordinador TID:** Orquestación estratégica, gestión de presupuesto y liderazgo táctico del ecosistema.
 
-| # | Órgano | Función |
-|---|--------|---------|
-| 3 | **Asset Discovery & Vulnerability Assessment** | Escaneo activo de la superficie expuesta: puertos abiertos, servicios, dominios, endpoints, IPs y versiones de software. Identificación de vulnerabilidades conocidas mediante análisis de firmas y correlación con bases de datos de CVEs. Herramientas de referencia: Nmap, OpenVAS, Tenable ASM, Shodan. |
-| 3b | **Defensive Gap Analysis** | Con el mapa de activos y vulnerabilidades en mano, se evalúa si los controles existentes son capaces de detectar las técnicas del perfil de amenaza que apuntan a esos activos. El resultado es un mapa de cobertura con gaps explícitos. |
-| 4 | **Control Engineering** | Diseñar y desarrollar las reglas de detección, parsers, correlaciones y lógica defensiva necesaria para cerrar los gaps identificados. |
-| 5 | **Control Deployment** | Desplegar los controles diseñados sobre los activos expuestos, asegurando cobertura efectiva en los vectores relevantes. |
-
-### 🔴 Pilar 3 — Attack Simulation & Remediation
-*Objetivo: validar las defensas con ataques reales y activar mecanismos de respuesta.*
-
-| # | Órgano | Función |
-|---|--------|---------|
-| 6 | **BAS (Breach & Attack Simulation)** | Ejecutar simulaciones de ataque controladas y documentadas, replicando las técnicas del perfil de amenaza sobre el entorno real. |
-| 7 | **Detection Validation** | Verificar que los controles desplegados detectaron los ataques simulados. Generar evidencia de cobertura. |
-| 8 | **Feedback Loop & Tuning** | Ajustar umbrales, eliminar falsos positivos y refinar reglas de detección en base a los resultados de la validación. |
-| 9 | **Prevention Layer** | Activar mecanismos de bloqueo automático para prevenir que los ataques detectados alcancen su objetivo. |
-| 10 | **Playbook Automation** | Definir y automatizar la respuesta ante incidentes: aislamiento, notificación, forense y escalamiento. |
-| 11 | **Metrics & Reporting** | Cuantificar la cobertura ATT&CK, el tiempo medio de detección (MTTD), la tasa de falsos positivos y la efectividad de prevención. |
-| 12 | **Continuous Improvement** | Reiniciar el ciclo con nuevas amenazas, incorporando aprendizajes para elevar la madurez defensiva de forma sostenida. |
-
----
-
-## 4. Workflow Hipotético de TID dividido en 3 Épicas
-
-### 4.1 Por qué 3 Épicas y no 12 pasos sueltos
-
-Organizar los 12 órganos operativos en **3 épicas secuenciadas** no es solo una decisión estética: resuelve un problema de dependencias lógicas. Cada épica es un prerrequisito de la siguiente:
-
-- **No tiene sentido hacer Gap Analysis (Épica 2) sin saber qué técnicas usa el adversario (Épica 1).**  
-  Un control que detecta algo que nadie está explotando no agrega valor real; uno que no cubre las TTPs activas deja la puerta abierta.
-
-- **No tiene sentido simular ataques (Épica 3) sin conocer la superficie expuesta (Épica 2).**  
-  Simular sobre activos desconocidos o no mapeados genera resultados no representativos. La simulación debe apuntar a lo que el adversario real vería.
-
-- **El ciclo es deliberadamente cerrado:** el Órgano 12 (Continuous Improvement) retroalimenta al Órgano 1 (CTI), y el Órgano 8 (Feedback Loop) retroalimenta al Órgano 4 (Control Engineering). TID no es un proyecto con fecha de cierre — es un ciclo operativo continuo cuya velocidad de iteración define la madurez defensiva de la organización.
-
-### 4.2 Mapa conceptual — Pipeline TID por Épicas
-
-| Épica | Órganos | Pregunta clave |
-|-------|---------|----------------|
-| 🔵 **Threat Intel** | 1 — CTI & 2 — Threat Profiling | ¿Quién me ataca y cómo? |
-| 🟠 **Attack Surface Management** | 3 — Gap Analysis, 4 — Control Engineering, 5 — Control Deployment | ¿Qué tengo expuesto y estoy protegido? |
-| 🔴 **Attack Simulation & Remediation** | 6 — BAS, 7 — Detection Validation, 8 — Feedback Loop, 9 — Prevention, 10 — Playbook, 11 — Metrics, 12 — Continuous Improvement | ¿Mis defensas funcionan? ¿Cómo respondo? |
+### 🗺️ Mapa Conceptual: El Ecosistema T.I.D.
 
 ```mermaid
 %%{init: {
@@ -105,164 +65,162 @@ Organizar los 12 órganos operativos en **3 épicas secuenciadas** no es solo un
   }
 }}%%
 flowchart TD
-    %% Estilos por épica
-    classDef intel   fill:#0d47a1,stroke:#1976d2,stroke-width:2px,color:#e3f2fd
-    classDef asm     fill:#bf360c,stroke:#e64a19,stroke-width:2px,color:#fbe9e7
-    classDef asmGate fill:#6d4c00,stroke:#f9a825,stroke-width:2px,color:#fff9c4
-    classDef sim     fill:#1b5e20,stroke:#43a047,stroke-width:2px,color:#e8f5e9
-    classDef simGate fill:#4a148c,stroke:#8e24aa,stroke-width:2px,color:#f3e5f5
-    classDef loop    fill:#37474f,stroke:#78909c,stroke-width:2px,color:#cfd8dc
+    %% Estilos por Cuadrante
+    classDef intel fill:#0d47a1,stroke:#1976d2,stroke-width:2px,color:#e3f2fd
+    classDef ops fill:#bf360c,stroke:#e64a19,stroke-width:2px,color:#fbe9e7
+    classDef action fill:#1b5e20,stroke:#43a047,stroke-width:2px,color:#e8f5e9
+    classDef gov fill:#4a148c,stroke:#8e24aa,stroke-width:2px,color:#f3e5f5
 
-    %% ── ÉPICA 1: THREAT INTEL ──────────────────────────────────────
-    subgraph E1 ["🔵 ÉPICA 1 — THREAT INTEL"]
+    subgraph C1 ["🔵 1. Inteligencia y Visibilidad"]
         direction TB
-        O1["🧠 Órgano 1\nCTI\nIdentificar amenazas & TTPs activos"]:::intel
-        O2["🎯 Órgano 2\nThreat Profiling\nMapeo MITRE ATT&CK"]:::intel
-        O1 --> O2
+        O1["🧠 Órgano 1\nTI (Threat Intel)\nContextualiza amenazas"]:::intel
+        O2["🔍 Órgano 2\nASM\nDescubre exposición"]:::intel
     end
 
-    %% ── ÉPICA 2: ATTACK SURFACE MANAGEMENT ────────────────────────
-    subgraph E2 ["🟠 ÉPICA 2 — ATTACK SURFACE MANAGEMENT"]
+    subgraph C2 ["🟠 2. Detección y Operaciones"]
         direction TB
-        O3{"🔍 Órgano 3\nDefensive Gap Analysis\n¿Controles existentes?"}:::asmGate
-        O4["🏗️ Órgano 4\nControl Engineering\nDiseño de reglas & parsers"]:::asm
-        O5["⚙️ Órgano 5\nControl Deployment\nDespliegue en activos expuestos"]:::asm
-        O3 -- "❌ Gap detectado" --> O4
-        O4 -- "Reglas / Parsers" --> O5
+        O3["🛡️ Órgano 3\nVM/PM\nParcheo y priorización"]:::ops
+        O4["🏗️ Órgano 4\nDetection Engineering\nReglas mapeadas a MITRE"]:::ops
+        O5["🖥️ Órgano 5\nSOC\nMonitoreo 24/7"]:::ops
     end
 
-    %% ── ÉPICA 3: ATTACK SIMULATION & REMEDIATION ──────────────────
-    subgraph E3 ["🔴 ÉPICA 3 — ATTACK SIMULATION & REMEDIATION"]
+    subgraph C3 ["🔴 3. Acción y Emulación"]
         direction TB
-        O6["🧪 Órgano 6\nBAS — Breach & Attack Simulation\nEjecución de técnicas de ataque"]:::sim
-        O7{"📊 Órgano 7\nDetection Validation\n¿El control detectó?"}:::simGate
-        O8["🔄 Órgano 8\nFeedback Loop & Tuning\nAjuste de umbrales & FP"]:::loop
-        O9["🚨 Órgano 9\nPrevention Layer\nBloqueo automático"]:::sim
-        O10["📋 Órgano 10\nPlaybook Automation\nRespuesta & remediación"]:::sim
-        O11["📈 Órgano 11\nMetrics & Reporting\nKPIs & cobertura ATT&CK"]:::sim
-        O12["🔁 Órgano 12\nContinuous Improvement\nMadurez TID continua"]:::sim
-        O6 --> O7
-        O7 -- "❌ No detectó" --> O8
-        O7 -- "✅ Detectó" --> O9
-        O9 --> O10
-        O10 --> O11
-        O11 --> O12
+        O6["🎯 Órgano 6\nThreat Hunting\nBúsqueda proactiva"]:::action
+        O7["🧪 Órgano 7\nPurple Team / BAS\nSimulación continua"]:::action
+        O8["🚨 Órgano 8\nIR / Forensics\nRespuesta a incidentes"]:::action
     end
 
-    %% ── FLUJOS INTER-ÉPICAS ────────────────────────────────────────
+    subgraph C4 ["🟣 4. Fundamentos y Gobernanza"]
+        direction TB
+        O9["⚙️ Órgano 9\nSecurity Engineering\nArquitectura base"]:::gov
+        O10["🛠️ Órgano 10\nDevSecOps\nHardening y CI/CD"]:::gov
+        O11["📋 Órgano 11\nGRC\nRiesgo de negocio"]:::gov
+        O12["👔 Órgano 12\nCoordinador TID\nOrquestación"]:::gov
+    end
+
+    %% Relaciones Core - El Pipeline Operativo
+    O1 --> O4
     O2 --> O3
-    O3 -- "✅ Control existe" --> O6
-    O5 --> O6
-    O8 -. "♻️ Re-ingeniería\nde controles" .-> O4
-    O12 -. "🔃 Nuevas amenazas" .-> O1
+    O3 --> O4
+    O4 <--> O7
+    O4 --> O5
+    O5 -. "Incidente o Evasión" .-> C3
+    O8 -. "Feedback Post-Incidente" .-> O4
+    
+    C4 ==> C1
+    C4 ==> C2
 ```
 
-### 4.3 Recorrido del pipeline TID
+---
 
-#### 📌 Épica 1: Threat Intel — *Saber quién y cómo me ataca*
+## 3. Fases Operativas: Del Caos a la Respuesta
 
-**🧠 Órgano 1 — CTI (Cyber Threat Intelligence)**  
-Se identifican las amenazas activas relevantes para el entorno objetivo: vulnerabilidades públicas con exploit conocido, campañas activas de actores de amenaza y tendencias de explotación recientes. Las fuentes incluyen feeds públicos, bases de datos de vulnerabilidades, inteligencia de sector y alertas de CERTs.
+La operación del pipeline TID no es lineal; ocurre en **tres fases críticas** que convierten el miedo a lo desconocido en ingeniería determinista.
 
-**🎯 Órgano 2 — Threat Profiling**  
-Cada amenaza identificada se mapea sobre la matriz MITRE ATT&CK, construyendo un perfil de TTP (Tactics, Techniques & Procedures) contextualizado. Este profiling responde la pregunta: *¿qué haría exactamente un atacante que explote esta vulnerabilidad en nuestro entorno?*
+### Fase 1: Traducción de la Amenaza
+ATT&CK no es solo un mapa, es el lenguaje universal que estructura el caos.
+
+```mermaid
+%%{init: {'theme': 'dark'}}%%
+flowchart LR
+    A["Paso 1: El Caos\n(Amenaza Cruda)"]:::caos --> B["Paso 2: La Traducción\n(Framework MITRE)"]:::trans
+    B --> C["Paso 3: La Fórmula\n(Estructura Defensiva)"]:::rule
+    
+    classDef caos fill:#3b1e22,stroke:#ff5555,stroke-width:2px,color:#fff;
+    classDef trans fill:#1e2a3b,stroke:#55aaff,stroke-width:2px,color:#fff;
+    classDef rule fill:#1e3b22,stroke:#55ff55,stroke-width:2px,color:#fff;
+```
+> *Ejemplo: Un ransomware detectado en el sector salud (Caos) se descompone en comportamientos observables como T1059 Command and Scripting Interpreter (Traducción), que a su vez se traduce en "Táctica + Técnica = Regla de Detección" (Fórmula).*
+
+### Fase 2: Ingeniería de Detección y Caza Proactiva
+> *"Si no validaste tu SIEM disparando el ataque, tu detección es solo una suposición."*
+
+```mermaid
+%%{init: {'theme': 'dark'}}%%
+flowchart LR
+    BAS["🧪 Validar (BAS)\nLanzar simulaciones\ncontra controles"]:::sim
+    ENG["🏗️ Construir (Eng.)\nDiseñar reglas\nmapeadas a MITRE"]:::eng
+    TH["🎯 Cazar (Hunting)\nBúsqueda profunda\nde anomalías"]:::hunt
+
+    BAS -- "Ataque" --> HUB((Punto de Choque))
+    ENG -- "Detección" --> HUB
+    HUB -. "Evasiones detectadas" .-> TH
+    TH -. "Nuevas TTPs" .-> ENG
+
+    classDef sim fill:#5e1c1c,stroke:#ff6b6b,stroke-width:2px,color:#fff;
+    classDef eng fill:#1c3d5e,stroke:#6bc2ff,stroke-width:2px,color:#fff;
+    classDef hunt fill:#1c5e27,stroke:#6bff78,stroke-width:2px,color:#fff;
+```
+
+### Fase 3: La Operación post-Alerta (El Handshake crítico)
+Alineado con el umbral de los 51 segundos, esta fase dictamina cómo el SOC y el CSIRT interactúan: el Nivel L1 realiza el triaje primario en el SIEM, el L2 ejecuta la validación técnica empírica, y el CSIRT asume la contención evaluando el incidente en base a la ecuación del riesgo.
+
+```mermaid
+%%{init: {'theme': 'dark'}}%%
+flowchart LR
+    SOC["Zona SOC\nMonitoreo 24/7\n(Triage: Falso vs Confirmado)"]:::soc
+    PI{"Punto de\nInflexión"}:::pi
+    
+    subgraph WR ["Zona CSIRT / IR (El War Room)"]
+        direction TB
+        C1["Contención Técnica\nAislamiento de red"]:::ir
+        C2["Forense Digital\nCaptura de memoria"]:::ir
+        C3["Manejo de Crisis\nLegal / Comunicación"]:::ir
+    end
+
+    SOC --> PI
+    PI -- "Incidente Mayor" --> WR
+
+    classDef soc fill:#2d3748,stroke:#a0aec0,stroke-width:2px,color:#fff;
+    classDef pi fill:#742a2a,stroke:#fc8181,stroke-width:2px,color:#fff;
+    classDef ir fill:#4a148c,stroke:#e9d8fd,stroke-width:2px,color:#fff;
+```
 
 ---
 
-#### 📌 Épica 2: Attack Surface Management — *Saber qué tengo expuesto y qué tan protegido está*
+## 4. Filosofía "Living off the Land" (Sustitución Táctica LoL)
 
-**🗺️ Órgano 3a — Asset Discovery & Vulnerability Assessment**  
-El punto de partida de ASM es un **assessment activo de la superficie de ataque**. Se realizan escaneos de red para identificar hosts activos, puertos abiertos y servicios en escucha; enumeración de dominios, subdominios y endpoints expuestos; y detección de vulnerabilidades conocidas en las versiones de software detectadas, correlacionándolas con bases de datos de CVEs.
+La seguridad corporativa no siempre equivale a comprar herramientas nuevas y costosas. La filosofía **Defensiva LoL (Living off the Land)** significa exprimir y aprovechar las capacidades ya instaladas y de código abierto para lograr resultados empresariales:
 
-Esta fase responde: *¿qué activos tengo expuestos y cuál es su postura de seguridad actual?*  
-Herramientas de referencia: **Nmap** (discovery & port scanning), **OpenVAS / Greenbone** (vulnerability scanning), **Tenable ASM / Nessus** (gestión continua de superficie), **Shodan / Censys** (visión externa del atacante).
+| Función T.I.D. | Enfoque Tradicional (Gasto) | Sustitución Táctica LoL (Optimización) |
+|---------------|-----------------------------|----------------------------------------|
+| **Threat Intel** | Feeds comerciales premiums | OTX AlienVault, flujos de BI (Power BI, n8n) para inteligencia de riesgos |
+| **ASM** | Plataformas EASM Enterprise | Nmap, auditorías de config, plataformas pasivas (Zabbix, WSUS, SCCM) usadas como sensores |
+| **Detección** | EDRs comerciales complejos | OSQuery, Sysmon, VSS, Event Forwarding, **Wazuh** |
+| **Purple Team** | BAS Comercial cerrado | **Atomic Red Team**, validación empírica programada |
+| **Hardening** | Herramientas de 3eros | GPOs nativos, **CrowdSec** (inteligencia curada consensuada que reduce fatiga del SOC en un 80%) |
 
-**🔍 Órgano 3b — Defensive Gap Analysis**  
-Con el mapa de activos y vulnerabilidades construido en el paso anterior, se evalúa si los controles existentes son capaces de detectar las técnicas del perfil de amenaza que apuntan a esos activos.  
-Pregunta central: *¿Nuestros controles actuales detectan las técnicas que un atacante usaría sobre los activos que acabamos de mapear?*  
-Se auditan reglas, parsers, watchpoints y configuraciones y se mapean contra las técnicas ATT&CK identificadas. El resultado es un mapa de cobertura con gaps explícitos.
-
-**🏗️ Órgano 4 — Control Engineering**  
-Se diseñan los controles de detección necesarios para cerrar los gaps: reglas de correlación en el SIEM, watchpoints de auditoría del sistema operativo, parsers de logs y firmas de comportamiento anómalo. Cada control incluye su mapeo ATT&CK correspondiente.
-
-**⚙️ Órgano 5 — Control Deployment**  
-Los controles diseñados se despliegan sobre los activos expuestos del entorno. El despliegue es documentado y versionado, asegurando trazabilidad entre el gap identificado, el control diseñado y el activo protegido.
+Esta es la justificación principal de la arquitectura **Lumina**: una validación de seguridad de alto impacto utilizando el stack actual.
 
 ---
 
-#### 📌 Épica 3: Attack Simulation & Remediation — *Validar defensas y accionar*
+## 5. Stack Tecnológico del Laboratorio (EvilSec)
 
-**🧪 Órgano 6 — BAS (Breach & Attack Simulation)**  
-Se ejecutan simulaciones de ataque controladas que replican con precisión las técnicas del perfil de amenaza. La simulación puede incluir ataques de reconocimiento, acceso inicial, escalada de privilegios, acceso a credenciales y exfiltración, según las TTPs identificadas.
+El entorno práctico **Lumina - EvilSec Lab** materializa la filosofía LoL y el modelo TID empleando herramientas de código abierto potentes y ampliamente integrables:
 
-**📊 Órgano 7 — Detection Validation**  
-Se verifica con evidencia objetiva si cada control desplegado detectó la técnica simulada. El resultado es una tabla de cobertura: control por técnica, con estado (✅ detectó / ❌ no detectó) y tiempo de detección.
-
-**🔄 Órgano 8 — Feedback Loop & Tuning**  
-Con los resultados de la validación, se ajustan los controles: umbrales de alerta, correlación cruzada entre reglas, exclusión de falsos positivos y refinamiento de firmas. Los controles que no detectaron se re-envían al Órgano 4 para re-ingeniería.
-
-**🚨 Órgano 9 — Prevention Layer**  
-Una vez validada la detección, se activan los mecanismos de prevención: bloqueo automático de IPs, aislamiento de procesos, cierre de sesiones sospechosas. La prevención opera en tiempo real sin intervención humana.
-
-**📋 Órgano 10 — Playbook Automation**  
-Se define la respuesta automatizada ante cada tipo de incidente detectado:
-1. **Aislamiento:** bloqueo de red del origen del ataque
-2. **Notificación:** alerta inmediata al equipo de seguridad (Slack, Teams, PagerDuty)
-3. **Forense:** snapshot del estado del sistema para análisis post-mortem
-4. **Escalamiento:** apertura automática de ticket en el sistema de gestión de incidentes
-
-**📈 Órgano 11 — Metrics & Reporting**  
-KPIs generados para medir la madurez TID:
-- **Cobertura ATT&CK:** % de técnicas del perfil de amenaza detectadas
-- **MTTD (Mean Time to Detect):** tiempo entre el inicio del ataque y la primera alerta
-- **Tasa de Falsos Positivos:** % de alertas que no corresponden a actividad maliciosa real
-- **Tasa de Prevención:** % de ataques detenidos automáticamente sin intervención humana
-
-**🔁 Órgano 12 — Continuous Improvement**  
-El ciclo TID no termina: se reinicia con cada nueva amenaza identificada. Nuevas vulnerabilidades, nuevas técnicas adversariales y cambios en el entorno disparan un nuevo ciclo desde el Órgano 1. La madurez TID se mide por la velocidad y precisión con que la organización recorre este pipeline.
-
----
-
-## Por Qué TID es Adaptativo, Dinámico y Proactivo
-
-| Atributo | Descripción |
-|----------|-------------|
-| **Adaptativo** | Cada ciclo incorpora el aprendizaje del anterior. Los controles evolucionan junto con las amenazas, no se vuelven obsoletos. |
-| **Dinámico** | El pipeline no es lineal ni estático: tiene bucles de retroalimentación (Órgano 8 → Órgano 4) y ciclos de mejora continua (Órgano 12 → Órgano 1). |
-| **Proactivo** | No espera a que ocurra un incidente real para mejorar las defensas. La simulación controlada valida la postura de seguridad antes de que el adversario la ponga a prueba. |
-
----
-
-## Stack Tecnológico de Referencia
-
-TID es **tecnológicamente agnóstico**: puede implementarse con herramientas comerciales o completamente open-source. Un stack de referencia viable incluye:
-
-| Capacidad | Herramientas de referencia |
+| Capacidad | Herramientas en el Lab |
 |-----------|---------------------------|
-| **Asset Discovery & Port Scanning** | Nmap, Masscan, Rustscan |
-| **Vulnerability Assessment** | OpenVAS / Greenbone, Nessus, Tenable ASM |
-| **Visión externa (Attacker View)** | Shodan, Censys, FOFA |
-| **SIEM / Detección** | Wazuh, Elastic SIEM, OpenSearch |
-| **Prevención / Intel comunitaria** | CrowdSec |
-| **Auditoría del SO** | auditd |
-| **BAS / Simulación** | Atomic Red Team, Caldera (MITRE) |
-| **Framework de mapeo** | MITRE ATT&CK |
-| **Orquestación de respuesta** | n8n, Shuffle, TheHive |
+| **Endpoint Security & SIEM** | Wazuh Manager y Agent |
+| **Prevención Perimetral Activa**| CrowdSec + Bouncer de iptables |
+| **Ingeniería Inversa / Web** | Nginx (Proxy y Vector de Ataque) |
+| **Simulación de Ataque** | Scripts nativos (`privilege_escalation_demo.sh`, `slowloris.py`) |
+| **Respuesta Activa (IR)** | Wazuh Active Response (bloqueo en `/etc/shadow`) |
 
----
-
-## Estructura del Repositorio
+### Estructura del Proyecto
 
 ```
 Lumina - TID/
-├── README.md           ← Este archivo
-├── scripts/            ← Scripts de setup y demo del laboratorio
-│   ├── setup_base.sh
-│   ├── setup_wazuh.sh
-│   └── nginx_dos_demo.sh
-└── lab_EvilSec/        ← Documentación técnica del laboratorio de demostración
+├── README.v2.md        ← Este documento maestro de la arquitectura TID
+├── scripts/            ← Automatización de despliegues, ataques y recuperación
+│   ├── rebuild_tid_lab.sh
+│   ├── recover_lab.sh
+│   ├── nginx_dos_demo.sh
+│   └── privilege_escalation_demo.sh
+├── Info/               ← Material complementario y Rundown
+└── lab_EvilSec/        ← Artefactos y SITREPs detallados de la operación
+    ├── SITREP_Wazuh_ActiveResponse.md
+    └── evidencias/     ← Respaldo en JSON de detecciones
 ```
 
----
-
-> **Lumina - TID** es un framework de referencia para implementar Threat-Informed Defense con herramientas open-source, orientado a organizaciones que priorizan la validación continua sobre la acumulación de controles sin evidencia de efectividad.
+> **Lumina - TID** transforma la ciberseguridad corporativa: pasa de ser un gasto reactivo impulsado por el miedo, a una ventaja competitiva de negocio, orquestada de forma medible, probada y adaptativa.
