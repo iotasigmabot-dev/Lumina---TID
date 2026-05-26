@@ -65,40 +65,49 @@ TID es un engranaje completo, no una herramienta aislada. Se articula a través 
   }
 }}%%
 flowchart TD
+    %% Estilos por Cuadrante
+    classDef intel fill:#0d47a1,stroke:#1976d2,stroke-width:2px,color:#e3f2fd
+    classDef ops fill:#bf360c,stroke:#e64a19,stroke-width:2px,color:#fbe9e7
+    classDef action fill:#1b5e20,stroke:#43a047,stroke-width:2px,color:#e8f5e9
+    classDef gov fill:#4a148c,stroke:#8e24aa,stroke-width:2px,color:#f3e5f5
+
     subgraph C1 ["🔵 1. Inteligencia y Visibilidad"]
         direction TB
-        O1["🧠 TI (Threat Intel)\nContextualiza amenazas"]
-        O2["🔍 ASM\nDescubre exposición"]
+        O1["🧠 Órgano 1\nTI (Threat Intel)\nContextualiza amenazas"]:::intel
+        O2["🔍 Órgano 2\nASM\nDescubre exposición"]:::intel
     end
 
     subgraph C2 ["🟠 2. Detección y Operaciones"]
         direction TB
-        O3["🛡️ VM/PM\nParcheo y priorización"]
-        O4["🏗️ Detection Engineering\nReglas mapeadas a MITRE"]
-        O5["🖥️ SOC\nMonitoreo 24/7"]
+        O3["🛡️ Órgano 3\nVM/PM\nParcheo y priorización"]:::ops
+        O4["🏗️ Órgano 4\nDetection Engineering\nReglas mapeadas a MITRE"]:::ops
+        O5["🖥️ Órgano 5\nSOC\nMonitoreo 24/7"]:::ops
     end
 
     subgraph C3 ["🔴 3. Acción y Emulación"]
         direction TB
-        O6["🎯 Threat Hunting\nBúsqueda proactiva"]
-        O7["🧪 Purple Team / BAS\nSimulación continua"]
-        O8["🚨 IR / Forensics\nRespuesta a incidentes"]
+        O6["🎯 Órgano 6\nThreat Hunting\nBúsqueda proactiva"]:::action
+        O7["🧪 Órgano 7\nPurple Team / BAS\nSimulación continua"]:::action
+        O8["🚨 Órgano 8\nIR / Forensics\nRespuesta a incidentes"]:::action
     end
 
     subgraph C4 ["🟣 4. Fundamentos y Gobernanza"]
         direction TB
-        O9["⚙️ Security Engineering\nArquitectura base"]
-        O10["🛠️ DevSecOps\nHardening y CI/CD seguro"]
-        O11["📋 GRC\nRiesgo de negocio"]
-        O12["👔 Coordinador TID\nOrquestación estratégica"]
+        O9["⚙️ Órgano 9\nSecurity Engineering\nArquitectura base"]:::gov
+        O10["🛠️ Órgano 10\nDevSecOps\nHardening y CI/CD"]:::gov
+        O11["📋 Órgano 11\nGRC\nRiesgo de negocio"]:::gov
+        O12["👔 Órgano 12\nCoordinador TID\nOrquestación"]:::gov
     end
 
-    %% Relaciones Core
+    %% Relaciones Core - El Pipeline Operativo
     O1 --> O4
     O2 --> O3
+    O3 --> O4
     O4 <--> O7
-    O5 --> O8
-    O5 -. "Escalamiento" .-> C3
+    O4 --> O5
+    O5 -. "Incidente o Evasión" .-> C3
+    O8 -. "Feedback Post-Incidente" .-> O4
+    
     C4 ==> C1
     C4 ==> C2
 ```
