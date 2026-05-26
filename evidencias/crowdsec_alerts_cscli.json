@@ -1,0 +1,5128 @@
+[
+ {
+  "capacity": 40,
+  "created_at": "2026-05-25T21:38:04Z",
+  "decisions": [
+   {
+    "duration": "-12h20m51s",
+    "id": 14,
+    "origin": "crowdsec",
+    "scenario": "crowdsecurity/http-crawl-non_statics",
+    "scope": "Ip",
+    "simulated": false,
+    "type": "ban",
+    "value": "10.78.238.161"
+   }
+  ],
+  "events": [
+   {
+    "meta": [
+     {
+      "key": "datasource_path",
+      "value": "/var/log/nginx/access.log"
+     },
+     {
+      "key": "datasource_type",
+      "value": "file"
+     },
+     {
+      "key": "http_args_len",
+      "value": "0"
+     },
+     {
+      "key": "http_path",
+      "value": "/exploit-probe-35"
+     },
+     {
+      "key": "http_status",
+      "value": "404"
+     },
+     {
+      "key": "http_user_agent",
+      "value": "curl/8.14.1"
+     },
+     {
+      "key": "http_verb",
+      "value": "GET"
+     },
+     {
+      "key": "log_type",
+      "value": "http_access-log"
+     },
+     {
+      "key": "service",
+      "value": "http"
+     },
+     {
+      "key": "source_ip",
+      "value": "10.78.238.161"
+     },
+     {
+      "key": "timestamp",
+      "value": "2026-05-25T18:38:03-03:00"
+     }
+    ],
+    "timestamp": "2026-05-25 18:38:03 -0300 -0300"
+   },
+   {
+    "meta": [
+     {
+      "key": "datasource_path",
+      "value": "/var/log/nginx/access.log"
+     },
+     {
+      "key": "datasource_type",
+      "value": "file"
+     },
+     {
+      "key": "http_args_len",
+      "value": "0"
+     },
+     {
+      "key": "http_path",
+      "value": "/vuln-trigger-17"
+     },
+     {
+      "key": "http_status",
+      "value": "404"
+     },
+     {
+      "key": "http_user_agent",
+      "value": "curl/8.14.1"
+     },
+     {
+      "key": "http_verb",
+      "value": "GET"
+     },
+     {
+      "key": "log_type",
+      "value": "http_access-log"
+     },
+     {
+      "key": "service",
+      "value": "http"
+     },
+     {
+      "key": "source_ip",
+      "value": "10.78.238.161"
+     },
+     {
+      "key": "timestamp",
+      "value": "2026-05-25T18:38:03-03:00"
+     }
+    ],
+    "timestamp": "2026-05-25 18:38:03 -0300 -0300"
+   },
+   {
+    "meta": [
+     {
+      "key": "datasource_path",
+      "value": "/var/log/nginx/access.log"
+     },
+     {
+      "key": "datasource_type",
+      "value": "file"
+     },
+     {
+      "key": "http_args_len",
+      "value": "0"
+     },
+     {
+      "key": "http_path",
+      "value": "/exploit-probe-16"
+     },
+     {
+      "key": "http_status",
+      "value": "404"
+     },
+     {
+      "key": "http_user_agent",
+      "value": "curl/8.14.1"
+     },
+     {
+      "key": "http_verb",
+      "value": "GET"
+     },
+     {
+      "key": "log_type",
+      "value": "http_access-log"
+     },
+     {
+      "key": "service",
+      "value": "http"
+     },
+     {
+      "key": "source_ip",
+      "value": "10.78.238.161"
+     },
+     {
+      "key": "timestamp",
+      "value": "2026-05-25T18:38:03-03:00"
+     }
+    ],
+    "timestamp": "2026-05-25 18:38:03 -0300 -0300"
+   },
+   {
+    "meta": [
+     {
+      "key": "datasource_path",
+      "value": "/var/log/nginx/access.log"
+     },
+     {
+      "key": "datasource_type",
+      "value": "file"
+     },
+     {
+      "key": "http_args_len",
+      "value": "0"
+     },
+     {
+      "key": "http_path",
+      "value": "/exploit-probe-15"
+     },
+     {
+      "key": "http_status",
+      "value": "404"
+     },
+     {
+      "key": "http_user_agent",
+      "value": "curl/8.14.1"
+     },
+     {
+      "key": "http_verb",
+      "value": "GET"
+     },
+     {
+      "key": "log_type",
+      "value": "http_access-log"
+     },
+     {
+      "key": "service",
+      "value": "http"
+     },
+     {
+      "key": "source_ip",
+      "value": "10.78.238.161"
+     },
+     {
+      "key": "timestamp",
+      "value": "2026-05-25T18:38:03-03:00"
+     }
+    ],
+    "timestamp": "2026-05-25 18:38:03 -0300 -0300"
+   },
+   {
+    "meta": [
+     {
+      "key": "datasource_path",
+      "value": "/var/log/nginx/access.log"
+     },
+     {
+      "key": "datasource_type",
+      "value": "file"
+     },
+     {
+      "key": "http_args_len",
+      "value": "0"
+     },
+     {
+      "key": "http_path",
+      "value": "/vuln-trigger-18"
+     },
+     {
+      "key": "http_status",
+      "value": "404"
+     },
+     {
+      "key": "http_user_agent",
+      "value": "curl/8.14.1"
+     },
+     {
+      "key": "http_verb",
+      "value": "GET"
+     },
+     {
+      "key": "log_type",
+      "value": "http_access-log"
+     },
+     {
+      "key": "service",
+      "value": "http"
+     },
+     {
+      "key": "source_ip",
+      "value": "10.78.238.161"
+     },
+     {
+      "key": "timestamp",
+      "value": "2026-05-25T18:38:03-03:00"
+     }
+    ],
+    "timestamp": "2026-05-25 18:38:03 -0300 -0300"
+   },
+   {
+    "meta": [
+     {
+      "key": "datasource_path",
+      "value": "/var/log/nginx/access.log"
+     },
+     {
+      "key": "datasource_type",
+      "value": "file"
+     },
+     {
+      "key": "http_args_len",
+      "value": "0"
+     },
+     {
+      "key": "http_path",
+      "value": "/vuln-trigger-19"
+     },
+     {
+      "key": "http_status",
+      "value": "404"
+     },
+     {
+      "key": "http_user_agent",
+      "value": "curl/8.14.1"
+     },
+     {
+      "key": "http_verb",
+      "value": "GET"
+     },
+     {
+      "key": "log_type",
+      "value": "http_access-log"
+     },
+     {
+      "key": "service",
+      "value": "http"
+     },
+     {
+      "key": "source_ip",
+      "value": "10.78.238.161"
+     },
+     {
+      "key": "timestamp",
+      "value": "2026-05-25T18:38:03-03:00"
+     }
+    ],
+    "timestamp": "2026-05-25 18:38:03 -0300 -0300"
+   }
+  ],
+  "events_count": 41,
+  "id": 14,
+  "kind": "crowdsec",
+  "labels": null,
+  "leakspeed": "500ms",
+  "machine_id": "926f08b902223423a1dc0681167e7c385eEH9ThPdKkxbvP2",
+  "message": "Ip 10.78.238.161 performed 'crowdsecurity/http-crawl-non_statics' (41 events over 415.2152ms) at 2026-05-25 21:38:04.007451784 +0000 UTC",
+  "meta": [
+   {
+    "key": "target_uri",
+    "value": "[\"/exploit-probe-35\",\"/vuln-trigger-17\",\"/exploit-probe-16\",\"/exploit-probe-15\",\"/vuln-trigger-18\",\"/vuln-trigger-19\"]"
+   },
+   {
+    "key": "user_agent",
+    "value": "[\"curl/8.14.1\"]"
+   },
+   {
+    "key": "method",
+    "value": "[\"GET\"]"
+   },
+   {
+    "key": "status",
+    "value": "[\"404\"]"
+   }
+  ],
+  "remediation": true,
+  "scenario": "crowdsecurity/http-crawl-non_statics",
+  "scenario_hash": "9f235ae2116031a2b7a64da1e3ff5356b5f4fb91078de1c78bc30e0edb734dfb",
+  "scenario_version": "0.7",
+  "simulated": false,
+  "source": {
+   "ip": "10.78.238.161",
+   "scope": "Ip",
+   "value": "10.78.238.161"
+  },
+  "start_at": "2026-05-25T21:38:03Z",
+  "stop_at": "2026-05-25T21:38:04Z",
+  "uuid": "c9471c26-d47c-425d-8ab4-7f9681557238"
+ },
+ {
+  "capacity": 40,
+  "created_at": "2026-05-25T21:38:04Z",
+  "decisions": [
+   {
+    "duration": "-12h20m51s",
+    "id": 13,
+    "origin": "crowdsec",
+    "scenario": "crowdsecurity/http-crawl-non_statics",
+    "scope": "Ip",
+    "simulated": false,
+    "type": "ban",
+    "value": "10.78.238.161"
+   }
+  ],
+  "events": [
+   {
+    "meta": [
+     {
+      "key": "datasource_path",
+      "value": "/var/log/nginx/error.log"
+     },
+     {
+      "key": "datasource_type",
+      "value": "file"
+     },
+     {
+      "key": "http_args_len",
+      "value": "0"
+     },
+     {
+      "key": "http_path",
+      "value": "/vuln-trigger-17"
+     },
+     {
+      "key": "http_verb",
+      "value": "GET"
+     },
+     {
+      "key": "log_type",
+      "value": "http_error-log"
+     },
+     {
+      "key": "service",
+      "value": "http"
+     },
+     {
+      "key": "source_ip",
+      "value": "10.78.238.161"
+     },
+     {
+      "key": "target_fqdn",
+      "value": "localhost"
+     },
+     {
+      "key": "timestamp",
+      "value": "2026-05-25T18:38:03Z"
+     }
+    ],
+    "timestamp": "2026-05-25 18:38:03 +0000 UTC"
+   },
+   {
+    "meta": [
+     {
+      "key": "datasource_path",
+      "value": "/var/log/nginx/error.log"
+     },
+     {
+      "key": "datasource_type",
+      "value": "file"
+     },
+     {
+      "key": "http_args_len",
+      "value": "0"
+     },
+     {
+      "key": "http_path",
+      "value": "/exploit-probe-16"
+     },
+     {
+      "key": "http_verb",
+      "value": "GET"
+     },
+     {
+      "key": "log_type",
+      "value": "http_error-log"
+     },
+     {
+      "key": "service",
+      "value": "http"
+     },
+     {
+      "key": "source_ip",
+      "value": "10.78.238.161"
+     },
+     {
+      "key": "target_fqdn",
+      "value": "localhost"
+     },
+     {
+      "key": "timestamp",
+      "value": "2026-05-25T18:38:03Z"
+     }
+    ],
+    "timestamp": "2026-05-25 18:38:03 +0000 UTC"
+   },
+   {
+    "meta": [
+     {
+      "key": "datasource_path",
+      "value": "/var/log/nginx/error.log"
+     },
+     {
+      "key": "datasource_type",
+      "value": "file"
+     },
+     {
+      "key": "http_args_len",
+      "value": "0"
+     },
+     {
+      "key": "http_path",
+      "value": "/exploit-probe-15"
+     },
+     {
+      "key": "http_verb",
+      "value": "GET"
+     },
+     {
+      "key": "log_type",
+      "value": "http_error-log"
+     },
+     {
+      "key": "service",
+      "value": "http"
+     },
+     {
+      "key": "source_ip",
+      "value": "10.78.238.161"
+     },
+     {
+      "key": "target_fqdn",
+      "value": "localhost"
+     },
+     {
+      "key": "timestamp",
+      "value": "2026-05-25T18:38:03Z"
+     }
+    ],
+    "timestamp": "2026-05-25 18:38:03 +0000 UTC"
+   },
+   {
+    "meta": [
+     {
+      "key": "datasource_path",
+      "value": "/var/log/nginx/error.log"
+     },
+     {
+      "key": "datasource_type",
+      "value": "file"
+     },
+     {
+      "key": "http_args_len",
+      "value": "0"
+     },
+     {
+      "key": "http_path",
+      "value": "/vuln-trigger-18"
+     },
+     {
+      "key": "http_verb",
+      "value": "GET"
+     },
+     {
+      "key": "log_type",
+      "value": "http_error-log"
+     },
+     {
+      "key": "service",
+      "value": "http"
+     },
+     {
+      "key": "source_ip",
+      "value": "10.78.238.161"
+     },
+     {
+      "key": "target_fqdn",
+      "value": "localhost"
+     },
+     {
+      "key": "timestamp",
+      "value": "2026-05-25T18:38:03Z"
+     }
+    ],
+    "timestamp": "2026-05-25 18:38:03 +0000 UTC"
+   },
+   {
+    "meta": [
+     {
+      "key": "datasource_path",
+      "value": "/var/log/nginx/error.log"
+     },
+     {
+      "key": "datasource_type",
+      "value": "file"
+     },
+     {
+      "key": "http_args_len",
+      "value": "0"
+     },
+     {
+      "key": "http_path",
+      "value": "/vuln-trigger-19"
+     },
+     {
+      "key": "http_verb",
+      "value": "GET"
+     },
+     {
+      "key": "log_type",
+      "value": "http_error-log"
+     },
+     {
+      "key": "service",
+      "value": "http"
+     },
+     {
+      "key": "source_ip",
+      "value": "10.78.238.161"
+     },
+     {
+      "key": "target_fqdn",
+      "value": "localhost"
+     },
+     {
+      "key": "timestamp",
+      "value": "2026-05-25T18:38:03Z"
+     }
+    ],
+    "timestamp": "2026-05-25 18:38:03 +0000 UTC"
+   },
+   {
+    "meta": [
+     {
+      "key": "datasource_path",
+      "value": "/var/log/nginx/error.log"
+     },
+     {
+      "key": "datasource_type",
+      "value": "file"
+     },
+     {
+      "key": "http_args_len",
+      "value": "0"
+     },
+     {
+      "key": "http_path",
+      "value": "/exploit-probe-38"
+     },
+     {
+      "key": "http_verb",
+      "value": "GET"
+     },
+     {
+      "key": "log_type",
+      "value": "http_error-log"
+     },
+     {
+      "key": "service",
+      "value": "http"
+     },
+     {
+      "key": "source_ip",
+      "value": "10.78.238.161"
+     },
+     {
+      "key": "target_fqdn",
+      "value": "localhost"
+     },
+     {
+      "key": "timestamp",
+      "value": "2026-05-25T18:38:03Z"
+     }
+    ],
+    "timestamp": "2026-05-25 18:38:03 +0000 UTC"
+   }
+  ],
+  "events_count": 41,
+  "id": 13,
+  "kind": "crowdsec",
+  "labels": null,
+  "leakspeed": "500ms",
+  "machine_id": "926f08b902223423a1dc0681167e7c385eEH9ThPdKkxbvP2",
+  "message": "Ip 10.78.238.161 performed 'crowdsecurity/http-crawl-non_statics' (41 events over 305.242974ms) at 2026-05-25 21:38:04.004865692 +0000 UTC",
+  "meta": [
+   {
+    "key": "target_uri",
+    "value": "[\"/vuln-trigger-17\",\"/exploit-probe-16\",\"/exploit-probe-15\",\"/vuln-trigger-18\",\"/vuln-trigger-19\",\"/exploit-probe-38\"]"
+   },
+   {
+    "key": "method",
+    "value": "[\"GET\"]"
+   }
+  ],
+  "remediation": true,
+  "scenario": "crowdsecurity/http-crawl-non_statics",
+  "scenario_hash": "9f235ae2116031a2b7a64da1e3ff5356b5f4fb91078de1c78bc30e0edb734dfb",
+  "scenario_version": "0.7",
+  "simulated": false,
+  "source": {
+   "ip": "10.78.238.161",
+   "scope": "Ip",
+   "value": "10.78.238.161"
+  },
+  "start_at": "2026-05-25T21:38:03Z",
+  "stop_at": "2026-05-25T21:38:04Z",
+  "uuid": "97a3ac73-cd71-4221-9011-998fbbe04965"
+ },
+ {
+  "capacity": 10,
+  "created_at": "2026-05-25T21:38:04Z",
+  "decisions": [
+   {
+    "duration": "-12h20m51s",
+    "id": 12,
+    "origin": "crowdsec",
+    "scenario": "crowdsecurity/http-probing",
+    "scope": "Ip",
+    "simulated": false,
+    "type": "ban",
+    "value": "10.78.238.161"
+   }
+  ],
+  "events": [
+   {
+    "meta": [
+     {
+      "key": "datasource_path",
+      "value": "/var/log/nginx/access.log"
+     },
+     {
+      "key": "datasource_type",
+      "value": "file"
+     },
+     {
+      "key": "http_args_len",
+      "value": "0"
+     },
+     {
+      "key": "http_path",
+      "value": "/app/AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA/BBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBB"
+     },
+     {
+      "key": "http_status",
+      "value": "404"
+     },
+     {
+      "key": "http_user_agent",
+      "value": "curl/8.14.1"
+     },
+     {
+      "key": "http_verb",
+      "value": "GET"
+     },
+     {
+      "key": "log_type",
+      "value": "http_access-log"
+     },
+     {
+      "key": "service",
+      "value": "http"
+     },
+     {
+      "key": "source_ip",
+      "value": "10.78.238.161"
+     },
+     {
+      "key": "timestamp",
+      "value": "2026-05-25T18:38:03-03:00"
+     }
+    ],
+    "timestamp": "2026-05-25 18:38:03 -0300 -0300"
+   },
+   {
+    "meta": [
+     {
+      "key": "datasource_path",
+      "value": "/var/log/nginx/access.log"
+     },
+     {
+      "key": "datasource_type",
+      "value": "file"
+     },
+     {
+      "key": "http_args_len",
+      "value": "0"
+     },
+     {
+      "key": "http_path",
+      "value": "/vuln-trigger-5"
+     },
+     {
+      "key": "http_status",
+      "value": "404"
+     },
+     {
+      "key": "http_user_agent",
+      "value": "curl/8.14.1"
+     },
+     {
+      "key": "http_verb",
+      "value": "GET"
+     },
+     {
+      "key": "log_type",
+      "value": "http_access-log"
+     },
+     {
+      "key": "service",
+      "value": "http"
+     },
+     {
+      "key": "source_ip",
+      "value": "10.78.238.161"
+     },
+     {
+      "key": "timestamp",
+      "value": "2026-05-25T18:38:03-03:00"
+     }
+    ],
+    "timestamp": "2026-05-25 18:38:03 -0300 -0300"
+   },
+   {
+    "meta": [
+     {
+      "key": "datasource_path",
+      "value": "/var/log/nginx/access.log"
+     },
+     {
+      "key": "datasource_type",
+      "value": "file"
+     },
+     {
+      "key": "http_args_len",
+      "value": "0"
+     },
+     {
+      "key": "http_path",
+      "value": "/vuln-trigger-3"
+     },
+     {
+      "key": "http_status",
+      "value": "404"
+     },
+     {
+      "key": "http_user_agent",
+      "value": "curl/8.14.1"
+     },
+     {
+      "key": "http_verb",
+      "value": "GET"
+     },
+     {
+      "key": "log_type",
+      "value": "http_access-log"
+     },
+     {
+      "key": "service",
+      "value": "http"
+     },
+     {
+      "key": "source_ip",
+      "value": "10.78.238.161"
+     },
+     {
+      "key": "timestamp",
+      "value": "2026-05-25T18:38:03-03:00"
+     }
+    ],
+    "timestamp": "2026-05-25 18:38:03 -0300 -0300"
+   },
+   {
+    "meta": [
+     {
+      "key": "datasource_path",
+      "value": "/var/log/nginx/access.log"
+     },
+     {
+      "key": "datasource_type",
+      "value": "file"
+     },
+     {
+      "key": "http_args_len",
+      "value": "0"
+     },
+     {
+      "key": "http_path",
+      "value": "/exploit-probe-3"
+     },
+     {
+      "key": "http_status",
+      "value": "404"
+     },
+     {
+      "key": "http_user_agent",
+      "value": "curl/8.14.1"
+     },
+     {
+      "key": "http_verb",
+      "value": "GET"
+     },
+     {
+      "key": "log_type",
+      "value": "http_access-log"
+     },
+     {
+      "key": "service",
+      "value": "http"
+     },
+     {
+      "key": "source_ip",
+      "value": "10.78.238.161"
+     },
+     {
+      "key": "timestamp",
+      "value": "2026-05-25T18:38:03-03:00"
+     }
+    ],
+    "timestamp": "2026-05-25 18:38:03 -0300 -0300"
+   },
+   {
+    "meta": [
+     {
+      "key": "datasource_path",
+      "value": "/var/log/nginx/access.log"
+     },
+     {
+      "key": "datasource_type",
+      "value": "file"
+     },
+     {
+      "key": "http_args_len",
+      "value": "0"
+     },
+     {
+      "key": "http_path",
+      "value": "/exploit-probe-4"
+     },
+     {
+      "key": "http_status",
+      "value": "404"
+     },
+     {
+      "key": "http_user_agent",
+      "value": "curl/8.14.1"
+     },
+     {
+      "key": "http_verb",
+      "value": "GET"
+     },
+     {
+      "key": "log_type",
+      "value": "http_access-log"
+     },
+     {
+      "key": "service",
+      "value": "http"
+     },
+     {
+      "key": "source_ip",
+      "value": "10.78.238.161"
+     },
+     {
+      "key": "timestamp",
+      "value": "2026-05-25T18:38:03-03:00"
+     }
+    ],
+    "timestamp": "2026-05-25 18:38:03 -0300 -0300"
+   },
+   {
+    "meta": [
+     {
+      "key": "datasource_path",
+      "value": "/var/log/nginx/access.log"
+     },
+     {
+      "key": "datasource_type",
+      "value": "file"
+     },
+     {
+      "key": "http_args_len",
+      "value": "0"
+     },
+     {
+      "key": "http_path",
+      "value": "/vuln-trigger-16"
+     },
+     {
+      "key": "http_status",
+      "value": "404"
+     },
+     {
+      "key": "http_user_agent",
+      "value": "curl/8.14.1"
+     },
+     {
+      "key": "http_verb",
+      "value": "GET"
+     },
+     {
+      "key": "log_type",
+      "value": "http_access-log"
+     },
+     {
+      "key": "service",
+      "value": "http"
+     },
+     {
+      "key": "source_ip",
+      "value": "10.78.238.161"
+     },
+     {
+      "key": "timestamp",
+      "value": "2026-05-25T18:38:03-03:00"
+     }
+    ],
+    "timestamp": "2026-05-25 18:38:03 -0300 -0300"
+   },
+   {
+    "meta": [
+     {
+      "key": "datasource_path",
+      "value": "/var/log/nginx/access.log"
+     },
+     {
+      "key": "datasource_type",
+      "value": "file"
+     },
+     {
+      "key": "http_args_len",
+      "value": "0"
+     },
+     {
+      "key": "http_path",
+      "value": "/vuln-trigger-22"
+     },
+     {
+      "key": "http_status",
+      "value": "404"
+     },
+     {
+      "key": "http_user_agent",
+      "value": "curl/8.14.1"
+     },
+     {
+      "key": "http_verb",
+      "value": "GET"
+     },
+     {
+      "key": "log_type",
+      "value": "http_access-log"
+     },
+     {
+      "key": "service",
+      "value": "http"
+     },
+     {
+      "key": "source_ip",
+      "value": "10.78.238.161"
+     },
+     {
+      "key": "timestamp",
+      "value": "2026-05-25T18:38:03-03:00"
+     }
+    ],
+    "timestamp": "2026-05-25 18:38:03 -0300 -0300"
+   },
+   {
+    "meta": [
+     {
+      "key": "datasource_path",
+      "value": "/var/log/nginx/access.log"
+     },
+     {
+      "key": "datasource_type",
+      "value": "file"
+     },
+     {
+      "key": "http_args_len",
+      "value": "0"
+     },
+     {
+      "key": "http_path",
+      "value": "/vuln-trigger-25"
+     },
+     {
+      "key": "http_status",
+      "value": "404"
+     },
+     {
+      "key": "http_user_agent",
+      "value": "curl/8.14.1"
+     },
+     {
+      "key": "http_verb",
+      "value": "GET"
+     },
+     {
+      "key": "log_type",
+      "value": "http_access-log"
+     },
+     {
+      "key": "service",
+      "value": "http"
+     },
+     {
+      "key": "source_ip",
+      "value": "10.78.238.161"
+     },
+     {
+      "key": "timestamp",
+      "value": "2026-05-25T18:38:03-03:00"
+     }
+    ],
+    "timestamp": "2026-05-25 18:38:03 -0300 -0300"
+   },
+   {
+    "meta": [
+     {
+      "key": "datasource_path",
+      "value": "/var/log/nginx/access.log"
+     },
+     {
+      "key": "datasource_type",
+      "value": "file"
+     },
+     {
+      "key": "http_args_len",
+      "value": "0"
+     },
+     {
+      "key": "http_path",
+      "value": "/exploit-probe-18"
+     },
+     {
+      "key": "http_status",
+      "value": "404"
+     },
+     {
+      "key": "http_user_agent",
+      "value": "curl/8.14.1"
+     },
+     {
+      "key": "http_verb",
+      "value": "GET"
+     },
+     {
+      "key": "log_type",
+      "value": "http_access-log"
+     },
+     {
+      "key": "service",
+      "value": "http"
+     },
+     {
+      "key": "source_ip",
+      "value": "10.78.238.161"
+     },
+     {
+      "key": "timestamp",
+      "value": "2026-05-25T18:38:03-03:00"
+     }
+    ],
+    "timestamp": "2026-05-25 18:38:03 -0300 -0300"
+   },
+   {
+    "meta": [
+     {
+      "key": "datasource_path",
+      "value": "/var/log/nginx/access.log"
+     },
+     {
+      "key": "datasource_type",
+      "value": "file"
+     },
+     {
+      "key": "http_args_len",
+      "value": "0"
+     },
+     {
+      "key": "http_path",
+      "value": "/exploit-probe-8"
+     },
+     {
+      "key": "http_status",
+      "value": "404"
+     },
+     {
+      "key": "http_user_agent",
+      "value": "curl/8.14.1"
+     },
+     {
+      "key": "http_verb",
+      "value": "GET"
+     },
+     {
+      "key": "log_type",
+      "value": "http_access-log"
+     },
+     {
+      "key": "service",
+      "value": "http"
+     },
+     {
+      "key": "source_ip",
+      "value": "10.78.238.161"
+     },
+     {
+      "key": "timestamp",
+      "value": "2026-05-25T18:38:03-03:00"
+     }
+    ],
+    "timestamp": "2026-05-25 18:38:03 -0300 -0300"
+   },
+   {
+    "meta": [
+     {
+      "key": "datasource_path",
+      "value": "/var/log/nginx/access.log"
+     },
+     {
+      "key": "datasource_type",
+      "value": "file"
+     },
+     {
+      "key": "http_args_len",
+      "value": "0"
+     },
+     {
+      "key": "http_path",
+      "value": "/exploit-probe-21"
+     },
+     {
+      "key": "http_status",
+      "value": "404"
+     },
+     {
+      "key": "http_user_agent",
+      "value": "curl/8.14.1"
+     },
+     {
+      "key": "http_verb",
+      "value": "GET"
+     },
+     {
+      "key": "log_type",
+      "value": "http_access-log"
+     },
+     {
+      "key": "service",
+      "value": "http"
+     },
+     {
+      "key": "source_ip",
+      "value": "10.78.238.161"
+     },
+     {
+      "key": "timestamp",
+      "value": "2026-05-25T18:38:03-03:00"
+     }
+    ],
+    "timestamp": "2026-05-25 18:38:03 -0300 -0300"
+   }
+  ],
+  "events_count": 11,
+  "id": 12,
+  "kind": "crowdsec",
+  "labels": null,
+  "leakspeed": "10s",
+  "machine_id": "926f08b902223423a1dc0681167e7c385eEH9ThPdKkxbvP2",
+  "message": "Ip 10.78.238.161 performed 'crowdsecurity/http-probing' (11 events over 234.948164ms) at 2026-05-25 21:38:03.82734069 +0000 UTC",
+  "meta": [
+   {
+    "key": "target_uri",
+    "value": "[\"/app/AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA...\"]"
+   },
+   {
+    "key": "user_agent",
+    "value": "[\"curl/8.14.1\"]"
+   },
+   {
+    "key": "method",
+    "value": "[\"GET\"]"
+   },
+   {
+    "key": "status",
+    "value": "[\"404\"]"
+   }
+  ],
+  "remediation": true,
+  "scenario": "crowdsecurity/http-probing",
+  "scenario_hash": "4b16f896af400e006c28b1476bf5989c748186f2b3756ed9ad7d1559480d278c",
+  "scenario_version": "0.4",
+  "simulated": false,
+  "source": {
+   "ip": "10.78.238.161",
+   "scope": "Ip",
+   "value": "10.78.238.161"
+  },
+  "start_at": "2026-05-25T21:38:03Z",
+  "stop_at": "2026-05-25T21:38:03Z",
+  "uuid": "1047bfd6-1f00-44a1-be62-776b21890254"
+ },
+ {
+  "capacity": 40,
+  "created_at": "2026-05-25T20:48:14Z",
+  "decisions": [
+   {
+    "duration": "-13h10m41s",
+    "id": 11,
+    "origin": "crowdsec",
+    "scenario": "crowdsecurity/http-crawl-non_statics",
+    "scope": "Ip",
+    "simulated": false,
+    "type": "ban",
+    "value": "10.78.238.2"
+   }
+  ],
+  "events": [
+   {
+    "meta": [
+     {
+      "key": "datasource_path",
+      "value": "/var/log/nginx/error.log"
+     },
+     {
+      "key": "datasource_type",
+      "value": "file"
+     },
+     {
+      "key": "http_args_len",
+      "value": "0"
+     },
+     {
+      "key": "http_path",
+      "value": "/vuln-trigger-19"
+     },
+     {
+      "key": "http_verb",
+      "value": "GET"
+     },
+     {
+      "key": "log_type",
+      "value": "http_error-log"
+     },
+     {
+      "key": "service",
+      "value": "http"
+     },
+     {
+      "key": "source_ip",
+      "value": "10.78.238.2"
+     },
+     {
+      "key": "target_fqdn",
+      "value": "localhost"
+     },
+     {
+      "key": "timestamp",
+      "value": "2026-05-25T17:48:13Z"
+     }
+    ],
+    "timestamp": "2026-05-25 17:48:13 +0000 UTC"
+   },
+   {
+    "meta": [
+     {
+      "key": "datasource_path",
+      "value": "/var/log/nginx/error.log"
+     },
+     {
+      "key": "datasource_type",
+      "value": "file"
+     },
+     {
+      "key": "http_args_len",
+      "value": "0"
+     },
+     {
+      "key": "http_path",
+      "value": "/exploit-probe-19"
+     },
+     {
+      "key": "http_verb",
+      "value": "GET"
+     },
+     {
+      "key": "log_type",
+      "value": "http_error-log"
+     },
+     {
+      "key": "service",
+      "value": "http"
+     },
+     {
+      "key": "source_ip",
+      "value": "10.78.238.2"
+     },
+     {
+      "key": "target_fqdn",
+      "value": "localhost"
+     },
+     {
+      "key": "timestamp",
+      "value": "2026-05-25T17:48:13Z"
+     }
+    ],
+    "timestamp": "2026-05-25 17:48:13 +0000 UTC"
+   },
+   {
+    "meta": [
+     {
+      "key": "datasource_path",
+      "value": "/var/log/nginx/error.log"
+     },
+     {
+      "key": "datasource_type",
+      "value": "file"
+     },
+     {
+      "key": "http_args_len",
+      "value": "0"
+     },
+     {
+      "key": "http_path",
+      "value": "/vuln-trigger-20"
+     },
+     {
+      "key": "http_verb",
+      "value": "GET"
+     },
+     {
+      "key": "log_type",
+      "value": "http_error-log"
+     },
+     {
+      "key": "service",
+      "value": "http"
+     },
+     {
+      "key": "source_ip",
+      "value": "10.78.238.2"
+     },
+     {
+      "key": "target_fqdn",
+      "value": "localhost"
+     },
+     {
+      "key": "timestamp",
+      "value": "2026-05-25T17:48:13Z"
+     }
+    ],
+    "timestamp": "2026-05-25 17:48:13 +0000 UTC"
+   },
+   {
+    "meta": [
+     {
+      "key": "datasource_path",
+      "value": "/var/log/nginx/error.log"
+     },
+     {
+      "key": "datasource_type",
+      "value": "file"
+     },
+     {
+      "key": "http_args_len",
+      "value": "0"
+     },
+     {
+      "key": "http_path",
+      "value": "/exploit-probe-20"
+     },
+     {
+      "key": "http_verb",
+      "value": "GET"
+     },
+     {
+      "key": "log_type",
+      "value": "http_error-log"
+     },
+     {
+      "key": "service",
+      "value": "http"
+     },
+     {
+      "key": "source_ip",
+      "value": "10.78.238.2"
+     },
+     {
+      "key": "target_fqdn",
+      "value": "localhost"
+     },
+     {
+      "key": "timestamp",
+      "value": "2026-05-25T17:48:13Z"
+     }
+    ],
+    "timestamp": "2026-05-25 17:48:13 +0000 UTC"
+   },
+   {
+    "meta": [
+     {
+      "key": "datasource_path",
+      "value": "/var/log/nginx/error.log"
+     },
+     {
+      "key": "datasource_type",
+      "value": "file"
+     },
+     {
+      "key": "http_args_len",
+      "value": "0"
+     },
+     {
+      "key": "http_path",
+      "value": "/vuln-trigger-21"
+     },
+     {
+      "key": "http_verb",
+      "value": "GET"
+     },
+     {
+      "key": "log_type",
+      "value": "http_error-log"
+     },
+     {
+      "key": "service",
+      "value": "http"
+     },
+     {
+      "key": "source_ip",
+      "value": "10.78.238.2"
+     },
+     {
+      "key": "target_fqdn",
+      "value": "localhost"
+     },
+     {
+      "key": "timestamp",
+      "value": "2026-05-25T17:48:13Z"
+     }
+    ],
+    "timestamp": "2026-05-25 17:48:13 +0000 UTC"
+   },
+   {
+    "meta": [
+     {
+      "key": "datasource_path",
+      "value": "/var/log/nginx/error.log"
+     },
+     {
+      "key": "datasource_type",
+      "value": "file"
+     },
+     {
+      "key": "http_args_len",
+      "value": "0"
+     },
+     {
+      "key": "http_path",
+      "value": "/exploit-probe-21"
+     },
+     {
+      "key": "http_verb",
+      "value": "GET"
+     },
+     {
+      "key": "log_type",
+      "value": "http_error-log"
+     },
+     {
+      "key": "service",
+      "value": "http"
+     },
+     {
+      "key": "source_ip",
+      "value": "10.78.238.2"
+     },
+     {
+      "key": "target_fqdn",
+      "value": "localhost"
+     },
+     {
+      "key": "timestamp",
+      "value": "2026-05-25T17:48:13Z"
+     }
+    ],
+    "timestamp": "2026-05-25 17:48:13 +0000 UTC"
+   }
+  ],
+  "events_count": 42,
+  "id": 11,
+  "kind": "crowdsec",
+  "labels": null,
+  "leakspeed": "500ms",
+  "machine_id": "926f08b902223423a1dc0681167e7c385eEH9ThPdKkxbvP2",
+  "message": "Ip 10.78.238.2 performed 'crowdsecurity/http-crawl-non_statics' (42 events over 571.907879ms) at 2026-05-25 20:48:13.58611682 +0000 UTC",
+  "meta": [
+   {
+    "key": "target_uri",
+    "value": "[\"/vuln-trigger-19\",\"/exploit-probe-19\",\"/vuln-trigger-20\",\"/exploit-probe-20\",\"/vuln-trigger-21\",\"/exploit-probe-21\"]"
+   },
+   {
+    "key": "method",
+    "value": "[\"GET\"]"
+   }
+  ],
+  "remediation": true,
+  "scenario": "crowdsecurity/http-crawl-non_statics",
+  "scenario_hash": "9f235ae2116031a2b7a64da1e3ff5356b5f4fb91078de1c78bc30e0edb734dfb",
+  "scenario_version": "0.7",
+  "simulated": false,
+  "source": {
+   "ip": "10.78.238.2",
+   "scope": "Ip",
+   "value": "10.78.238.2"
+  },
+  "start_at": "2026-05-25T20:48:13Z",
+  "stop_at": "2026-05-25T20:48:13Z",
+  "uuid": "9c8a9a3d-af69-45f9-8e3b-17992b311a9a"
+ },
+ {
+  "capacity": 40,
+  "created_at": "2026-05-25T20:48:14Z",
+  "decisions": [
+   {
+    "duration": "-13h10m41s",
+    "id": 10,
+    "origin": "crowdsec",
+    "scenario": "crowdsecurity/http-crawl-non_statics",
+    "scope": "Ip",
+    "simulated": false,
+    "type": "ban",
+    "value": "10.78.238.2"
+   }
+  ],
+  "events": [
+   {
+    "meta": [
+     {
+      "key": "datasource_path",
+      "value": "/var/log/nginx/access.log"
+     },
+     {
+      "key": "datasource_type",
+      "value": "file"
+     },
+     {
+      "key": "http_args_len",
+      "value": "0"
+     },
+     {
+      "key": "http_path",
+      "value": "/exploit-probe-18"
+     },
+     {
+      "key": "http_status",
+      "value": "404"
+     },
+     {
+      "key": "http_user_agent",
+      "value": "curl/8.14.1"
+     },
+     {
+      "key": "http_verb",
+      "value": "GET"
+     },
+     {
+      "key": "log_type",
+      "value": "http_access-log"
+     },
+     {
+      "key": "service",
+      "value": "http"
+     },
+     {
+      "key": "source_ip",
+      "value": "10.78.238.2"
+     },
+     {
+      "key": "timestamp",
+      "value": "2026-05-25T17:48:13-03:00"
+     }
+    ],
+    "timestamp": "2026-05-25 17:48:13 -0300 -0300"
+   },
+   {
+    "meta": [
+     {
+      "key": "datasource_path",
+      "value": "/var/log/nginx/access.log"
+     },
+     {
+      "key": "datasource_type",
+      "value": "file"
+     },
+     {
+      "key": "http_args_len",
+      "value": "0"
+     },
+     {
+      "key": "http_path",
+      "value": "/vuln-trigger-19"
+     },
+     {
+      "key": "http_status",
+      "value": "404"
+     },
+     {
+      "key": "http_user_agent",
+      "value": "curl/8.14.1"
+     },
+     {
+      "key": "http_verb",
+      "value": "GET"
+     },
+     {
+      "key": "log_type",
+      "value": "http_access-log"
+     },
+     {
+      "key": "service",
+      "value": "http"
+     },
+     {
+      "key": "source_ip",
+      "value": "10.78.238.2"
+     },
+     {
+      "key": "timestamp",
+      "value": "2026-05-25T17:48:13-03:00"
+     }
+    ],
+    "timestamp": "2026-05-25 17:48:13 -0300 -0300"
+   },
+   {
+    "meta": [
+     {
+      "key": "datasource_path",
+      "value": "/var/log/nginx/access.log"
+     },
+     {
+      "key": "datasource_type",
+      "value": "file"
+     },
+     {
+      "key": "http_args_len",
+      "value": "0"
+     },
+     {
+      "key": "http_path",
+      "value": "/exploit-probe-19"
+     },
+     {
+      "key": "http_status",
+      "value": "404"
+     },
+     {
+      "key": "http_user_agent",
+      "value": "curl/8.14.1"
+     },
+     {
+      "key": "http_verb",
+      "value": "GET"
+     },
+     {
+      "key": "log_type",
+      "value": "http_access-log"
+     },
+     {
+      "key": "service",
+      "value": "http"
+     },
+     {
+      "key": "source_ip",
+      "value": "10.78.238.2"
+     },
+     {
+      "key": "timestamp",
+      "value": "2026-05-25T17:48:13-03:00"
+     }
+    ],
+    "timestamp": "2026-05-25 17:48:13 -0300 -0300"
+   },
+   {
+    "meta": [
+     {
+      "key": "datasource_path",
+      "value": "/var/log/nginx/access.log"
+     },
+     {
+      "key": "datasource_type",
+      "value": "file"
+     },
+     {
+      "key": "http_args_len",
+      "value": "0"
+     },
+     {
+      "key": "http_path",
+      "value": "/vuln-trigger-20"
+     },
+     {
+      "key": "http_status",
+      "value": "404"
+     },
+     {
+      "key": "http_user_agent",
+      "value": "curl/8.14.1"
+     },
+     {
+      "key": "http_verb",
+      "value": "GET"
+     },
+     {
+      "key": "log_type",
+      "value": "http_access-log"
+     },
+     {
+      "key": "service",
+      "value": "http"
+     },
+     {
+      "key": "source_ip",
+      "value": "10.78.238.2"
+     },
+     {
+      "key": "timestamp",
+      "value": "2026-05-25T17:48:13-03:00"
+     }
+    ],
+    "timestamp": "2026-05-25 17:48:13 -0300 -0300"
+   },
+   {
+    "meta": [
+     {
+      "key": "datasource_path",
+      "value": "/var/log/nginx/access.log"
+     },
+     {
+      "key": "datasource_type",
+      "value": "file"
+     },
+     {
+      "key": "http_args_len",
+      "value": "0"
+     },
+     {
+      "key": "http_path",
+      "value": "/exploit-probe-20"
+     },
+     {
+      "key": "http_status",
+      "value": "404"
+     },
+     {
+      "key": "http_user_agent",
+      "value": "curl/8.14.1"
+     },
+     {
+      "key": "http_verb",
+      "value": "GET"
+     },
+     {
+      "key": "log_type",
+      "value": "http_access-log"
+     },
+     {
+      "key": "service",
+      "value": "http"
+     },
+     {
+      "key": "source_ip",
+      "value": "10.78.238.2"
+     },
+     {
+      "key": "timestamp",
+      "value": "2026-05-25T17:48:13-03:00"
+     }
+    ],
+    "timestamp": "2026-05-25 17:48:13 -0300 -0300"
+   },
+   {
+    "meta": [
+     {
+      "key": "datasource_path",
+      "value": "/var/log/nginx/access.log"
+     },
+     {
+      "key": "datasource_type",
+      "value": "file"
+     },
+     {
+      "key": "http_args_len",
+      "value": "0"
+     },
+     {
+      "key": "http_path",
+      "value": "/vuln-trigger-21"
+     },
+     {
+      "key": "http_status",
+      "value": "404"
+     },
+     {
+      "key": "http_user_agent",
+      "value": "curl/8.14.1"
+     },
+     {
+      "key": "http_verb",
+      "value": "GET"
+     },
+     {
+      "key": "log_type",
+      "value": "http_access-log"
+     },
+     {
+      "key": "service",
+      "value": "http"
+     },
+     {
+      "key": "source_ip",
+      "value": "10.78.238.2"
+     },
+     {
+      "key": "timestamp",
+      "value": "2026-05-25T17:48:13-03:00"
+     }
+    ],
+    "timestamp": "2026-05-25 17:48:13 -0300 -0300"
+   }
+  ],
+  "events_count": 42,
+  "id": 10,
+  "kind": "crowdsec",
+  "labels": null,
+  "leakspeed": "500ms",
+  "machine_id": "926f08b902223423a1dc0681167e7c385eEH9ThPdKkxbvP2",
+  "message": "Ip 10.78.238.2 performed 'crowdsecurity/http-crawl-non_statics' (42 events over 604.927928ms) at 2026-05-25 20:48:13.574651777 +0000 UTC",
+  "meta": [
+   {
+    "key": "target_uri",
+    "value": "[\"/exploit-probe-18\",\"/vuln-trigger-19\",\"/exploit-probe-19\",\"/vuln-trigger-20\",\"/exploit-probe-20\",\"/vuln-trigger-21\"]"
+   },
+   {
+    "key": "user_agent",
+    "value": "[\"curl/8.14.1\"]"
+   },
+   {
+    "key": "method",
+    "value": "[\"GET\"]"
+   },
+   {
+    "key": "status",
+    "value": "[\"404\"]"
+   }
+  ],
+  "remediation": true,
+  "scenario": "crowdsecurity/http-crawl-non_statics",
+  "scenario_hash": "9f235ae2116031a2b7a64da1e3ff5356b5f4fb91078de1c78bc30e0edb734dfb",
+  "scenario_version": "0.7",
+  "simulated": false,
+  "source": {
+   "ip": "10.78.238.2",
+   "scope": "Ip",
+   "value": "10.78.238.2"
+  },
+  "start_at": "2026-05-25T20:48:12Z",
+  "stop_at": "2026-05-25T20:48:13Z",
+  "uuid": "4472a15c-8bd8-4c06-87c9-a2f6c20655f3"
+ },
+ {
+  "capacity": 10,
+  "created_at": "2026-05-25T20:48:13Z",
+  "decisions": [
+   {
+    "duration": "-13h10m41s",
+    "id": 9,
+    "origin": "crowdsec",
+    "scenario": "crowdsecurity/http-probing",
+    "scope": "Ip",
+    "simulated": false,
+    "type": "ban",
+    "value": "10.78.238.2"
+   }
+  ],
+  "events": [
+   {
+    "meta": [
+     {
+      "key": "datasource_path",
+      "value": "/var/log/nginx/access.log"
+     },
+     {
+      "key": "datasource_type",
+      "value": "file"
+     },
+     {
+      "key": "http_args_len",
+      "value": "0"
+     },
+     {
+      "key": "http_path",
+      "value": "/app/AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA/BBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBB"
+     },
+     {
+      "key": "http_status",
+      "value": "404"
+     },
+     {
+      "key": "http_user_agent",
+      "value": "curl/8.14.1"
+     },
+     {
+      "key": "http_verb",
+      "value": "GET"
+     },
+     {
+      "key": "log_type",
+      "value": "http_access-log"
+     },
+     {
+      "key": "service",
+      "value": "http"
+     },
+     {
+      "key": "source_ip",
+      "value": "10.78.238.2"
+     },
+     {
+      "key": "timestamp",
+      "value": "2026-05-25T17:48:12-03:00"
+     }
+    ],
+    "timestamp": "2026-05-25 17:48:12 -0300 -0300"
+   },
+   {
+    "meta": [
+     {
+      "key": "datasource_path",
+      "value": "/var/log/nginx/access.log"
+     },
+     {
+      "key": "datasource_type",
+      "value": "file"
+     },
+     {
+      "key": "http_args_len",
+      "value": "0"
+     },
+     {
+      "key": "http_path",
+      "value": "/vuln-trigger-1"
+     },
+     {
+      "key": "http_status",
+      "value": "404"
+     },
+     {
+      "key": "http_user_agent",
+      "value": "curl/8.14.1"
+     },
+     {
+      "key": "http_verb",
+      "value": "GET"
+     },
+     {
+      "key": "log_type",
+      "value": "http_access-log"
+     },
+     {
+      "key": "service",
+      "value": "http"
+     },
+     {
+      "key": "source_ip",
+      "value": "10.78.238.2"
+     },
+     {
+      "key": "timestamp",
+      "value": "2026-05-25T17:48:12-03:00"
+     }
+    ],
+    "timestamp": "2026-05-25 17:48:12 -0300 -0300"
+   },
+   {
+    "meta": [
+     {
+      "key": "datasource_path",
+      "value": "/var/log/nginx/access.log"
+     },
+     {
+      "key": "datasource_type",
+      "value": "file"
+     },
+     {
+      "key": "http_args_len",
+      "value": "0"
+     },
+     {
+      "key": "http_path",
+      "value": "/exploit-probe-1"
+     },
+     {
+      "key": "http_status",
+      "value": "404"
+     },
+     {
+      "key": "http_user_agent",
+      "value": "curl/8.14.1"
+     },
+     {
+      "key": "http_verb",
+      "value": "GET"
+     },
+     {
+      "key": "log_type",
+      "value": "http_access-log"
+     },
+     {
+      "key": "service",
+      "value": "http"
+     },
+     {
+      "key": "source_ip",
+      "value": "10.78.238.2"
+     },
+     {
+      "key": "timestamp",
+      "value": "2026-05-25T17:48:13-03:00"
+     }
+    ],
+    "timestamp": "2026-05-25 17:48:13 -0300 -0300"
+   },
+   {
+    "meta": [
+     {
+      "key": "datasource_path",
+      "value": "/var/log/nginx/access.log"
+     },
+     {
+      "key": "datasource_type",
+      "value": "file"
+     },
+     {
+      "key": "http_args_len",
+      "value": "0"
+     },
+     {
+      "key": "http_path",
+      "value": "/vuln-trigger-2"
+     },
+     {
+      "key": "http_status",
+      "value": "404"
+     },
+     {
+      "key": "http_user_agent",
+      "value": "curl/8.14.1"
+     },
+     {
+      "key": "http_verb",
+      "value": "GET"
+     },
+     {
+      "key": "log_type",
+      "value": "http_access-log"
+     },
+     {
+      "key": "service",
+      "value": "http"
+     },
+     {
+      "key": "source_ip",
+      "value": "10.78.238.2"
+     },
+     {
+      "key": "timestamp",
+      "value": "2026-05-25T17:48:13-03:00"
+     }
+    ],
+    "timestamp": "2026-05-25 17:48:13 -0300 -0300"
+   },
+   {
+    "meta": [
+     {
+      "key": "datasource_path",
+      "value": "/var/log/nginx/access.log"
+     },
+     {
+      "key": "datasource_type",
+      "value": "file"
+     },
+     {
+      "key": "http_args_len",
+      "value": "0"
+     },
+     {
+      "key": "http_path",
+      "value": "/exploit-probe-2"
+     },
+     {
+      "key": "http_status",
+      "value": "404"
+     },
+     {
+      "key": "http_user_agent",
+      "value": "curl/8.14.1"
+     },
+     {
+      "key": "http_verb",
+      "value": "GET"
+     },
+     {
+      "key": "log_type",
+      "value": "http_access-log"
+     },
+     {
+      "key": "service",
+      "value": "http"
+     },
+     {
+      "key": "source_ip",
+      "value": "10.78.238.2"
+     },
+     {
+      "key": "timestamp",
+      "value": "2026-05-25T17:48:13-03:00"
+     }
+    ],
+    "timestamp": "2026-05-25 17:48:13 -0300 -0300"
+   },
+   {
+    "meta": [
+     {
+      "key": "datasource_path",
+      "value": "/var/log/nginx/access.log"
+     },
+     {
+      "key": "datasource_type",
+      "value": "file"
+     },
+     {
+      "key": "http_args_len",
+      "value": "0"
+     },
+     {
+      "key": "http_path",
+      "value": "/vuln-trigger-3"
+     },
+     {
+      "key": "http_status",
+      "value": "404"
+     },
+     {
+      "key": "http_user_agent",
+      "value": "curl/8.14.1"
+     },
+     {
+      "key": "http_verb",
+      "value": "GET"
+     },
+     {
+      "key": "log_type",
+      "value": "http_access-log"
+     },
+     {
+      "key": "service",
+      "value": "http"
+     },
+     {
+      "key": "source_ip",
+      "value": "10.78.238.2"
+     },
+     {
+      "key": "timestamp",
+      "value": "2026-05-25T17:48:13-03:00"
+     }
+    ],
+    "timestamp": "2026-05-25 17:48:13 -0300 -0300"
+   },
+   {
+    "meta": [
+     {
+      "key": "datasource_path",
+      "value": "/var/log/nginx/access.log"
+     },
+     {
+      "key": "datasource_type",
+      "value": "file"
+     },
+     {
+      "key": "http_args_len",
+      "value": "0"
+     },
+     {
+      "key": "http_path",
+      "value": "/exploit-probe-3"
+     },
+     {
+      "key": "http_status",
+      "value": "404"
+     },
+     {
+      "key": "http_user_agent",
+      "value": "curl/8.14.1"
+     },
+     {
+      "key": "http_verb",
+      "value": "GET"
+     },
+     {
+      "key": "log_type",
+      "value": "http_access-log"
+     },
+     {
+      "key": "service",
+      "value": "http"
+     },
+     {
+      "key": "source_ip",
+      "value": "10.78.238.2"
+     },
+     {
+      "key": "timestamp",
+      "value": "2026-05-25T17:48:13-03:00"
+     }
+    ],
+    "timestamp": "2026-05-25 17:48:13 -0300 -0300"
+   },
+   {
+    "meta": [
+     {
+      "key": "datasource_path",
+      "value": "/var/log/nginx/access.log"
+     },
+     {
+      "key": "datasource_type",
+      "value": "file"
+     },
+     {
+      "key": "http_args_len",
+      "value": "0"
+     },
+     {
+      "key": "http_path",
+      "value": "/vuln-trigger-4"
+     },
+     {
+      "key": "http_status",
+      "value": "404"
+     },
+     {
+      "key": "http_user_agent",
+      "value": "curl/8.14.1"
+     },
+     {
+      "key": "http_verb",
+      "value": "GET"
+     },
+     {
+      "key": "log_type",
+      "value": "http_access-log"
+     },
+     {
+      "key": "service",
+      "value": "http"
+     },
+     {
+      "key": "source_ip",
+      "value": "10.78.238.2"
+     },
+     {
+      "key": "timestamp",
+      "value": "2026-05-25T17:48:13-03:00"
+     }
+    ],
+    "timestamp": "2026-05-25 17:48:13 -0300 -0300"
+   },
+   {
+    "meta": [
+     {
+      "key": "datasource_path",
+      "value": "/var/log/nginx/access.log"
+     },
+     {
+      "key": "datasource_type",
+      "value": "file"
+     },
+     {
+      "key": "http_args_len",
+      "value": "0"
+     },
+     {
+      "key": "http_path",
+      "value": "/exploit-probe-4"
+     },
+     {
+      "key": "http_status",
+      "value": "404"
+     },
+     {
+      "key": "http_user_agent",
+      "value": "curl/8.14.1"
+     },
+     {
+      "key": "http_verb",
+      "value": "GET"
+     },
+     {
+      "key": "log_type",
+      "value": "http_access-log"
+     },
+     {
+      "key": "service",
+      "value": "http"
+     },
+     {
+      "key": "source_ip",
+      "value": "10.78.238.2"
+     },
+     {
+      "key": "timestamp",
+      "value": "2026-05-25T17:48:13-03:00"
+     }
+    ],
+    "timestamp": "2026-05-25 17:48:13 -0300 -0300"
+   },
+   {
+    "meta": [
+     {
+      "key": "datasource_path",
+      "value": "/var/log/nginx/access.log"
+     },
+     {
+      "key": "datasource_type",
+      "value": "file"
+     },
+     {
+      "key": "http_args_len",
+      "value": "0"
+     },
+     {
+      "key": "http_path",
+      "value": "/vuln-trigger-5"
+     },
+     {
+      "key": "http_status",
+      "value": "404"
+     },
+     {
+      "key": "http_user_agent",
+      "value": "curl/8.14.1"
+     },
+     {
+      "key": "http_verb",
+      "value": "GET"
+     },
+     {
+      "key": "log_type",
+      "value": "http_access-log"
+     },
+     {
+      "key": "service",
+      "value": "http"
+     },
+     {
+      "key": "source_ip",
+      "value": "10.78.238.2"
+     },
+     {
+      "key": "timestamp",
+      "value": "2026-05-25T17:48:13-03:00"
+     }
+    ],
+    "timestamp": "2026-05-25 17:48:13 -0300 -0300"
+   },
+   {
+    "meta": [
+     {
+      "key": "datasource_path",
+      "value": "/var/log/nginx/access.log"
+     },
+     {
+      "key": "datasource_type",
+      "value": "file"
+     },
+     {
+      "key": "http_args_len",
+      "value": "0"
+     },
+     {
+      "key": "http_path",
+      "value": "/exploit-probe-5"
+     },
+     {
+      "key": "http_status",
+      "value": "404"
+     },
+     {
+      "key": "http_user_agent",
+      "value": "curl/8.14.1"
+     },
+     {
+      "key": "http_verb",
+      "value": "GET"
+     },
+     {
+      "key": "log_type",
+      "value": "http_access-log"
+     },
+     {
+      "key": "service",
+      "value": "http"
+     },
+     {
+      "key": "source_ip",
+      "value": "10.78.238.2"
+     },
+     {
+      "key": "timestamp",
+      "value": "2026-05-25T17:48:13-03:00"
+     }
+    ],
+    "timestamp": "2026-05-25 17:48:13 -0300 -0300"
+   }
+  ],
+  "events_count": 11,
+  "id": 9,
+  "kind": "crowdsec",
+  "labels": null,
+  "leakspeed": "10s",
+  "machine_id": "926f08b902223423a1dc0681167e7c385eEH9ThPdKkxbvP2",
+  "message": "Ip 10.78.238.2 performed 'crowdsecurity/http-probing' (11 events over 184.200724ms) at 2026-05-25 20:48:13.155205472 +0000 UTC",
+  "meta": [
+   {
+    "key": "target_uri",
+    "value": "[\"/app/AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA...\"]"
+   },
+   {
+    "key": "user_agent",
+    "value": "[\"curl/8.14.1\"]"
+   },
+   {
+    "key": "method",
+    "value": "[\"GET\"]"
+   },
+   {
+    "key": "status",
+    "value": "[\"404\"]"
+   }
+  ],
+  "remediation": true,
+  "scenario": "crowdsecurity/http-probing",
+  "scenario_hash": "4b16f896af400e006c28b1476bf5989c748186f2b3756ed9ad7d1559480d278c",
+  "scenario_version": "0.4",
+  "simulated": false,
+  "source": {
+   "ip": "10.78.238.2",
+   "scope": "Ip",
+   "value": "10.78.238.2"
+  },
+  "start_at": "2026-05-25T20:48:12Z",
+  "stop_at": "2026-05-25T20:48:13Z",
+  "uuid": "50cba242-0f22-45f8-82e1-ddff4068bce6"
+ },
+ {
+  "capacity": 0,
+  "created_at": "2026-05-25T20:22:39Z",
+  "decisions": [
+   {
+    "duration": "-17h36m4s",
+    "id": 8,
+    "origin": "cscli",
+    "scenario": "DoS Nginx CVE-2026-42945",
+    "scope": "Ip",
+    "simulated": false,
+    "type": "ban",
+    "value": "10.78.238.1"
+   }
+  ],
+  "events": null,
+  "events_count": 1,
+  "id": 8,
+  "kind": "cscli",
+  "labels": null,
+  "leakspeed": "0",
+  "machine_id": "926f08b902223423a1dc0681167e7c385eEH9ThPdKkxbvP2",
+  "message": "DoS Nginx CVE-2026-42945",
+  "remediation": true,
+  "scenario": "DoS Nginx CVE-2026-42945",
+  "scenario_hash": "",
+  "scenario_version": "",
+  "simulated": false,
+  "source": {
+   "ip": "10.78.238.1",
+   "scope": "Ip",
+   "value": "10.78.238.1"
+  },
+  "start_at": "2026-05-25T20:22:39Z",
+  "stop_at": "2026-05-25T20:22:39Z",
+  "uuid": "6691b943-084b-4389-baeb-a4a278008fb0"
+ },
+ {
+  "capacity": 0,
+  "created_at": "2026-05-25T20:16:21Z",
+  "decisions": [
+   {
+    "duration": "-17h37m34s",
+    "id": 7,
+    "origin": "cscli",
+    "scenario": "DoS Nginx CVE-2026-42945",
+    "scope": "Ip",
+    "simulated": false,
+    "type": "ban",
+    "value": "10.78.238.1"
+   }
+  ],
+  "events": null,
+  "events_count": 1,
+  "id": 7,
+  "kind": "cscli",
+  "labels": null,
+  "leakspeed": "0",
+  "machine_id": "926f08b902223423a1dc0681167e7c385eEH9ThPdKkxbvP2",
+  "message": "DoS Nginx CVE-2026-42945",
+  "remediation": true,
+  "scenario": "DoS Nginx CVE-2026-42945",
+  "scenario_hash": "",
+  "scenario_version": "",
+  "simulated": false,
+  "source": {
+   "ip": "10.78.238.1",
+   "scope": "Ip",
+   "value": "10.78.238.1"
+  },
+  "start_at": "2026-05-25T20:16:21Z",
+  "stop_at": "2026-05-25T20:16:21Z",
+  "uuid": "0b3cb8d2-709a-4ee5-85db-1d915c7988df"
+ },
+ {
+  "capacity": 40,
+  "created_at": "2026-05-25T20:12:17Z",
+  "decisions": [
+   {
+    "duration": "-17h43m57s",
+    "id": 6,
+    "origin": "crowdsec",
+    "scenario": "crowdsecurity/http-crawl-non_statics",
+    "scope": "Ip",
+    "simulated": false,
+    "type": "ban",
+    "value": "10.78.238.1"
+   }
+  ],
+  "events": [
+   {
+    "meta": [
+     {
+      "key": "datasource_path",
+      "value": "/var/log/nginx/access.log"
+     },
+     {
+      "key": "datasource_type",
+      "value": "file"
+     },
+     {
+      "key": "http_args_len",
+      "value": "0"
+     },
+     {
+      "key": "http_path",
+      "value": "/exploit-probe-18"
+     },
+     {
+      "key": "http_status",
+      "value": "404"
+     },
+     {
+      "key": "http_user_agent",
+      "value": "curl/8.14.1"
+     },
+     {
+      "key": "http_verb",
+      "value": "GET"
+     },
+     {
+      "key": "log_type",
+      "value": "http_access-log"
+     },
+     {
+      "key": "service",
+      "value": "http"
+     },
+     {
+      "key": "source_ip",
+      "value": "10.78.238.1"
+     },
+     {
+      "key": "timestamp",
+      "value": "2026-05-25T17:12:17-03:00"
+     }
+    ],
+    "timestamp": "2026-05-25 17:12:17 -0300 -0300"
+   },
+   {
+    "meta": [
+     {
+      "key": "datasource_path",
+      "value": "/var/log/nginx/access.log"
+     },
+     {
+      "key": "datasource_type",
+      "value": "file"
+     },
+     {
+      "key": "http_args_len",
+      "value": "0"
+     },
+     {
+      "key": "http_path",
+      "value": "/vuln-trigger-19"
+     },
+     {
+      "key": "http_status",
+      "value": "404"
+     },
+     {
+      "key": "http_user_agent",
+      "value": "curl/8.14.1"
+     },
+     {
+      "key": "http_verb",
+      "value": "GET"
+     },
+     {
+      "key": "log_type",
+      "value": "http_access-log"
+     },
+     {
+      "key": "service",
+      "value": "http"
+     },
+     {
+      "key": "source_ip",
+      "value": "10.78.238.1"
+     },
+     {
+      "key": "timestamp",
+      "value": "2026-05-25T17:12:17-03:00"
+     }
+    ],
+    "timestamp": "2026-05-25 17:12:17 -0300 -0300"
+   },
+   {
+    "meta": [
+     {
+      "key": "datasource_path",
+      "value": "/var/log/nginx/access.log"
+     },
+     {
+      "key": "datasource_type",
+      "value": "file"
+     },
+     {
+      "key": "http_args_len",
+      "value": "0"
+     },
+     {
+      "key": "http_path",
+      "value": "/exploit-probe-19"
+     },
+     {
+      "key": "http_status",
+      "value": "404"
+     },
+     {
+      "key": "http_user_agent",
+      "value": "curl/8.14.1"
+     },
+     {
+      "key": "http_verb",
+      "value": "GET"
+     },
+     {
+      "key": "log_type",
+      "value": "http_access-log"
+     },
+     {
+      "key": "service",
+      "value": "http"
+     },
+     {
+      "key": "source_ip",
+      "value": "10.78.238.1"
+     },
+     {
+      "key": "timestamp",
+      "value": "2026-05-25T17:12:17-03:00"
+     }
+    ],
+    "timestamp": "2026-05-25 17:12:17 -0300 -0300"
+   },
+   {
+    "meta": [
+     {
+      "key": "datasource_path",
+      "value": "/var/log/nginx/access.log"
+     },
+     {
+      "key": "datasource_type",
+      "value": "file"
+     },
+     {
+      "key": "http_args_len",
+      "value": "0"
+     },
+     {
+      "key": "http_path",
+      "value": "/vuln-trigger-20"
+     },
+     {
+      "key": "http_status",
+      "value": "404"
+     },
+     {
+      "key": "http_user_agent",
+      "value": "curl/8.14.1"
+     },
+     {
+      "key": "http_verb",
+      "value": "GET"
+     },
+     {
+      "key": "log_type",
+      "value": "http_access-log"
+     },
+     {
+      "key": "service",
+      "value": "http"
+     },
+     {
+      "key": "source_ip",
+      "value": "10.78.238.1"
+     },
+     {
+      "key": "timestamp",
+      "value": "2026-05-25T17:12:17-03:00"
+     }
+    ],
+    "timestamp": "2026-05-25 17:12:17 -0300 -0300"
+   },
+   {
+    "meta": [
+     {
+      "key": "datasource_path",
+      "value": "/var/log/nginx/access.log"
+     },
+     {
+      "key": "datasource_type",
+      "value": "file"
+     },
+     {
+      "key": "http_args_len",
+      "value": "0"
+     },
+     {
+      "key": "http_path",
+      "value": "/exploit-probe-20"
+     },
+     {
+      "key": "http_status",
+      "value": "404"
+     },
+     {
+      "key": "http_user_agent",
+      "value": "curl/8.14.1"
+     },
+     {
+      "key": "http_verb",
+      "value": "GET"
+     },
+     {
+      "key": "log_type",
+      "value": "http_access-log"
+     },
+     {
+      "key": "service",
+      "value": "http"
+     },
+     {
+      "key": "source_ip",
+      "value": "10.78.238.1"
+     },
+     {
+      "key": "timestamp",
+      "value": "2026-05-25T17:12:17-03:00"
+     }
+    ],
+    "timestamp": "2026-05-25 17:12:17 -0300 -0300"
+   },
+   {
+    "meta": [
+     {
+      "key": "datasource_path",
+      "value": "/var/log/nginx/access.log"
+     },
+     {
+      "key": "datasource_type",
+      "value": "file"
+     },
+     {
+      "key": "http_args_len",
+      "value": "0"
+     },
+     {
+      "key": "http_path",
+      "value": "/vuln-trigger-21"
+     },
+     {
+      "key": "http_status",
+      "value": "404"
+     },
+     {
+      "key": "http_user_agent",
+      "value": "curl/8.14.1"
+     },
+     {
+      "key": "http_verb",
+      "value": "GET"
+     },
+     {
+      "key": "log_type",
+      "value": "http_access-log"
+     },
+     {
+      "key": "service",
+      "value": "http"
+     },
+     {
+      "key": "source_ip",
+      "value": "10.78.238.1"
+     },
+     {
+      "key": "timestamp",
+      "value": "2026-05-25T17:12:17-03:00"
+     }
+    ],
+    "timestamp": "2026-05-25 17:12:17 -0300 -0300"
+   }
+  ],
+  "events_count": 43,
+  "id": 6,
+  "kind": "crowdsec",
+  "labels": null,
+  "leakspeed": "500ms",
+  "machine_id": "926f08b902223423a1dc0681167e7c385eEH9ThPdKkxbvP2",
+  "message": "Ip 10.78.238.1 performed 'crowdsecurity/http-crawl-non_statics' (43 events over 14.575156953s) at 2026-05-25 20:12:17.372378737 +0000 UTC",
+  "meta": [
+   {
+    "key": "method",
+    "value": "[\"GET\"]"
+   },
+   {
+    "key": "status",
+    "value": "[\"404\"]"
+   },
+   {
+    "key": "target_uri",
+    "value": "[\"/exploit-probe-18\",\"/vuln-trigger-19\",\"/exploit-probe-19\",\"/vuln-trigger-20\",\"/exploit-probe-20\",\"/vuln-trigger-21\"]"
+   },
+   {
+    "key": "user_agent",
+    "value": "[\"curl/8.14.1\"]"
+   }
+  ],
+  "remediation": true,
+  "scenario": "crowdsecurity/http-crawl-non_statics",
+  "scenario_hash": "9f235ae2116031a2b7a64da1e3ff5356b5f4fb91078de1c78bc30e0edb734dfb",
+  "scenario_version": "0.7",
+  "simulated": false,
+  "source": {
+   "ip": "10.78.238.1",
+   "scope": "Ip",
+   "value": "10.78.238.1"
+  },
+  "start_at": "2026-05-25T20:12:02Z",
+  "stop_at": "2026-05-25T20:12:17Z",
+  "uuid": "560063c0-b6ab-4afa-80ff-7775620dedfb"
+ },
+ {
+  "capacity": 40,
+  "created_at": "2026-05-25T20:12:17Z",
+  "decisions": [
+   {
+    "duration": "-17h43m57s",
+    "id": 5,
+    "origin": "crowdsec",
+    "scenario": "crowdsecurity/http-crawl-non_statics",
+    "scope": "Ip",
+    "simulated": false,
+    "type": "ban",
+    "value": "10.78.238.1"
+   }
+  ],
+  "events": [
+   {
+    "meta": [
+     {
+      "key": "datasource_path",
+      "value": "/var/log/nginx/error.log"
+     },
+     {
+      "key": "datasource_type",
+      "value": "file"
+     },
+     {
+      "key": "http_args_len",
+      "value": "0"
+     },
+     {
+      "key": "http_path",
+      "value": "/exploit-probe-18"
+     },
+     {
+      "key": "http_verb",
+      "value": "GET"
+     },
+     {
+      "key": "log_type",
+      "value": "http_error-log"
+     },
+     {
+      "key": "service",
+      "value": "http"
+     },
+     {
+      "key": "source_ip",
+      "value": "10.78.238.1"
+     },
+     {
+      "key": "target_fqdn",
+      "value": "localhost"
+     },
+     {
+      "key": "timestamp",
+      "value": "2026-05-25T17:12:17Z"
+     }
+    ],
+    "timestamp": "2026-05-25 17:12:17 +0000 UTC"
+   },
+   {
+    "meta": [
+     {
+      "key": "datasource_path",
+      "value": "/var/log/nginx/error.log"
+     },
+     {
+      "key": "datasource_type",
+      "value": "file"
+     },
+     {
+      "key": "http_args_len",
+      "value": "0"
+     },
+     {
+      "key": "http_path",
+      "value": "/vuln-trigger-19"
+     },
+     {
+      "key": "http_verb",
+      "value": "GET"
+     },
+     {
+      "key": "log_type",
+      "value": "http_error-log"
+     },
+     {
+      "key": "service",
+      "value": "http"
+     },
+     {
+      "key": "source_ip",
+      "value": "10.78.238.1"
+     },
+     {
+      "key": "target_fqdn",
+      "value": "localhost"
+     },
+     {
+      "key": "timestamp",
+      "value": "2026-05-25T17:12:17Z"
+     }
+    ],
+    "timestamp": "2026-05-25 17:12:17 +0000 UTC"
+   },
+   {
+    "meta": [
+     {
+      "key": "datasource_path",
+      "value": "/var/log/nginx/error.log"
+     },
+     {
+      "key": "datasource_type",
+      "value": "file"
+     },
+     {
+      "key": "http_args_len",
+      "value": "0"
+     },
+     {
+      "key": "http_path",
+      "value": "/exploit-probe-19"
+     },
+     {
+      "key": "http_verb",
+      "value": "GET"
+     },
+     {
+      "key": "log_type",
+      "value": "http_error-log"
+     },
+     {
+      "key": "service",
+      "value": "http"
+     },
+     {
+      "key": "source_ip",
+      "value": "10.78.238.1"
+     },
+     {
+      "key": "target_fqdn",
+      "value": "localhost"
+     },
+     {
+      "key": "timestamp",
+      "value": "2026-05-25T17:12:17Z"
+     }
+    ],
+    "timestamp": "2026-05-25 17:12:17 +0000 UTC"
+   },
+   {
+    "meta": [
+     {
+      "key": "datasource_path",
+      "value": "/var/log/nginx/error.log"
+     },
+     {
+      "key": "datasource_type",
+      "value": "file"
+     },
+     {
+      "key": "http_args_len",
+      "value": "0"
+     },
+     {
+      "key": "http_path",
+      "value": "/vuln-trigger-20"
+     },
+     {
+      "key": "http_verb",
+      "value": "GET"
+     },
+     {
+      "key": "log_type",
+      "value": "http_error-log"
+     },
+     {
+      "key": "service",
+      "value": "http"
+     },
+     {
+      "key": "source_ip",
+      "value": "10.78.238.1"
+     },
+     {
+      "key": "target_fqdn",
+      "value": "localhost"
+     },
+     {
+      "key": "timestamp",
+      "value": "2026-05-25T17:12:17Z"
+     }
+    ],
+    "timestamp": "2026-05-25 17:12:17 +0000 UTC"
+   },
+   {
+    "meta": [
+     {
+      "key": "datasource_path",
+      "value": "/var/log/nginx/error.log"
+     },
+     {
+      "key": "datasource_type",
+      "value": "file"
+     },
+     {
+      "key": "http_args_len",
+      "value": "0"
+     },
+     {
+      "key": "http_path",
+      "value": "/exploit-probe-20"
+     },
+     {
+      "key": "http_verb",
+      "value": "GET"
+     },
+     {
+      "key": "log_type",
+      "value": "http_error-log"
+     },
+     {
+      "key": "service",
+      "value": "http"
+     },
+     {
+      "key": "source_ip",
+      "value": "10.78.238.1"
+     },
+     {
+      "key": "target_fqdn",
+      "value": "localhost"
+     },
+     {
+      "key": "timestamp",
+      "value": "2026-05-25T17:12:17Z"
+     }
+    ],
+    "timestamp": "2026-05-25 17:12:17 +0000 UTC"
+   },
+   {
+    "meta": [
+     {
+      "key": "datasource_path",
+      "value": "/var/log/nginx/error.log"
+     },
+     {
+      "key": "datasource_type",
+      "value": "file"
+     },
+     {
+      "key": "http_args_len",
+      "value": "0"
+     },
+     {
+      "key": "http_path",
+      "value": "/vuln-trigger-21"
+     },
+     {
+      "key": "http_verb",
+      "value": "GET"
+     },
+     {
+      "key": "log_type",
+      "value": "http_error-log"
+     },
+     {
+      "key": "service",
+      "value": "http"
+     },
+     {
+      "key": "source_ip",
+      "value": "10.78.238.1"
+     },
+     {
+      "key": "target_fqdn",
+      "value": "localhost"
+     },
+     {
+      "key": "timestamp",
+      "value": "2026-05-25T17:12:17Z"
+     }
+    ],
+    "timestamp": "2026-05-25 17:12:17 +0000 UTC"
+   }
+  ],
+  "events_count": 41,
+  "id": 5,
+  "kind": "crowdsec",
+  "labels": null,
+  "leakspeed": "500ms",
+  "machine_id": "926f08b902223423a1dc0681167e7c385eEH9ThPdKkxbvP2",
+  "message": "Ip 10.78.238.1 performed 'crowdsecurity/http-crawl-non_statics' (41 events over 405.54122ms) at 2026-05-25 20:12:17.370712553 +0000 UTC",
+  "meta": [
+   {
+    "key": "target_uri",
+    "value": "[\"/exploit-probe-18\",\"/vuln-trigger-19\",\"/exploit-probe-19\",\"/vuln-trigger-20\",\"/exploit-probe-20\",\"/vuln-trigger-21\"]"
+   },
+   {
+    "key": "method",
+    "value": "[\"GET\"]"
+   }
+  ],
+  "remediation": true,
+  "scenario": "crowdsecurity/http-crawl-non_statics",
+  "scenario_hash": "9f235ae2116031a2b7a64da1e3ff5356b5f4fb91078de1c78bc30e0edb734dfb",
+  "scenario_version": "0.7",
+  "simulated": false,
+  "source": {
+   "ip": "10.78.238.1",
+   "scope": "Ip",
+   "value": "10.78.238.1"
+  },
+  "start_at": "2026-05-25T20:12:16Z",
+  "stop_at": "2026-05-25T20:12:17Z",
+  "uuid": "52b6f1ab-a407-4cb2-b905-a796481ace6e"
+ },
+ {
+  "capacity": 10,
+  "created_at": "2026-05-25T20:12:17Z",
+  "decisions": [
+   {
+    "duration": "-17h43m57s",
+    "id": 4,
+    "origin": "crowdsec",
+    "scenario": "crowdsecurity/http-probing",
+    "scope": "Ip",
+    "simulated": false,
+    "type": "ban",
+    "value": "10.78.238.1"
+   }
+  ],
+  "events": [
+   {
+    "meta": [
+     {
+      "key": "datasource_path",
+      "value": "/var/log/nginx/access.log"
+     },
+     {
+      "key": "datasource_type",
+      "value": "file"
+     },
+     {
+      "key": "http_args_len",
+      "value": "0"
+     },
+     {
+      "key": "http_path",
+      "value": "/app/AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA/BBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBB"
+     },
+     {
+      "key": "http_status",
+      "value": "404"
+     },
+     {
+      "key": "http_user_agent",
+      "value": "curl/8.14.1"
+     },
+     {
+      "key": "http_verb",
+      "value": "GET"
+     },
+     {
+      "key": "log_type",
+      "value": "http_access-log"
+     },
+     {
+      "key": "service",
+      "value": "http"
+     },
+     {
+      "key": "source_ip",
+      "value": "10.78.238.1"
+     },
+     {
+      "key": "timestamp",
+      "value": "2026-05-25T17:12:16-03:00"
+     }
+    ],
+    "timestamp": "2026-05-25 17:12:16 -0300 -0300"
+   },
+   {
+    "meta": [
+     {
+      "key": "datasource_path",
+      "value": "/var/log/nginx/access.log"
+     },
+     {
+      "key": "datasource_type",
+      "value": "file"
+     },
+     {
+      "key": "http_args_len",
+      "value": "0"
+     },
+     {
+      "key": "http_path",
+      "value": "/vuln-trigger-1"
+     },
+     {
+      "key": "http_status",
+      "value": "404"
+     },
+     {
+      "key": "http_user_agent",
+      "value": "curl/8.14.1"
+     },
+     {
+      "key": "http_verb",
+      "value": "GET"
+     },
+     {
+      "key": "log_type",
+      "value": "http_access-log"
+     },
+     {
+      "key": "service",
+      "value": "http"
+     },
+     {
+      "key": "source_ip",
+      "value": "10.78.238.1"
+     },
+     {
+      "key": "timestamp",
+      "value": "2026-05-25T17:12:16-03:00"
+     }
+    ],
+    "timestamp": "2026-05-25 17:12:16 -0300 -0300"
+   },
+   {
+    "meta": [
+     {
+      "key": "datasource_path",
+      "value": "/var/log/nginx/access.log"
+     },
+     {
+      "key": "datasource_type",
+      "value": "file"
+     },
+     {
+      "key": "http_args_len",
+      "value": "0"
+     },
+     {
+      "key": "http_path",
+      "value": "/exploit-probe-1"
+     },
+     {
+      "key": "http_status",
+      "value": "404"
+     },
+     {
+      "key": "http_user_agent",
+      "value": "curl/8.14.1"
+     },
+     {
+      "key": "http_verb",
+      "value": "GET"
+     },
+     {
+      "key": "log_type",
+      "value": "http_access-log"
+     },
+     {
+      "key": "service",
+      "value": "http"
+     },
+     {
+      "key": "source_ip",
+      "value": "10.78.238.1"
+     },
+     {
+      "key": "timestamp",
+      "value": "2026-05-25T17:12:16-03:00"
+     }
+    ],
+    "timestamp": "2026-05-25 17:12:16 -0300 -0300"
+   },
+   {
+    "meta": [
+     {
+      "key": "datasource_path",
+      "value": "/var/log/nginx/access.log"
+     },
+     {
+      "key": "datasource_type",
+      "value": "file"
+     },
+     {
+      "key": "http_args_len",
+      "value": "0"
+     },
+     {
+      "key": "http_path",
+      "value": "/vuln-trigger-2"
+     },
+     {
+      "key": "http_status",
+      "value": "404"
+     },
+     {
+      "key": "http_user_agent",
+      "value": "curl/8.14.1"
+     },
+     {
+      "key": "http_verb",
+      "value": "GET"
+     },
+     {
+      "key": "log_type",
+      "value": "http_access-log"
+     },
+     {
+      "key": "service",
+      "value": "http"
+     },
+     {
+      "key": "source_ip",
+      "value": "10.78.238.1"
+     },
+     {
+      "key": "timestamp",
+      "value": "2026-05-25T17:12:16-03:00"
+     }
+    ],
+    "timestamp": "2026-05-25 17:12:16 -0300 -0300"
+   },
+   {
+    "meta": [
+     {
+      "key": "datasource_path",
+      "value": "/var/log/nginx/access.log"
+     },
+     {
+      "key": "datasource_type",
+      "value": "file"
+     },
+     {
+      "key": "http_args_len",
+      "value": "0"
+     },
+     {
+      "key": "http_path",
+      "value": "/exploit-probe-2"
+     },
+     {
+      "key": "http_status",
+      "value": "404"
+     },
+     {
+      "key": "http_user_agent",
+      "value": "curl/8.14.1"
+     },
+     {
+      "key": "http_verb",
+      "value": "GET"
+     },
+     {
+      "key": "log_type",
+      "value": "http_access-log"
+     },
+     {
+      "key": "service",
+      "value": "http"
+     },
+     {
+      "key": "source_ip",
+      "value": "10.78.238.1"
+     },
+     {
+      "key": "timestamp",
+      "value": "2026-05-25T17:12:16-03:00"
+     }
+    ],
+    "timestamp": "2026-05-25 17:12:16 -0300 -0300"
+   },
+   {
+    "meta": [
+     {
+      "key": "datasource_path",
+      "value": "/var/log/nginx/access.log"
+     },
+     {
+      "key": "datasource_type",
+      "value": "file"
+     },
+     {
+      "key": "http_args_len",
+      "value": "0"
+     },
+     {
+      "key": "http_path",
+      "value": "/vuln-trigger-3"
+     },
+     {
+      "key": "http_status",
+      "value": "404"
+     },
+     {
+      "key": "http_user_agent",
+      "value": "curl/8.14.1"
+     },
+     {
+      "key": "http_verb",
+      "value": "GET"
+     },
+     {
+      "key": "log_type",
+      "value": "http_access-log"
+     },
+     {
+      "key": "service",
+      "value": "http"
+     },
+     {
+      "key": "source_ip",
+      "value": "10.78.238.1"
+     },
+     {
+      "key": "timestamp",
+      "value": "2026-05-25T17:12:16-03:00"
+     }
+    ],
+    "timestamp": "2026-05-25 17:12:16 -0300 -0300"
+   },
+   {
+    "meta": [
+     {
+      "key": "datasource_path",
+      "value": "/var/log/nginx/access.log"
+     },
+     {
+      "key": "datasource_type",
+      "value": "file"
+     },
+     {
+      "key": "http_args_len",
+      "value": "0"
+     },
+     {
+      "key": "http_path",
+      "value": "/exploit-probe-3"
+     },
+     {
+      "key": "http_status",
+      "value": "404"
+     },
+     {
+      "key": "http_user_agent",
+      "value": "curl/8.14.1"
+     },
+     {
+      "key": "http_verb",
+      "value": "GET"
+     },
+     {
+      "key": "log_type",
+      "value": "http_access-log"
+     },
+     {
+      "key": "service",
+      "value": "http"
+     },
+     {
+      "key": "source_ip",
+      "value": "10.78.238.1"
+     },
+     {
+      "key": "timestamp",
+      "value": "2026-05-25T17:12:16-03:00"
+     }
+    ],
+    "timestamp": "2026-05-25 17:12:16 -0300 -0300"
+   },
+   {
+    "meta": [
+     {
+      "key": "datasource_path",
+      "value": "/var/log/nginx/access.log"
+     },
+     {
+      "key": "datasource_type",
+      "value": "file"
+     },
+     {
+      "key": "http_args_len",
+      "value": "0"
+     },
+     {
+      "key": "http_path",
+      "value": "/vuln-trigger-4"
+     },
+     {
+      "key": "http_status",
+      "value": "404"
+     },
+     {
+      "key": "http_user_agent",
+      "value": "curl/8.14.1"
+     },
+     {
+      "key": "http_verb",
+      "value": "GET"
+     },
+     {
+      "key": "log_type",
+      "value": "http_access-log"
+     },
+     {
+      "key": "service",
+      "value": "http"
+     },
+     {
+      "key": "source_ip",
+      "value": "10.78.238.1"
+     },
+     {
+      "key": "timestamp",
+      "value": "2026-05-25T17:12:16-03:00"
+     }
+    ],
+    "timestamp": "2026-05-25 17:12:16 -0300 -0300"
+   },
+   {
+    "meta": [
+     {
+      "key": "datasource_path",
+      "value": "/var/log/nginx/access.log"
+     },
+     {
+      "key": "datasource_type",
+      "value": "file"
+     },
+     {
+      "key": "http_args_len",
+      "value": "0"
+     },
+     {
+      "key": "http_path",
+      "value": "/exploit-probe-4"
+     },
+     {
+      "key": "http_status",
+      "value": "404"
+     },
+     {
+      "key": "http_user_agent",
+      "value": "curl/8.14.1"
+     },
+     {
+      "key": "http_verb",
+      "value": "GET"
+     },
+     {
+      "key": "log_type",
+      "value": "http_access-log"
+     },
+     {
+      "key": "service",
+      "value": "http"
+     },
+     {
+      "key": "source_ip",
+      "value": "10.78.238.1"
+     },
+     {
+      "key": "timestamp",
+      "value": "2026-05-25T17:12:16-03:00"
+     }
+    ],
+    "timestamp": "2026-05-25 17:12:16 -0300 -0300"
+   },
+   {
+    "meta": [
+     {
+      "key": "datasource_path",
+      "value": "/var/log/nginx/access.log"
+     },
+     {
+      "key": "datasource_type",
+      "value": "file"
+     },
+     {
+      "key": "http_args_len",
+      "value": "0"
+     },
+     {
+      "key": "http_path",
+      "value": "/vuln-trigger-5"
+     },
+     {
+      "key": "http_status",
+      "value": "404"
+     },
+     {
+      "key": "http_user_agent",
+      "value": "curl/8.14.1"
+     },
+     {
+      "key": "http_verb",
+      "value": "GET"
+     },
+     {
+      "key": "log_type",
+      "value": "http_access-log"
+     },
+     {
+      "key": "service",
+      "value": "http"
+     },
+     {
+      "key": "source_ip",
+      "value": "10.78.238.1"
+     },
+     {
+      "key": "timestamp",
+      "value": "2026-05-25T17:12:16-03:00"
+     }
+    ],
+    "timestamp": "2026-05-25 17:12:16 -0300 -0300"
+   },
+   {
+    "meta": [
+     {
+      "key": "datasource_path",
+      "value": "/var/log/nginx/access.log"
+     },
+     {
+      "key": "datasource_type",
+      "value": "file"
+     },
+     {
+      "key": "http_args_len",
+      "value": "0"
+     },
+     {
+      "key": "http_path",
+      "value": "/exploit-probe-5"
+     },
+     {
+      "key": "http_status",
+      "value": "404"
+     },
+     {
+      "key": "http_user_agent",
+      "value": "curl/8.14.1"
+     },
+     {
+      "key": "http_verb",
+      "value": "GET"
+     },
+     {
+      "key": "log_type",
+      "value": "http_access-log"
+     },
+     {
+      "key": "service",
+      "value": "http"
+     },
+     {
+      "key": "source_ip",
+      "value": "10.78.238.1"
+     },
+     {
+      "key": "timestamp",
+      "value": "2026-05-25T17:12:16-03:00"
+     }
+    ],
+    "timestamp": "2026-05-25 17:12:16 -0300 -0300"
+   }
+  ],
+  "events_count": 11,
+  "id": 4,
+  "kind": "crowdsec",
+  "labels": null,
+  "leakspeed": "10s",
+  "machine_id": "926f08b902223423a1dc0681167e7c385eEH9ThPdKkxbvP2",
+  "message": "Ip 10.78.238.1 performed 'crowdsecurity/http-probing' (11 events over 242.504579ms) at 2026-05-25 20:12:16.969731513 +0000 UTC",
+  "meta": [
+   {
+    "key": "method",
+    "value": "[\"GET\"]"
+   },
+   {
+    "key": "status",
+    "value": "[\"404\"]"
+   },
+   {
+    "key": "target_uri",
+    "value": "[\"/app/AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA...\"]"
+   },
+   {
+    "key": "user_agent",
+    "value": "[\"curl/8.14.1\"]"
+   }
+  ],
+  "remediation": true,
+  "scenario": "crowdsecurity/http-probing",
+  "scenario_hash": "4b16f896af400e006c28b1476bf5989c748186f2b3756ed9ad7d1559480d278c",
+  "scenario_version": "0.4",
+  "simulated": false,
+  "source": {
+   "ip": "10.78.238.1",
+   "scope": "Ip",
+   "value": "10.78.238.1"
+  },
+  "start_at": "2026-05-25T20:12:16Z",
+  "stop_at": "2026-05-25T20:12:16Z",
+  "uuid": "bf0bdcdf-9d35-49cc-b2ef-8e5be913b1f6"
+ },
+ {
+  "capacity": 40,
+  "created_at": "2026-05-25T19:27:01Z",
+  "decisions": [
+   {
+    "duration": "-17h46m59s",
+    "id": 3,
+    "origin": "crowdsec",
+    "scenario": "crowdsecurity/http-crawl-non_statics",
+    "scope": "Ip",
+    "simulated": false,
+    "type": "ban",
+    "value": "10.78.238.1"
+   }
+  ],
+  "events": [
+   {
+    "meta": [
+     {
+      "key": "datasource_path",
+      "value": "/var/log/nginx/error.log"
+     },
+     {
+      "key": "datasource_type",
+      "value": "file"
+     },
+     {
+      "key": "http_args_len",
+      "value": "0"
+     },
+     {
+      "key": "http_path",
+      "value": "/app-vuln-trigger-19"
+     },
+     {
+      "key": "http_verb",
+      "value": "GET"
+     },
+     {
+      "key": "log_type",
+      "value": "http_error-log"
+     },
+     {
+      "key": "service",
+      "value": "http"
+     },
+     {
+      "key": "source_ip",
+      "value": "10.78.238.1"
+     },
+     {
+      "key": "target_fqdn",
+      "value": "localhost"
+     },
+     {
+      "key": "timestamp",
+      "value": "2026-05-25T16:27:01Z"
+     }
+    ],
+    "timestamp": "2026-05-25 16:27:01 +0000 UTC"
+   },
+   {
+    "meta": [
+     {
+      "key": "datasource_path",
+      "value": "/var/log/nginx/error.log"
+     },
+     {
+      "key": "datasource_type",
+      "value": "file"
+     },
+     {
+      "key": "http_args_len",
+      "value": "0"
+     },
+     {
+      "key": "http_path",
+      "value": "/app-vuln-trigger-59"
+     },
+     {
+      "key": "http_verb",
+      "value": "GET"
+     },
+     {
+      "key": "log_type",
+      "value": "http_error-log"
+     },
+     {
+      "key": "service",
+      "value": "http"
+     },
+     {
+      "key": "source_ip",
+      "value": "10.78.238.1"
+     },
+     {
+      "key": "target_fqdn",
+      "value": "localhost"
+     },
+     {
+      "key": "timestamp",
+      "value": "2026-05-25T16:27:01Z"
+     }
+    ],
+    "timestamp": "2026-05-25 16:27:01 +0000 UTC"
+   },
+   {
+    "meta": [
+     {
+      "key": "datasource_path",
+      "value": "/var/log/nginx/error.log"
+     },
+     {
+      "key": "datasource_type",
+      "value": "file"
+     },
+     {
+      "key": "http_args_len",
+      "value": "0"
+     },
+     {
+      "key": "http_path",
+      "value": "/app-vuln-trigger-20"
+     },
+     {
+      "key": "http_verb",
+      "value": "GET"
+     },
+     {
+      "key": "log_type",
+      "value": "http_error-log"
+     },
+     {
+      "key": "service",
+      "value": "http"
+     },
+     {
+      "key": "source_ip",
+      "value": "10.78.238.1"
+     },
+     {
+      "key": "target_fqdn",
+      "value": "localhost"
+     },
+     {
+      "key": "timestamp",
+      "value": "2026-05-25T16:27:01Z"
+     }
+    ],
+    "timestamp": "2026-05-25 16:27:01 +0000 UTC"
+   },
+   {
+    "meta": [
+     {
+      "key": "datasource_path",
+      "value": "/var/log/nginx/error.log"
+     },
+     {
+      "key": "datasource_type",
+      "value": "file"
+     },
+     {
+      "key": "http_args_len",
+      "value": "0"
+     },
+     {
+      "key": "http_path",
+      "value": "/app-vuln-trigger-60"
+     },
+     {
+      "key": "http_verb",
+      "value": "GET"
+     },
+     {
+      "key": "log_type",
+      "value": "http_error-log"
+     },
+     {
+      "key": "service",
+      "value": "http"
+     },
+     {
+      "key": "source_ip",
+      "value": "10.78.238.1"
+     },
+     {
+      "key": "target_fqdn",
+      "value": "localhost"
+     },
+     {
+      "key": "timestamp",
+      "value": "2026-05-25T16:27:01Z"
+     }
+    ],
+    "timestamp": "2026-05-25 16:27:01 +0000 UTC"
+   },
+   {
+    "meta": [
+     {
+      "key": "datasource_path",
+      "value": "/var/log/nginx/error.log"
+     },
+     {
+      "key": "datasource_type",
+      "value": "file"
+     },
+     {
+      "key": "http_args_len",
+      "value": "0"
+     },
+     {
+      "key": "http_path",
+      "value": "/app-vuln-trigger-21"
+     },
+     {
+      "key": "http_verb",
+      "value": "GET"
+     },
+     {
+      "key": "log_type",
+      "value": "http_error-log"
+     },
+     {
+      "key": "service",
+      "value": "http"
+     },
+     {
+      "key": "source_ip",
+      "value": "10.78.238.1"
+     },
+     {
+      "key": "target_fqdn",
+      "value": "localhost"
+     },
+     {
+      "key": "timestamp",
+      "value": "2026-05-25T16:27:01Z"
+     }
+    ],
+    "timestamp": "2026-05-25 16:27:01 +0000 UTC"
+   },
+   {
+    "meta": [
+     {
+      "key": "datasource_path",
+      "value": "/var/log/nginx/error.log"
+     },
+     {
+      "key": "datasource_type",
+      "value": "file"
+     },
+     {
+      "key": "http_args_len",
+      "value": "0"
+     },
+     {
+      "key": "http_path",
+      "value": "/app-vuln-trigger-61"
+     },
+     {
+      "key": "http_verb",
+      "value": "GET"
+     },
+     {
+      "key": "log_type",
+      "value": "http_error-log"
+     },
+     {
+      "key": "service",
+      "value": "http"
+     },
+     {
+      "key": "source_ip",
+      "value": "10.78.238.1"
+     },
+     {
+      "key": "target_fqdn",
+      "value": "localhost"
+     },
+     {
+      "key": "timestamp",
+      "value": "2026-05-25T16:27:01Z"
+     }
+    ],
+    "timestamp": "2026-05-25 16:27:01 +0000 UTC"
+   }
+  ],
+  "events_count": 42,
+  "id": 3,
+  "kind": "crowdsec",
+  "labels": null,
+  "leakspeed": "500ms",
+  "machine_id": "926f08b902223423a1dc0681167e7c385eEH9ThPdKkxbvP2",
+  "message": "Ip 10.78.238.1 performed 'crowdsecurity/http-crawl-non_statics' (42 events over 546.298898ms) at 2026-05-25 19:27:01.176962338 +0000 UTC",
+  "meta": [
+   {
+    "key": "method",
+    "value": "[\"GET\"]"
+   },
+   {
+    "key": "target_uri",
+    "value": "[\"/app-vuln-trigger-19\",\"/app-vuln-trigger-59\",\"/app-vuln-trigger-20\",\"/app-vuln-trigger-60\",\"/app-vuln-trigger-21\",\"/app-vuln-trigger-61\"]"
+   }
+  ],
+  "remediation": true,
+  "scenario": "crowdsecurity/http-crawl-non_statics",
+  "scenario_hash": "9f235ae2116031a2b7a64da1e3ff5356b5f4fb91078de1c78bc30e0edb734dfb",
+  "scenario_version": "0.7",
+  "simulated": false,
+  "source": {
+   "ip": "10.78.238.1",
+   "scope": "Ip",
+   "value": "10.78.238.1"
+  },
+  "start_at": "2026-05-25T19:27:00Z",
+  "stop_at": "2026-05-25T19:27:01Z",
+  "uuid": "2ebbcba4-3068-419d-a255-3627e1df5055"
+ },
+ {
+  "capacity": 40,
+  "created_at": "2026-05-25T19:27:01Z",
+  "decisions": [
+   {
+    "duration": "-17h46m59s",
+    "id": 2,
+    "origin": "crowdsec",
+    "scenario": "crowdsecurity/http-crawl-non_statics",
+    "scope": "Ip",
+    "simulated": false,
+    "type": "ban",
+    "value": "10.78.238.1"
+   }
+  ],
+  "events": [
+   {
+    "meta": [
+     {
+      "key": "datasource_path",
+      "value": "/var/log/nginx/access.log"
+     },
+     {
+      "key": "datasource_type",
+      "value": "file"
+     },
+     {
+      "key": "http_args_len",
+      "value": "0"
+     },
+     {
+      "key": "http_path",
+      "value": "/app-vuln-trigger-58"
+     },
+     {
+      "key": "http_status",
+      "value": "404"
+     },
+     {
+      "key": "http_user_agent",
+      "value": "curl/8.14.1"
+     },
+     {
+      "key": "http_verb",
+      "value": "GET"
+     },
+     {
+      "key": "log_type",
+      "value": "http_access-log"
+     },
+     {
+      "key": "service",
+      "value": "http"
+     },
+     {
+      "key": "source_ip",
+      "value": "10.78.238.1"
+     },
+     {
+      "key": "timestamp",
+      "value": "2026-05-25T16:27:01-03:00"
+     }
+    ],
+    "timestamp": "2026-05-25 16:27:01 -0300 -0300"
+   },
+   {
+    "meta": [
+     {
+      "key": "datasource_path",
+      "value": "/var/log/nginx/access.log"
+     },
+     {
+      "key": "datasource_type",
+      "value": "file"
+     },
+     {
+      "key": "http_args_len",
+      "value": "0"
+     },
+     {
+      "key": "http_path",
+      "value": "/app-vuln-trigger-19"
+     },
+     {
+      "key": "http_status",
+      "value": "404"
+     },
+     {
+      "key": "http_user_agent",
+      "value": "curl/8.14.1"
+     },
+     {
+      "key": "http_verb",
+      "value": "GET"
+     },
+     {
+      "key": "log_type",
+      "value": "http_access-log"
+     },
+     {
+      "key": "service",
+      "value": "http"
+     },
+     {
+      "key": "source_ip",
+      "value": "10.78.238.1"
+     },
+     {
+      "key": "timestamp",
+      "value": "2026-05-25T16:27:01-03:00"
+     }
+    ],
+    "timestamp": "2026-05-25 16:27:01 -0300 -0300"
+   },
+   {
+    "meta": [
+     {
+      "key": "datasource_path",
+      "value": "/var/log/nginx/access.log"
+     },
+     {
+      "key": "datasource_type",
+      "value": "file"
+     },
+     {
+      "key": "http_args_len",
+      "value": "0"
+     },
+     {
+      "key": "http_path",
+      "value": "/app-vuln-trigger-59"
+     },
+     {
+      "key": "http_status",
+      "value": "404"
+     },
+     {
+      "key": "http_user_agent",
+      "value": "curl/8.14.1"
+     },
+     {
+      "key": "http_verb",
+      "value": "GET"
+     },
+     {
+      "key": "log_type",
+      "value": "http_access-log"
+     },
+     {
+      "key": "service",
+      "value": "http"
+     },
+     {
+      "key": "source_ip",
+      "value": "10.78.238.1"
+     },
+     {
+      "key": "timestamp",
+      "value": "2026-05-25T16:27:01-03:00"
+     }
+    ],
+    "timestamp": "2026-05-25 16:27:01 -0300 -0300"
+   },
+   {
+    "meta": [
+     {
+      "key": "datasource_path",
+      "value": "/var/log/nginx/access.log"
+     },
+     {
+      "key": "datasource_type",
+      "value": "file"
+     },
+     {
+      "key": "http_args_len",
+      "value": "0"
+     },
+     {
+      "key": "http_path",
+      "value": "/app-vuln-trigger-20"
+     },
+     {
+      "key": "http_status",
+      "value": "404"
+     },
+     {
+      "key": "http_user_agent",
+      "value": "curl/8.14.1"
+     },
+     {
+      "key": "http_verb",
+      "value": "GET"
+     },
+     {
+      "key": "log_type",
+      "value": "http_access-log"
+     },
+     {
+      "key": "service",
+      "value": "http"
+     },
+     {
+      "key": "source_ip",
+      "value": "10.78.238.1"
+     },
+     {
+      "key": "timestamp",
+      "value": "2026-05-25T16:27:01-03:00"
+     }
+    ],
+    "timestamp": "2026-05-25 16:27:01 -0300 -0300"
+   },
+   {
+    "meta": [
+     {
+      "key": "datasource_path",
+      "value": "/var/log/nginx/access.log"
+     },
+     {
+      "key": "datasource_type",
+      "value": "file"
+     },
+     {
+      "key": "http_args_len",
+      "value": "0"
+     },
+     {
+      "key": "http_path",
+      "value": "/app-vuln-trigger-60"
+     },
+     {
+      "key": "http_status",
+      "value": "404"
+     },
+     {
+      "key": "http_user_agent",
+      "value": "curl/8.14.1"
+     },
+     {
+      "key": "http_verb",
+      "value": "GET"
+     },
+     {
+      "key": "log_type",
+      "value": "http_access-log"
+     },
+     {
+      "key": "service",
+      "value": "http"
+     },
+     {
+      "key": "source_ip",
+      "value": "10.78.238.1"
+     },
+     {
+      "key": "timestamp",
+      "value": "2026-05-25T16:27:01-03:00"
+     }
+    ],
+    "timestamp": "2026-05-25 16:27:01 -0300 -0300"
+   },
+   {
+    "meta": [
+     {
+      "key": "datasource_path",
+      "value": "/var/log/nginx/access.log"
+     },
+     {
+      "key": "datasource_type",
+      "value": "file"
+     },
+     {
+      "key": "http_args_len",
+      "value": "0"
+     },
+     {
+      "key": "http_path",
+      "value": "/app-vuln-trigger-21"
+     },
+     {
+      "key": "http_status",
+      "value": "404"
+     },
+     {
+      "key": "http_user_agent",
+      "value": "curl/8.14.1"
+     },
+     {
+      "key": "http_verb",
+      "value": "GET"
+     },
+     {
+      "key": "log_type",
+      "value": "http_access-log"
+     },
+     {
+      "key": "service",
+      "value": "http"
+     },
+     {
+      "key": "source_ip",
+      "value": "10.78.238.1"
+     },
+     {
+      "key": "timestamp",
+      "value": "2026-05-25T16:27:01-03:00"
+     }
+    ],
+    "timestamp": "2026-05-25 16:27:01 -0300 -0300"
+   }
+  ],
+  "events_count": 41,
+  "id": 2,
+  "kind": "crowdsec",
+  "labels": null,
+  "leakspeed": "500ms",
+  "machine_id": "926f08b902223423a1dc0681167e7c385eEH9ThPdKkxbvP2",
+  "message": "Ip 10.78.238.1 performed 'crowdsecurity/http-crawl-non_statics' (41 events over 334.845891ms) at 2026-05-25 19:27:01.153863924 +0000 UTC",
+  "meta": [
+   {
+    "key": "status",
+    "value": "[\"404\"]"
+   },
+   {
+    "key": "target_uri",
+    "value": "[\"/app-vuln-trigger-58\",\"/app-vuln-trigger-19\",\"/app-vuln-trigger-59\",\"/app-vuln-trigger-20\",\"/app-vuln-trigger-60\",\"/app-vuln-trigger-21\"]"
+   },
+   {
+    "key": "user_agent",
+    "value": "[\"curl/8.14.1\"]"
+   },
+   {
+    "key": "method",
+    "value": "[\"GET\"]"
+   }
+  ],
+  "remediation": true,
+  "scenario": "crowdsecurity/http-crawl-non_statics",
+  "scenario_hash": "9f235ae2116031a2b7a64da1e3ff5356b5f4fb91078de1c78bc30e0edb734dfb",
+  "scenario_version": "0.7",
+  "simulated": false,
+  "source": {
+   "ip": "10.78.238.1",
+   "scope": "Ip",
+   "value": "10.78.238.1"
+  },
+  "start_at": "2026-05-25T19:27:00Z",
+  "stop_at": "2026-05-25T19:27:01Z",
+  "uuid": "c6787678-7bc9-4750-be61-9e3168a8f918"
+ },
+ {
+  "capacity": 10,
+  "created_at": "2026-05-25T19:27:01Z",
+  "decisions": [
+   {
+    "duration": "-17h46m59s",
+    "id": 1,
+    "origin": "crowdsec",
+    "scenario": "crowdsecurity/http-probing",
+    "scope": "Ip",
+    "simulated": false,
+    "type": "ban",
+    "value": "10.78.238.1"
+   }
+  ],
+  "events": [
+   {
+    "meta": [
+     {
+      "key": "datasource_path",
+      "value": "/var/log/nginx/access.log"
+     },
+     {
+      "key": "datasource_type",
+      "value": "file"
+     },
+     {
+      "key": "http_args_len",
+      "value": "0"
+     },
+     {
+      "key": "http_path",
+      "value": "/app-vuln-trigger-1"
+     },
+     {
+      "key": "http_status",
+      "value": "404"
+     },
+     {
+      "key": "http_user_agent",
+      "value": "curl/8.14.1"
+     },
+     {
+      "key": "http_verb",
+      "value": "GET"
+     },
+     {
+      "key": "log_type",
+      "value": "http_access-log"
+     },
+     {
+      "key": "service",
+      "value": "http"
+     },
+     {
+      "key": "source_ip",
+      "value": "10.78.238.1"
+     },
+     {
+      "key": "timestamp",
+      "value": "2026-05-25T16:27:00-03:00"
+     }
+    ],
+    "timestamp": "2026-05-25 16:27:00 -0300 -0300"
+   },
+   {
+    "meta": [
+     {
+      "key": "datasource_path",
+      "value": "/var/log/nginx/access.log"
+     },
+     {
+      "key": "datasource_type",
+      "value": "file"
+     },
+     {
+      "key": "http_args_len",
+      "value": "0"
+     },
+     {
+      "key": "http_path",
+      "value": "/app-vuln-trigger-41"
+     },
+     {
+      "key": "http_status",
+      "value": "404"
+     },
+     {
+      "key": "http_user_agent",
+      "value": "curl/8.14.1"
+     },
+     {
+      "key": "http_verb",
+      "value": "GET"
+     },
+     {
+      "key": "log_type",
+      "value": "http_access-log"
+     },
+     {
+      "key": "service",
+      "value": "http"
+     },
+     {
+      "key": "source_ip",
+      "value": "10.78.238.1"
+     },
+     {
+      "key": "timestamp",
+      "value": "2026-05-25T16:27:00-03:00"
+     }
+    ],
+    "timestamp": "2026-05-25 16:27:00 -0300 -0300"
+   },
+   {
+    "meta": [
+     {
+      "key": "datasource_path",
+      "value": "/var/log/nginx/access.log"
+     },
+     {
+      "key": "datasource_type",
+      "value": "file"
+     },
+     {
+      "key": "http_args_len",
+      "value": "0"
+     },
+     {
+      "key": "http_path",
+      "value": "/app-vuln-trigger-2"
+     },
+     {
+      "key": "http_status",
+      "value": "404"
+     },
+     {
+      "key": "http_user_agent",
+      "value": "curl/8.14.1"
+     },
+     {
+      "key": "http_verb",
+      "value": "GET"
+     },
+     {
+      "key": "log_type",
+      "value": "http_access-log"
+     },
+     {
+      "key": "service",
+      "value": "http"
+     },
+     {
+      "key": "source_ip",
+      "value": "10.78.238.1"
+     },
+     {
+      "key": "timestamp",
+      "value": "2026-05-25T16:27:00-03:00"
+     }
+    ],
+    "timestamp": "2026-05-25 16:27:00 -0300 -0300"
+   },
+   {
+    "meta": [
+     {
+      "key": "datasource_path",
+      "value": "/var/log/nginx/access.log"
+     },
+     {
+      "key": "datasource_type",
+      "value": "file"
+     },
+     {
+      "key": "http_args_len",
+      "value": "0"
+     },
+     {
+      "key": "http_path",
+      "value": "/app-vuln-trigger-42"
+     },
+     {
+      "key": "http_status",
+      "value": "404"
+     },
+     {
+      "key": "http_user_agent",
+      "value": "curl/8.14.1"
+     },
+     {
+      "key": "http_verb",
+      "value": "GET"
+     },
+     {
+      "key": "log_type",
+      "value": "http_access-log"
+     },
+     {
+      "key": "service",
+      "value": "http"
+     },
+     {
+      "key": "source_ip",
+      "value": "10.78.238.1"
+     },
+     {
+      "key": "timestamp",
+      "value": "2026-05-25T16:27:00-03:00"
+     }
+    ],
+    "timestamp": "2026-05-25 16:27:00 -0300 -0300"
+   },
+   {
+    "meta": [
+     {
+      "key": "datasource_path",
+      "value": "/var/log/nginx/access.log"
+     },
+     {
+      "key": "datasource_type",
+      "value": "file"
+     },
+     {
+      "key": "http_args_len",
+      "value": "0"
+     },
+     {
+      "key": "http_path",
+      "value": "/app-vuln-trigger-3"
+     },
+     {
+      "key": "http_status",
+      "value": "404"
+     },
+     {
+      "key": "http_user_agent",
+      "value": "curl/8.14.1"
+     },
+     {
+      "key": "http_verb",
+      "value": "GET"
+     },
+     {
+      "key": "log_type",
+      "value": "http_access-log"
+     },
+     {
+      "key": "service",
+      "value": "http"
+     },
+     {
+      "key": "source_ip",
+      "value": "10.78.238.1"
+     },
+     {
+      "key": "timestamp",
+      "value": "2026-05-25T16:27:00-03:00"
+     }
+    ],
+    "timestamp": "2026-05-25 16:27:00 -0300 -0300"
+   },
+   {
+    "meta": [
+     {
+      "key": "datasource_path",
+      "value": "/var/log/nginx/access.log"
+     },
+     {
+      "key": "datasource_type",
+      "value": "file"
+     },
+     {
+      "key": "http_args_len",
+      "value": "0"
+     },
+     {
+      "key": "http_path",
+      "value": "/app-vuln-trigger-43"
+     },
+     {
+      "key": "http_status",
+      "value": "404"
+     },
+     {
+      "key": "http_user_agent",
+      "value": "curl/8.14.1"
+     },
+     {
+      "key": "http_verb",
+      "value": "GET"
+     },
+     {
+      "key": "log_type",
+      "value": "http_access-log"
+     },
+     {
+      "key": "service",
+      "value": "http"
+     },
+     {
+      "key": "source_ip",
+      "value": "10.78.238.1"
+     },
+     {
+      "key": "timestamp",
+      "value": "2026-05-25T16:27:00-03:00"
+     }
+    ],
+    "timestamp": "2026-05-25 16:27:00 -0300 -0300"
+   },
+   {
+    "meta": [
+     {
+      "key": "datasource_path",
+      "value": "/var/log/nginx/access.log"
+     },
+     {
+      "key": "datasource_type",
+      "value": "file"
+     },
+     {
+      "key": "http_args_len",
+      "value": "0"
+     },
+     {
+      "key": "http_path",
+      "value": "/app-vuln-trigger-4"
+     },
+     {
+      "key": "http_status",
+      "value": "404"
+     },
+     {
+      "key": "http_user_agent",
+      "value": "curl/8.14.1"
+     },
+     {
+      "key": "http_verb",
+      "value": "GET"
+     },
+     {
+      "key": "log_type",
+      "value": "http_access-log"
+     },
+     {
+      "key": "service",
+      "value": "http"
+     },
+     {
+      "key": "source_ip",
+      "value": "10.78.238.1"
+     },
+     {
+      "key": "timestamp",
+      "value": "2026-05-25T16:27:00-03:00"
+     }
+    ],
+    "timestamp": "2026-05-25 16:27:00 -0300 -0300"
+   },
+   {
+    "meta": [
+     {
+      "key": "datasource_path",
+      "value": "/var/log/nginx/access.log"
+     },
+     {
+      "key": "datasource_type",
+      "value": "file"
+     },
+     {
+      "key": "http_args_len",
+      "value": "0"
+     },
+     {
+      "key": "http_path",
+      "value": "/app-vuln-trigger-44"
+     },
+     {
+      "key": "http_status",
+      "value": "404"
+     },
+     {
+      "key": "http_user_agent",
+      "value": "curl/8.14.1"
+     },
+     {
+      "key": "http_verb",
+      "value": "GET"
+     },
+     {
+      "key": "log_type",
+      "value": "http_access-log"
+     },
+     {
+      "key": "service",
+      "value": "http"
+     },
+     {
+      "key": "source_ip",
+      "value": "10.78.238.1"
+     },
+     {
+      "key": "timestamp",
+      "value": "2026-05-25T16:27:00-03:00"
+     }
+    ],
+    "timestamp": "2026-05-25 16:27:00 -0300 -0300"
+   },
+   {
+    "meta": [
+     {
+      "key": "datasource_path",
+      "value": "/var/log/nginx/access.log"
+     },
+     {
+      "key": "datasource_type",
+      "value": "file"
+     },
+     {
+      "key": "http_args_len",
+      "value": "0"
+     },
+     {
+      "key": "http_path",
+      "value": "/app-vuln-trigger-5"
+     },
+     {
+      "key": "http_status",
+      "value": "404"
+     },
+     {
+      "key": "http_user_agent",
+      "value": "curl/8.14.1"
+     },
+     {
+      "key": "http_verb",
+      "value": "GET"
+     },
+     {
+      "key": "log_type",
+      "value": "http_access-log"
+     },
+     {
+      "key": "service",
+      "value": "http"
+     },
+     {
+      "key": "source_ip",
+      "value": "10.78.238.1"
+     },
+     {
+      "key": "timestamp",
+      "value": "2026-05-25T16:27:00-03:00"
+     }
+    ],
+    "timestamp": "2026-05-25 16:27:00 -0300 -0300"
+   },
+   {
+    "meta": [
+     {
+      "key": "datasource_path",
+      "value": "/var/log/nginx/access.log"
+     },
+     {
+      "key": "datasource_type",
+      "value": "file"
+     },
+     {
+      "key": "http_args_len",
+      "value": "0"
+     },
+     {
+      "key": "http_path",
+      "value": "/app-vuln-trigger-45"
+     },
+     {
+      "key": "http_status",
+      "value": "404"
+     },
+     {
+      "key": "http_user_agent",
+      "value": "curl/8.14.1"
+     },
+     {
+      "key": "http_verb",
+      "value": "GET"
+     },
+     {
+      "key": "log_type",
+      "value": "http_access-log"
+     },
+     {
+      "key": "service",
+      "value": "http"
+     },
+     {
+      "key": "source_ip",
+      "value": "10.78.238.1"
+     },
+     {
+      "key": "timestamp",
+      "value": "2026-05-25T16:27:00-03:00"
+     }
+    ],
+    "timestamp": "2026-05-25 16:27:00 -0300 -0300"
+   },
+   {
+    "meta": [
+     {
+      "key": "datasource_path",
+      "value": "/var/log/nginx/access.log"
+     },
+     {
+      "key": "datasource_type",
+      "value": "file"
+     },
+     {
+      "key": "http_args_len",
+      "value": "0"
+     },
+     {
+      "key": "http_path",
+      "value": "/app-vuln-trigger-6"
+     },
+     {
+      "key": "http_status",
+      "value": "404"
+     },
+     {
+      "key": "http_user_agent",
+      "value": "curl/8.14.1"
+     },
+     {
+      "key": "http_verb",
+      "value": "GET"
+     },
+     {
+      "key": "log_type",
+      "value": "http_access-log"
+     },
+     {
+      "key": "service",
+      "value": "http"
+     },
+     {
+      "key": "source_ip",
+      "value": "10.78.238.1"
+     },
+     {
+      "key": "timestamp",
+      "value": "2026-05-25T16:27:00-03:00"
+     }
+    ],
+    "timestamp": "2026-05-25 16:27:00 -0300 -0300"
+   }
+  ],
+  "events_count": 11,
+  "id": 1,
+  "kind": "crowdsec",
+  "labels": null,
+  "leakspeed": "10s",
+  "machine_id": "926f08b902223423a1dc0681167e7c385eEH9ThPdKkxbvP2",
+  "message": "Ip 10.78.238.1 performed 'crowdsecurity/http-probing' (11 events over 11.423285ms) at 2026-05-25 19:27:00.830239825 +0000 UTC",
+  "meta": [
+   {
+    "key": "method",
+    "value": "[\"GET\"]"
+   },
+   {
+    "key": "status",
+    "value": "[\"404\"]"
+   },
+   {
+    "key": "target_uri",
+    "value": "[\"/app-vuln-trigger-1\",\"/app-vuln-trigger-41\",\"/app-vuln-trigger-2\",\"/app-vuln-trigger-42\",\"/app-vuln-trigger-3\",\"/app-vuln-trigger-43\",\"/app-vuln-trigger-4\",\"/app-vuln-trigger-44\",\"/app-vuln-trigger-5\",\"/app-vuln-trigger-45\",\"/app-vuln-trigger-6\"]"
+   },
+   {
+    "key": "user_agent",
+    "value": "[\"curl/8.14.1\"]"
+   }
+  ],
+  "remediation": true,
+  "scenario": "crowdsecurity/http-probing",
+  "scenario_hash": "4b16f896af400e006c28b1476bf5989c748186f2b3756ed9ad7d1559480d278c",
+  "scenario_version": "0.4",
+  "simulated": false,
+  "source": {
+   "ip": "10.78.238.1",
+   "scope": "Ip",
+   "value": "10.78.238.1"
+  },
+  "start_at": "2026-05-25T19:27:00Z",
+  "stop_at": "2026-05-25T19:27:00Z",
+  "uuid": "da0649eb-ca6d-4265-a3d1-6ab41728f6a1"
+ }
+]
