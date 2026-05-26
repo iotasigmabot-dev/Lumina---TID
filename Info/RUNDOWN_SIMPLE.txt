@@ -3,25 +3,82 @@
 =========================================
 
 -----------------------------------------
-[ PREPARACIÓN: ANTES DE LA CHARLA ]
+[ PRE-FLIGHT: VERIFICACION COMPLETA ]
 -----------------------------------------
-# Obtener URL del panel web de Wazuh:
-echo "https://$(multipass info tid-lab | awk '/IPv4/ {print $2}' | head -n 1)"
-# Credenciales: admin / SecretPassword
-# - Ir a 'Security Events' -> filtrar por 'rule.id: 100010' para ver ataques
-# - Ir a 'Security Events' -> buscar 'custom-shadow-lock' para ver el Active Response
+# Correr todo este bloque de una vez. Cada línea debe devolver OK/200/active.
 
-# Preparar usuario victima (asegurar que está desbloqueado antes de empezar):
-multipass exec tid-lab -- sudo usermod -U victima
+# 0. Variables dinámicas (base de todo el pre-flight):
+VM_IP=$(multipass info tid-lab | awk '/IPv4/ {print $2}' | head -n 1)
+HOST_IFACE=$(ip route get "$VM_IP" | grep -oP 'dev \K\S+')
+BASE_IP=$(echo "$VM_IP" | cut -d. -f1-3)
+
+# 1. IP atacante — detectar la actual o asignar la siguiente libre (.50→.99):
+EXISTING=$(ip addr show "$HOST_IFACE" | grep "inet ${BASE_IP}" \
+  | awk '{print $2}' | cut -d/ -f1 | grep -v "^${BASE_IP}\.1$" | head -1)
+if [ -n "$EXISTING" ]; then
+  ATTACK_IP="$EXISTING"
+  echo "IP atacante activa: $ATTACK_IP"
+else
+  for oct in $(seq 50 99); do
+    candidate="${BASE_IP}.${oct}"
+    if ! ip addr show "$HOST_IFACE" | grep -q "$candidate"; then
+      sudo ip addr add "${candidate}/24" dev "$HOST_IFACE"
+      ATTACK_IP="$candidate"; break
+    fi
+  done
+  echo "IP atacante asignada: $ATTACK_IP"
+fi
+# Rotar (si está baneada): sudo ip addr del ${ATTACK_IP}/24 dev $HOST_IFACE
+#   → volver a correr el bloque anterior para asignar la siguiente libre
+
+# 2. VM corriendo:
+multipass info tid-lab | grep State
+# Esperado: State: Running
+
+# 3. Servicios críticos (todos deben decir "active"):
+for svc in nginx crowdsec crowdsec-firewall-bouncer wazuh-agent auditd; do
+  echo "$svc: $(multipass exec tid-lab -- systemctl is-active $svc 2>/dev/null)"
+done
+
+# 4. Wazuh containers (3/3 Up):
+multipass exec tid-lab -- sudo docker ps --format "{{.Names}}: {{.Status}}" 2>/dev/null
+
+# 5. NGINX responde HTTP 200:
+curl -s -o /dev/null -w "NGINX: %{http_code}\n" --max-time 3 http://$VM_IP/
+
+# 6. CrowdSec pizarra limpia:
+multipass exec tid-lab -- sudo cscli decisions list
+# Esperado: No active decisions
+
+# 7. Auditd — reglas shadow y ssh_key activas:
+multipass exec tid-lab -- sudo auditctl -l | grep -E "shadow|ssh_key"
+# Esperado: 3 líneas
+
+# 8. Wazuh Active Response configurado:
+multipass exec tid-lab -- sudo docker exec single-node-wazuh.manager-1 \
+  grep "100010" /var/ossec/etc/ossec.conf 2>/dev/null && echo "AR: OK" || echo "AR: FALTA"
+
+# 9. Usuario victima DESBLOQUEADO:
+multipass exec tid-lab -- bash -c "echo 'victima:demo123' | sudo chpasswd && echo 'victima: OK'"
+
+# 10. IP atacante llega a la VM sin ban (HTTP 200):
+curl --interface $ATTACK_IP -s -o /dev/null -w "IP atacante → VM: %{http_code}\n" --max-time 3 http://$VM_IP/
+
+# 11. URL Wazuh Dashboard:
+echo "Wazuh: https://$VM_IP  (admin / SecretPassword)"
 
 -----------------------------------------
-[ ETAPA 1: BUILD & REBUILD ]
+[ ETAPA 1: BUILD / SETUP ]
 -----------------------------------------
-# Provisionar o reparar el laboratorio:
+# Reconstruir lab desde cero:
 bash "/home/carpeano/Documents/SISTEMAS/NETWORKING/Charla Evilsec/scripts/rebuild_tid_lab.sh"
 
-# Entrar a la shell interactiva de la VM:
+# Shell interactiva en la VM:
 multipass shell tid-lab
+
+# Dashboard Wazuh → https://<VM_IP>  (admin / SecretPassword)
+# Security Events → rule.id: 100010  |  custom-shadow-lock (AR)
+
 
 -----------------------------------------
 [ ETAPA 2 & 3: ATAQUES Y DEFENSA ACTIVA ]
