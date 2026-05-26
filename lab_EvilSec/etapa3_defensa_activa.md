@@ -105,7 +105,7 @@ sudo cscli decisions delete --ip "$IP_HOST"
 sudo cscli decisions list
 
 # Confirmar restauración de conectividad desde el HOST
-# En el HOST: curl -I http://10.78.238.104/ (Debería responder HTTP 200 OK nuevamente)
+# En el HOST: curl -I http://10.78.238.209/ (Debería responder HTTP 200 OK nuevamente)
 ```
 
 ---
@@ -223,7 +223,7 @@ docker compose ps
 
 ```bash
 # 1. Conectarse a la VM como victima (desde el HOST)
-ssh victima@10.78.238.104
+ssh victima@10.78.238.209
 # (Ingresar contraseña: demo123)
 
 # 2. Una vez dentro de la sesión SSH de victima, ejecutar el PoC:

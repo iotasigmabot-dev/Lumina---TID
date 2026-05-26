@@ -343,3 +343,53 @@ echo "=== FIN RESUMEN ==="
 - **Tiempo entre bloques de ataque y verificación**: siempre esperar al menos 10 segundos para que los eventos fluyan del agente al manager.
 - **No modificar ningún archivo de configuración** en esta etapa. Solo ejecutar los scripts y comandos indicados.
 - **Los únicos comandos de ataque permitidos** son los explícitamente definidos en BLOQUE 2.3 y BLOQUE 2.8. Todo lo demás es verificación/observación.
+
+---
+
+## ANEXO: Troubleshooting de Congelamiento (DoS Nginx Rift)
+
+Debido a la naturaleza extrema del ataque DoS (catastrophic backtracking), es posible que el proceso de la máquina virtual acapare el 100%+ de la CPU del Host y se congele por completo, bloqueando también el demonio de Multipass. 
+
+A continuación, los comandos esenciales (ejecutables desde el **Host**) para diagnosticar y recuperar la VM en caso de congelamiento o timeout de SSH:
+
+### 1. Monitorizar el estado y consumo de la VM en tiempo real
+
+Si `multipass exec` o `multipass list` se quedan colgados, puedes monitorear el proceso real de la VM en el Host:
+
+```bash
+# Ver el consumo de CPU y Memoria en tiempo real del proceso QEMU de la VM
+top -p $(pgrep -f "qemu-system-x86_64.*tid-lab")
+
+# Alternativa con htop (si está instalado)
+htop -p $(pgrep -f "qemu-system-x86_64.*tid-lab")
+
+# Ver el estado general (solo si multipass responde)
+multipass info tid-lab
+```
+
+### 2. Recuperación forzada de QEMU / Multipass (Cuando la VM no responde)
+
+Si el consumo de CPU es excesivo y los comandos nativos de multipass no responden, debes matar el proceso a la fuerza y reiniciar el demonio:
+
+```bash
+# 1. Matar el proceso exacto de la VM bloqueada
+sudo kill -9 $(pgrep -f "qemu-system-x86_64.*tid-lab")
+
+# 2. Reiniciar el demonio principal de Multipass para limpiar estados inconsistentes
+sudo systemctl restart snap.multipass.multipassd
+```
+
+### 3. Detener / Reiniciar la VM (Comandos nativos)
+
+Si la VM aún responde parcialmente al demonio de multipass, utiliza la vía natural para gestionarla:
+
+```bash
+# Apagar la VM forzosamente
+multipass stop --force tid-lab
+
+# Iniciar la VM
+multipass start tid-lab
+
+# Reiniciar la VM (cuando responde con normalidad)
+multipass restart tid-lab
+```
