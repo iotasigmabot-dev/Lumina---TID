@@ -1,0 +1,86 @@
+=========================================
+      EVILSEC TID LAB - RUNDOWN
+=========================================
+
+-----------------------------------------
+[ PREPARACIÓN: ANTES DE LA CHARLA ]
+-----------------------------------------
+# Obtener URL del panel web de Wazuh:
+echo "https://$(multipass info tid-lab | awk '/IPv4/ {print $2}' | head -n 1)"
+# Credenciales: admin / SecretPassword
+# - Ir a 'Security Events' -> filtrar por 'rule.id: 100010' para ver ataques
+# - Ir a 'Security Events' -> buscar 'custom-shadow-lock' para ver el Active Response
+
+# Preparar usuario victima (asegurar que está desbloqueado antes de empezar):
+multipass exec tid-lab -- sudo usermod -U victima
+
+-----------------------------------------
+[ ETAPA 1: BUILD & REBUILD ]
+-----------------------------------------
+# Provisionar o reparar el laboratorio:
+bash "/home/carpeano/Documents/SISTEMAS/NETWORKING/Charla Evilsec/scripts/rebuild_tid_lab.sh"
+
+# Entrar a la shell interactiva de la VM:
+multipass shell tid-lab
+
+-----------------------------------------
+[ ETAPA 2 & 3: ATAQUES Y DEFENSA ACTIVA ]
+-----------------------------------------
+# --- ATAQUE 1: DoS NGINX & BLOQUEO CROWDSEC ---
+
+# Lanzar ataque:
+bash "/home/carpeano/Documents/SISTEMAS/NETWORKING/Charla Evilsec/scripts/nginx_dos_demo.sh"
+
+# Mostrar alertas de CrowdSec:
+multipass exec tid-lab -- sudo cscli alerts list
+
+# Confirmar baneo de IP Atacante en CrowdSec:
+multipass exec tid-lab -- sudo cscli decisions list
+
+# Comprobar bloqueo perimetral (Timeout):
+VM_IP=$(multipass info tid-lab | awk '/IPv4/ {print $2}' | head -n 1)
+BASE_IP=$(echo "$VM_IP" | cut -d. -f1-3)
+HOST_IFACE=$(ip route get "$VM_IP" | grep -oP 'dev \K\S+')
+ATTACK_IP=$(ip -4 addr show dev "$HOST_IFACE" | grep inet | awk '{print $2}' | cut -d/ -f1 | grep "^${BASE_IP}" | grep -v "${BASE_IP}.1$" | head -n 1)
+curl --interface "$ATTACK_IP" --max-time 3 "http://$VM_IP/"
+
+# Comprobar acceso de gestión (HTTP 200):
+VM_IP=$(multipass info tid-lab | awk '/IPv4/ {print $2}' | head -n 1)
+curl -I "http://$VM_IP/"
+
+
+# --- ATAQUE 2: ESCALADA DE PRIVILEGIOS & WAZUH ---
+
+# Ejecutar PoC /etc/shadow:
+bash "/home/carpeano/Documents/SISTEMAS/NETWORKING/Charla Evilsec/scripts/privilege_escalation_demo.sh"
+
+# Extraer alerta crítica de Wazuh en tiempo real (Lectura /etc/shadow):
+multipass exec tid-lab -- bash -c "sudo docker exec single-node-wazuh.manager-1 grep -a -E '\"id\":\"(100010)\"' /var/ossec/logs/alerts/alerts.json | tail -n 1 | jq ."
+
+# Validar que Active Response bloqueó la cuenta:
+multipass exec tid-lab -- sudo tail -n 10 /var/ossec/logs/active-responses.log
+
+# Confirmar estado de la cuenta en el sistema (debe tener '!' en el hash):
+multipass exec tid-lab -- bash -c "sudo grep '^victima:' /etc/shadow | cut -d: -f1-2"
+
+-----------------------------------------
+[ ETAPA 4: EXTRACCIÓN DE EVIDENCIAS ]
+-----------------------------------------
+# NOTA: En la carpeta 'evidencias/' ya se encuentra el PLAN B
+# con los JSONs y logs completos en caso de fallo del lab.
+
+# Para mostrar las evidencias de CrowdSec en la terminal:
+cat "/home/carpeano/Documents/SISTEMAS/NETWORKING/Charla Evilsec/evidencias/crowdsec_alerts_cscli.json" | jq .
+
+# Si el lab está sano, extraer en vivo:
+multipass exec tid-lab -- sudo docker exec single-node-wazuh.manager-1 cat /var/ossec/logs/alerts/alerts.json > wazuh_alerts_dump.json
+multipass exec tid-lab -- sudo cscli alerts list -o json > crowdsec_alerts_dump.json
+
+-----------------------------------------
+[ TROUBLESHOOTING DE EMERGENCIA ]
+-----------------------------------------
+# Matar QEMU:
+sudo pkill -9 qemu
+
+# Limpiar todos los baneos de CrowdSec:
+multipass exec tid-lab -- sudo cscli decisions delete --all
