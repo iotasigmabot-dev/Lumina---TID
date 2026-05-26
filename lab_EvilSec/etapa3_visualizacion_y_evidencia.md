@@ -1,4 +1,4 @@
-# ETAPA 4: Visualización y Recolección de Evidencia
+# ETAPA 3: Visualización y Recolección de Evidencia
 
 Esta etapa final del laboratorio se enfoca en demostrar el impacto de los ataques y la efectividad de las defensas de TID utilizando interfaces gráficas (Dashboards) y extracción automatizada de logs crudos.
 

@@ -468,45 +468,30 @@ sudo cscli metrics                               # parseo activo de auth.log
 
 ---
 
-## BLOQUE 6 — Configurar Whitelist del Host en CrowdSec (VM)
+## BLOQUE 6 — Estrategia de IP para la Demo (CAMBIO DE ESTRATEGIA)
 
-**Dónde ejecutar:** Dentro de `multipass shell tid-lab`
+> ⚠️ **ESTRATEGIA ACTUALIZADA:** La whitelist de host ya **no es necesaria** para la demo.
+> En lugar de eso, la Etapa 2 usa una **IP virtual atacante** (`ip addr add`) que es diferente
+> a la IP de gestión nativa del HOST. CrowdSec baneará solo la IP del ataque, nunca la de gestión.
+>
+> **Ventaja:** El bloqueo es 100% real y demostrable — no hay nada en lista blanca.
+> La audiencia ve un ban auténtico mientras el presentador mantiene acceso SSH intacto.
 
-> CRITICO: Sin este paso, CrowdSec bloqueará la IP del HOST durante la demo.
+**No se requiere ejecutar ningún comando en este bloque.**
 
-### 6A — Obtener IP del Host
-
+La IP virtual atacante se crea en el momento de la demo (Etapa 2, Paso 0.4) con:
 ```bash
-ip route | grep default
-# Resultado: "default via 192.168.64.1 dev ens3"
-# La IP del HOST es 192.168.64.1
+ATTACK_IP="10.78.238.50"
+HOST_IFACE=$(ip route get $VM_IP | grep -oP 'dev \K\S+')
+sudo ip addr add ${ATTACK_IP}/24 dev $HOST_IFACE
 ```
 
-> ANOTAR: `<IP-HOST>` = el valor que aparece después de "via"
-
-### 6B — Crear whitelist
-
-> Reemplazar `192.168.64.1` con la IP real antes de ejecutar.
-
+Y se elimina al finalizar la demo:
 ```bash
-sudo tee /etc/crowdsec/parsers/s02-enrich/demo-whitelist.yaml > /dev/null << 'EOF'
-name: crowdsecurity/demo-whitelist
-description: "Whitelist para IP del host presentador — Demo Evilsec"
-filter: "evt.Meta.source_ip in ['192.168.64.1']"
-whitelist:
-  reason: "Host del presentador"
-  ip:
-    - "192.168.64.1"
-EOF
-
-sudo systemctl reload crowdsec
+sudo ip addr del ${ATTACK_IP}/24 dev $HOST_IFACE
 ```
 
-**Checkpoint 6:**
-```bash
-sudo cscli parsers list | grep whitelist
-# Debe aparecer: crowdsecurity/demo-whitelist
-```
+**Checkpoint 6:** No aplica. Continuar con Bloque 7.
 
 ---
 
