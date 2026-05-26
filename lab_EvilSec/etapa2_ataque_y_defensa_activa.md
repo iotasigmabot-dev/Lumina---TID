@@ -88,7 +88,7 @@ echo "Interfaz: $HOST_IFACE"
 # Típicamente: mpqemubr0 o similar
 
 # Añadir IP virtual a la interfaz (la IP atacante — ajustar si .50 ya está en uso)
-ATTACK_IP="10.78.238.50"
+ATTACK_IP="10.78.238.51"
 sudo ip addr add ${ATTACK_IP}/24 dev $HOST_IFACE 2>/dev/null || echo "[!] IP ya existe — ok, continuar"
 
 # Confirmar que la IP atacante puede llegar a la VM
@@ -106,7 +106,7 @@ curl --interface $ATTACK_IP -s -o /dev/null -w "%{http_code}" http://$VM_IP/
 
 ```bash
 VM_IP=$(multipass info tid-lab | awk '/IPv4/ {print $2}' | head -n 1)
-ATTACK_IP="10.78.238.50"
+ATTACK_IP="10.78.238.51"
 
 echo "INICIO ATAQUE: $(date)"
 echo "IP Atacante: $ATTACK_IP → IP Víctima: $VM_IP"
@@ -128,17 +128,17 @@ bash "/home/carpeano/Documents/SISTEMAS/NETWORKING/Charla Evilsec/scripts/nginx_
 ```bash
 # Desde otra terminal en el HOST — mantiene acceso por SSH de gestión:
 multipass exec tid-lab -- sudo cscli alerts list
-# Debe mostrar: Ip:10.78.238.50 | crowdsecurity/http-probing o http-crawl-non_statics | ban:1
+# Debe mostrar: Ip:10.78.238.51 | crowdsecurity/http-probing o http-crawl-non_statics | ban:1
 
 multipass exec tid-lab -- sudo cscli decisions list
-# Debe mostrar: 10.78.238.50 | ban | 4h
+# Debe mostrar: 10.78.238.51 | ban | 4h
 ```
 
 ### Bloque 2.3 — Demostrar el bloqueo diferenciado (HOST)
 
 ```bash
 VM_IP=$(multipass info tid-lab | awk '/IPv4/ {print $2}' | head -n 1)
-ATTACK_IP="10.78.238.50"
+ATTACK_IP="10.78.238.51"
 
 echo "=== DEMOSTRANDO BLOQUEO ==="
 
@@ -164,7 +164,7 @@ multipass exec tid-lab -- echo "SSH: OK - El atacante está baneado, el admin ma
 
 ```bash
 multipass exec tid-lab -- sudo iptables -L -n | grep -A 5 "crowdsec\|CROWDSEC"
-# Muestra reglas DROP para 10.78.238.50 insertadas por el bouncer
+# Muestra reglas DROP para 10.78.238.51 insertadas por el bouncer
 ```
 
 ---
@@ -230,7 +230,7 @@ multipass exec tid-lab -- bash -c "sudo grep '^victima:' /etc/shadow | cut -d: -
 
 ```bash
 # 1. Eliminar IP virtual atacante
-sudo ip addr del 10.78.238.50/24 dev $HOST_IFACE 2>/dev/null
+sudo ip addr del 10.78.238.51/24 dev $HOST_IFACE 2>/dev/null
 
 # 2. Limpiar baneos de CrowdSec
 multipass exec tid-lab -- sudo cscli decisions delete --all
@@ -250,7 +250,7 @@ curl -s -o /dev/null -w "HTTP Status: %{http_code}\n" "http://$VM_IP/"
 
 | Ataque | Evidencia | Estado Esperado |
 |--------|-----------|-----------------|
-| DoS NGINX | `cscli decisions list` | IP atacante (10.78.238.50) baneada |
+| DoS NGINX | `cscli decisions list` | IP atacante (10.78.238.51) baneada |
 | DoS NGINX | `curl --interface $ATTACK_IP` | Connection timeout |
 | DoS NGINX | `curl` desde IP gestión | HTTP 200 OK |
 | Shadow Access | Wazuh Rule 100010 | Alerta visible en JSON |

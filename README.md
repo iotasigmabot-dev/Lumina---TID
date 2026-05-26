@@ -23,7 +23,27 @@ El riesgo se mitiga de manera más efectiva **suprimiendo la variable de vulnera
 
 ---
 
-## 2. El Ecosistema T.I.D. (Los 4 Cuadrantes y 12 Órganos)
+## 2. Threat Modeling: El Diseño vs La Operación
+
+Para construir una defensa informada por inteligencia de amenazas, es vital aplicar el modelo correcto en la fase adecuada del Ciclo de Vida de Desarrollo (SDLC) o de la arquitectura corporativa.
+
+### STRIDE y el Modelado en Fase de Diseño
+**STRIDE** (Spoofing, Tampering, Repudiation, Information Disclosure, Denial of Service, Elevation of Privilege) es una metodología de Threat Modeling creada por Microsoft. Se implementa principalmente en la **Fase de Diseño o Arquitectura**. Su objetivo es identificar fallas estructurales antes de escribir código o desplegar infraestructura, cuando remediar vulnerabilidades es infinitamente más económico.
+
+### Modelos Similares y Complementarios
+Dependiendo del enfoque del negocio, existen alternativas o complementos a STRIDE:
+
+- **PASTA (Process for Attack Simulation and Threat Analysis):** Centrado en el riesgo empresarial. Alinea las amenazas técnicas con el impacto financiero o reputacional. Muy valorado por la alta gerencia.
+- **DREAD:** Modelo de clasificación de riesgos. Usualmente aplicado *después* de STRIDE para puntuar las amenazas descubiertas (del 1 al 10) según Daño, Reproducibilidad, Explotabilidad, etc.
+- **LINDDUN:** Metodología especializada al 100% en la **Privacidad** de los datos. Ideal para entornos regulados (GDPR, HIPAA).
+- **VAST:** Enfoque ágil y visual diseñado para integrarse velozmente en entornos modernos de CI/CD (DevOps).
+
+### STRIDE vs MITRE ATT&CK en T.I.D.
+Mientras que metodologías como **STRIDE** o **PASTA** aseguran que "la casa se construya sin ventanas rotas", **MITRE ATT&CK** (el corazón de Threat-Informed Defense) se usa en la fase operativa para entender y emular "cómo actúan los ladrones reales hoy en día", validando si los controles como Wazuh o CrowdSec son capaces de detectarlos y bloquearlos.
+
+---
+
+## 3. El Ecosistema T.I.D. (Los 4 Cuadrantes y 12 Órganos)
 
 TID es un engranaje completo, no una herramienta aislada. Se articula a través de 4 cuadrantes funcionales (también conocidos históricamente en la madurez del proyecto como "Épicas") que agrupan 12 órganos operativos.
 
@@ -114,7 +134,7 @@ flowchart TD
 
 ---
 
-## 3. Fases Operativas: Del Caos a la Respuesta
+## 4. Fases Operativas: Del Caos a la Respuesta
 
 La operación del pipeline TID no es lineal; ocurre en **tres fases críticas** que convierten el miedo a lo desconocido en ingeniería determinista.
 
@@ -179,7 +199,7 @@ flowchart LR
 
 ---
 
-## 4. Filosofía "Living off the Land" (Sustitución Táctica LoL)
+## 5. Filosofía "Living off the Land" (Sustitución Táctica LoL)
 
 La seguridad corporativa no siempre equivale a comprar herramientas nuevas y costosas. La filosofía **Defensiva LoL (Living off the Land)** significa exprimir y aprovechar las capacidades ya instaladas y de código abierto para lograr resultados empresariales:
 
@@ -195,7 +215,7 @@ Esta es la justificación principal de la arquitectura **Lumina**: una validaci�
 
 ---
 
-## 5. Stack Tecnológico del Laboratorio (EvilSec)
+## 6. Stack Tecnológico del Laboratorio (EvilSec)
 
 El entorno práctico **Lumina - EvilSec Lab** materializa la filosofía LoL y el modelo TID empleando herramientas de código abierto potentes y ampliamente integrables:
 

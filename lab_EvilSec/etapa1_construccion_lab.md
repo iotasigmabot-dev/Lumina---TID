@@ -481,13 +481,12 @@ sudo cscli metrics                               # parseo activo de auth.log
 
 La IP virtual atacante se crea en el momento de la demo (Etapa 2, Paso 0.4) con:
 ```bash
-ATTACK_IP="10.78.238.50"
+# Crear IP virtual (Atacante)
+ATTACK_IP="10.78.238.51"
 HOST_IFACE=$(ip route get $VM_IP | grep -oP 'dev \K\S+')
 sudo ip addr add ${ATTACK_IP}/24 dev $HOST_IFACE
-```
 
-Y se elimina al finalizar la demo:
-```bash
+# Eliminar IP virtual 
 sudo ip addr del ${ATTACK_IP}/24 dev $HOST_IFACE
 ```
 
